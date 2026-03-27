@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perception & Play Psychotherapy — Layla Kabbaj, RPQ</title>
+<meta name="description" content="Psychotherapy rooted in perception and play. Trauma-informed, attachment-based therapy in Quebec and Ontario. Layla Kabbaj, RPQ (Qualifying).">
+<meta property="og:title" content="Perception & Play Psychotherapy">
+<meta property="og:description" content="Trauma-informed, attachment-based psychotherapy in Quebec and Ontario.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://perceptionandplay.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════
+   PERCEPTION & PLAY — Editorial Wellness
+   ══════════════════════════════════════════ */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --forest: #2D3D2D;
+  --forest-mid: #3E5240;
+  --forest-light: #4A5E4A;
+  --gold: #C4A265;
+  --gold-soft: #D4B97A;
+  --gold-pale: #E5D4AA;
+  --blush: #E8D5D0;
+  --blush-deep: #D4B5AD;
+  --lavender: #9B8EA8;
+  --lavender-soft: #B8AEBF;
+  --cream: #F0E6D8;
+  --cream-light: #F5EDE4;
+  --cream-paper: #EDE0D0;
+  --text: #2D3D2D;
+  --text-body: #485848;
+  --text-muted: #6B7D6B;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.7;
+  font-weight: 400;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+img { max-width: 100%; display: block; }
+
+a {
+  color: var(--forest);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover { color: var(--gold); }
+
+/* Focus indicators */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--forest);
+  color: var(--cream);
+  padding: 0.75rem 1.5rem;
+  z-index: 999;
+  font-size: 0.85rem;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 1rem; }
+
+/* ── Scroll Reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+.reveal-d5 { transition-delay: 0.5s; }
+.reveal-d6 { transition-delay: 0.6s; }
+
+/* ── Organic Blobs ── */
+.blob {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+.blob--blush {
+  background: var(--blush-deep);
+  opacity: 0.22;
+  border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%;
+}
+.blob--lavender {
+  background: var(--lavender);
+  opacity: 0.16;
+  border-radius: 44% 56% 38% 62% / 52% 60% 40% 48%;
+}
+.blob--gold {
+  background: var(--gold);
+  opacity: 0.1;
+  border-radius: 52% 48% 58% 42% / 46% 62% 38% 54%;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  25% { transform: translate(15px, -10px) rotate(1.5deg) scale(1.02); }
+  50% { transform: translate(-8px, 15px) rotate(-1deg) scale(0.98); }
+  75% { transform: translate(10px, 5px) rotate(2deg) scale(1.01); }
+}
+
+/* ── Gold Ring Motif ── */
+.gold-ring {
+  position: absolute;
+  border: 1.5px solid var(--gold-soft);
+  border-radius: 50%;
+  opacity: 0.25;
+  pointer-events: none;
+  will-change: transform;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.25; }
+  50% { transform: scale(1.03); opacity: 0.18; }
+}
+
+/* ══════════════════════
+   NAVIGATION
+   ══════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.25rem clamp(1.5rem, 4vw, 3rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+nav.scrolled {
+  background: rgba(240, 230, 216, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(45, 61, 45, 0.08);
+}
+
+.nav-logo {
+  width: 54px; height: 54px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  mix-blend-mode: multiply;
+}
+.nav-logo:hover { transform: scale(1.06); }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--forest);
+  position: relative;
+  padding: 0.25rem 0;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1.5px;
+  background: var(--gold);
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after { width: 100%; }
+
+.lang-toggle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: none;
+  border: 1.5px solid var(--forest);
+  color: var(--forest);
+  padding: 0.4rem 0.85rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.lang-toggle:hover,
+.lang-toggle:focus-visible {
+  background: var(--forest);
+  color: var(--cream);
+}
+
+/* Hamburger */
+.nav-burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px; height: 22px;
+  position: relative;
+  z-index: 110;
+}
+.nav-burger span {
+  display: block;
+  width: 100%; height: 1.5px;
+  background: var(--forest);
+  position: absolute; left: 0;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-burger span:nth-child(1) { top: 0; }
+.nav-burger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.nav-burger span:nth-child(3) { bottom: 0; }
+.nav-burger.open span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; transform: translateX(-10px); }
+.nav-burger.open span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+/* Mobile overlay */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--cream);
+  z-index: 105;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.mobile-nav.open {
+  display: flex;
+  opacity: 1;
+}
+.mobile-nav a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--forest);
+}
+.mobile-nav .lang-toggle {
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  padding: 0.5rem 1.2rem;
+}
+
+/* ══════════════════════
+   HERO — Full editorial statement
+   ══════════════════════ */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(5.5rem, 10vh, 8rem) clamp(1.5rem, 6vw, 4rem) clamp(3rem, 5vh, 5rem);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 30%, rgba(212, 181, 173, 0.3), transparent),
+    radial-gradient(ellipse 60% 50% at 75% 65%, rgba(155, 142, 168, 0.18), transparent),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(196, 162, 101, 0.1), transparent),
+    var(--cream);
+}
+
+.hero-logo {
+  width: clamp(200px, 32vw, 380px);
+  height: auto;
+  margin-bottom: clamp(1.25rem, 2.5vh, 2rem);
+  filter: drop-shadow(0 4px 24px rgba(45, 61, 45, 0.1));
+  mix-blend-mode: multiply;
+  border-radius: 50%;
+}
+
+.hero-tagline {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  font-weight: 300;
+  color: var(--forest);
+  max-width: 700px;
+  margin: 0 auto 1.25rem;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold);
+  display: inline-block;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  color: var(--text-body);
+  max-width: 540px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--cream);
+  background: var(--forest);
+  padding: 1.1rem 2.4rem;
+  border: 1.5px solid var(--forest);
+  cursor: pointer;
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease;
+}
+.btn-primary:hover {
+  background: var(--forest-mid);
+  transform: translateY(-2px);
+}
+.btn-primary svg { width: 15px; height: 15px; transition: transform 0.3s ease; }
+.btn-primary:hover svg { transform: translateX(3px); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--forest);
+  padding: 1.1rem 2.4rem;
+  border: 1.5px solid rgba(45, 61, 45, 0.25);
+  background: none;
+  cursor: pointer;
+  transition: border-color 0.4s ease, color 0.4s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Hero decorative elements */
+.hero .blob-hero-1 {
+  width: clamp(280px, 35vw, 450px); height: clamp(260px, 32vw, 420px);
+  top: -8%; left: -8%;
+  animation: drift 24s ease-in-out infinite;
+}
+.hero .blob-hero-2 {
+  width: clamp(180px, 22vw, 300px); height: clamp(170px, 20vw, 280px);
+  bottom: 5%; right: -5%;
+  animation: drift 28s ease-in-out infinite reverse;
+}
+.hero .blob-hero-3 {
+  width: clamp(120px, 14vw, 200px); height: clamp(110px, 13vw, 180px);
+  top: 20%; right: 12%;
+  animation: drift 20s ease-in-out infinite 3s;
+}
+.hero .ring-hero {
+  width: clamp(300px, 40vw, 550px); height: clamp(300px, 40vw, 550px);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: breathe 18s ease-in-out infinite;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.hero-scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, var(--gold-soft), transparent);
+  animation: scrollPulse 2.5s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.15); }
+}
+
+/* ══════════════════════
+   HORIZONTAL DIVIDER
+   ══════════════════════ */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 clamp(2rem, 6vw, 6rem);
+  height: 0;
+  position: relative;
+  margin: 0;
+}
+.divider::before {
+  content: '';
+  width: min(80%, 600px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-pale), transparent);
+}
+
+/* ══════════════════════
+   SERVICES
+   ══════════════════════ */
+.services {
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(2rem, 6vw, 6rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.section-heading {
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--forest);
+  margin-bottom: 0.75rem;
+}
+
+.section-intro {
+  font-size: 1rem;
+  color: var(--text-body);
+  max-width: 540px;
+  margin-bottom: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.8;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  max-width: 1000px;
+}
+
+.service-item {
+  position: relative;
+  padding: clamp(2rem, 3.5vw, 3rem);
+  border-top: 1px solid rgba(45, 61, 45, 0.08);
+  transition: background-color 0.5s ease;
+}
+.service-item:hover {
+  background: rgba(232, 213, 208, 0.12);
+}
+
+.service-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--gold-pale);
+  line-height: 1;
+  margin-bottom: 1rem;
+  transition: color 0.4s ease;
+}
+.service-item:hover .service-number {
+  color: var(--gold);
+}
+
+.service-item h3 {
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  color: var(--forest);
+}
+
+.service-item p {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.75;
+}
+
+.services .blob-svc {
+  width: 300px; height: 280px;
+  top: 8%; right: -80px;
+  animation: drift 22s ease-in-out infinite;
+}
+
+/* ══════════════════════
+   APPROACH — Split panel
+   ══════════════════════ */
+.approach {
+  position: relative;
+  overflow: hidden;
+}
+
+.approach-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: auto;
+}
+
+.approach-visual {
+  background:
+    radial-gradient(ellipse 70% 60% at 40% 50%, rgba(155, 142, 168, 0.2), transparent),
+    radial-gradient(ellipse 50% 40% at 70% 30%, rgba(212, 181, 173, 0.25), transparent),
+    var(--blush);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(3rem, 6vw, 6rem);
+  overflow: hidden;
+}
+
+.approach-quote-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 400px;
+}
+.approach-quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 6rem;
+  color: var(--gold-pale);
+  line-height: 0.5;
+  margin-bottom: 0.5rem;
+  display: block;
+  opacity: 0.6;
+}
+
+.approach-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 2.8vw, 2.3rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--forest);
+  line-height: 1.45;
+}
+.approach-quote-attr {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+}
+
+.approach-visual .ring-approach {
+  width: 420px; height: 420px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: breathe 20s ease-in-out infinite;
+}
+.approach-visual .blob-approach {
+  width: 200px; height: 180px;
+  top: 12%; right: 8%;
+  animation: drift 26s ease-in-out infinite;
+}
+
+.approach-content {
+  padding: clamp(3rem, 5vw, 5rem) clamp(2.5rem, 5vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--cream);
+}
+
+.approach-text {
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 1.75rem;
+}
+
+.approach-methods {
+  list-style: none;
+  display: grid;
+  gap: 0;
+}
+
+.approach-method {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(45, 61, 45, 0.06);
+  font-size: 0.95rem;
+  color: var(--text-body);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: color 0.3s ease, padding-left 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.approach-method:first-child {
+  border-top: 1px solid rgba(45, 61, 45, 0.06);
+}
+.approach-method:hover {
+  color: var(--forest);
+  padding-left: 0.5rem;
+}
+.approach-method-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+.approach-method:hover .approach-method-dot {
+  transform: scale(1.6);
+}
+
+/* ══════════════════════
+   ABOUT — Asymmetric with photo
+   ══════════════════════ */
+.about {
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(2rem, 6vw, 6rem);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 50% 40% at 15% 80%, rgba(212, 181, 173, 0.18), transparent),
+    var(--cream);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-photo-wrapper {
+  position: relative;
+}
+
+.about-photo {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 15%;
+  border-radius: 62% 38% 52% 48% / 45% 55% 45% 55%;
+  filter: saturate(0.92) contrast(1.03);
+}
+
+.about-photo-ring {
+  position: absolute;
+  width: calc(100% + 50px);
+  max-width: 450px;
+  aspect-ratio: 1;
+  border: 1.5px solid var(--gold-soft);
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+  pointer-events: none;
+  animation: breathe 16s ease-in-out infinite;
+}
+
+.about-photo-blob {
+  position: absolute;
+  width: 160px; height: 150px;
+  bottom: -20px; left: -30px;
+  z-index: -1;
+  animation: drift 22s ease-in-out infinite;
+}
+
+.about-content { position: relative; z-index: 2; }
+
+.about-text {
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.85;
+  max-width: 500px;
+}
+.about-text + .about-text { margin-top: 1.25rem; }
+
+.about-credentials {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(45, 61, 45, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+.credential {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.credential strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--forest);
+  margin-bottom: 0.25rem;
+}
+
+/* ══════════════════════
+   CONTACT — Dark panel
+   ══════════════════════ */
+.contact {
+  background: var(--forest);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: auto;
+}
+
+.contact-content {
+  padding: clamp(3.5rem, 6vw, 5.5rem) clamp(2.5rem, 6vw, 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact .section-label { color: var(--gold-soft); }
+.contact .section-heading {
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+  max-width: 400px;
+}
+
+.contact-text {
+  font-size: 1rem;
+  color: rgba(240, 230, 216, 0.65);
+  line-height: 1.85;
+  max-width: 440px;
+  margin-bottom: 2rem;
+}
+
+.contact-details { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.contact-detail-icon {
+  width: 18px; height: 18px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--gold-soft);
+}
+.contact-detail-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(240, 230, 216, 0.38);
+  margin-bottom: 0.2rem;
+}
+.contact-detail-value {
+  font-size: 0.92rem;
+  color: var(--cream);
+}
+.contact-detail-value a {
+  color: var(--cream);
+  border-bottom: 1px solid rgba(240, 230, 216, 0.2);
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+.contact-detail-value a:hover {
+  color: var(--gold-soft);
+  border-color: var(--gold-soft);
+}
+
+.contact-booking {
+  background: rgba(240, 230, 216, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(3rem, 6vw, 6rem);
+  position: relative;
+}
+
+.booking-card {
+  text-align: center;
+  max-width: 360px;
+  position: relative;
+  z-index: 2;
+}
+
+.booking-card h3 {
+  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+  color: var(--cream);
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.booking-card p {
+  font-size: 0.88rem;
+  color: rgba(240, 230, 216, 0.55);
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+}
+
+.booking-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--forest);
+  background: var(--gold);
+  padding: 1.15rem 2.8rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.4s ease, transform 0.3s ease;
+}
+.booking-btn:hover {
+  background: var(--cream);
+  color: var(--forest);
+  transform: translateY(-2px);
+}
+.booking-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+.booking-btn svg { width: 15px; height: 15px; transition: transform 0.3s ease; }
+.booking-btn:hover svg { transform: translateX(3px); }
+
+.contact .blob-contact {
+  width: 280px; height: 260px;
+  top: -50px; right: 35%;
+  opacity: 0.06;
+  animation: drift 30s ease-in-out infinite;
+}
+.contact .ring-contact {
+  width: 380px; height: 380px;
+  bottom: -100px; left: -100px;
+  opacity: 0.1;
+  animation: breathe 22s ease-in-out infinite;
+}
+
+/* ══════════════════════
+   FOOTER
+   ══════════════════════ */
+footer {
+  background: var(--forest);
+  border-top: 1px solid rgba(240, 230, 216, 0.05);
+  padding: 1.75rem clamp(2rem, 6vw, 6rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-left {
+  font-size: 0.75rem;
+  color: rgba(240, 230, 216, 0.3);
+  letter-spacing: 0.04em;
+}
+
+.footer-right {
+  display: flex;
+  gap: 1.75rem;
+  list-style: none;
+}
+.footer-right a {
+  font-size: 0.72rem;
+  color: rgba(240, 230, 216, 0.35);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+.footer-right a:hover { color: var(--gold-soft); }
+
+/* ══════════════════════
+   LANGUAGE SYSTEM
+   ══════════════════════ */
+[data-lang="en"] .fr, [data-lang="en"] .es { display: none; }
+[data-lang="fr"] .en, [data-lang="fr"] .es { display: none; }
+[data-lang="es"] .en, [data-lang="es"] .fr { display: none; }
+
+/* ══════════════════════
+   RESPONSIVE
+   ══════════════════════ */
+@media (max-width: 900px) {
+  .nav-links, .nav-right .lang-toggle { display: none; }
+  .nav-burger { display: block; }
+
+  .hero { min-height: auto; padding-top: 6rem; padding-bottom: 3rem; }
+  .hero h1 { font-size: clamp(2rem, 7vw, 3rem); }
+  .hero-logo { width: clamp(140px, 35vw, 200px); }
+  .hero-scroll { display: none; }
+
+  .services-grid { grid-template-columns: 1fr; }
+
+  .approach-inner { grid-template-columns: 1fr; }
+  .approach-visual { min-height: 35vh; }
+  .approach-content { padding: 2.5rem 1.5rem 3rem; }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .about-photo { max-width: 280px; margin: 0 auto; }
+  .about-photo-ring { display: none; }
+  .about-photo-blob { display: none; }
+  .about-content { text-align: left; }
+
+  .contact-inner { grid-template-columns: 1fr; }
+  .contact-booking { padding: 3rem 2rem; }
+}
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .hero-cta-group { flex-direction: column; width: 100%; }
+  .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
+  .section-heading { font-size: 1.7rem; }
+  .about-credentials { flex-direction: column; gap: 1.5rem; }
+  nav { padding: 0.9rem 1.25rem; }
+  .nav-logo { width: 44px; height: 44px; }
+  .service-item { padding: 1.75rem 1.5rem; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .blob, .gold-ring { animation: none !important; }
+  .hero-scroll-line { animation: none; }
+  .approach-method { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">
+  <span class="en">Skip to content</span>
+  <span class="fr">Aller au contenu</span>
+  <span class="es">Ir al contenido</span>
+</a>
+
+<!-- ── Navigation ── -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <a href="#hero"><img src="assets/logo.jpeg" alt="Perception &amp; Play — Home" class="nav-logo"></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#services"><span class="en">Services</span><span class="fr">Services</span><span class="es">Servicios</span></a></li>
+      <li><a href="#approach"><span class="en">Approach</span><span class="fr">Approche</span><span class="es">Enfoque</span></a></li>
+      <li><a href="#about"><span class="en">About</span><span class="fr">&Agrave; propos</span><span class="es">Acerca</span></a></li>
+      <li><a href="#contact"><span class="en">Contact</span><span class="fr">Contact</span><span class="es">Contacto</span></a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle" aria-label="Toggle language">FR</button>
+  </div>
+  <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile nav overlay -->
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Navigation menu">
+  <a href="#services" class="mobile-nav-link"><span class="en">Services</span><span class="fr">Services</span><span class="es">Servicios</span></a>
+  <a href="#approach" class="mobile-nav-link"><span class="en">Approach</span><span class="fr">Approche</span><span class="es">Enfoque</span></a>
+  <a href="#about" class="mobile-nav-link"><span class="en">About</span><span class="fr">&Agrave; propos</span><span class="es">Acerca</span></a>
+  <a href="#contact" class="mobile-nav-link"><span class="en">Contact</span><span class="fr">Contact</span><span class="es">Contacto</span></a>
+  <button class="lang-toggle" id="langToggleMobile" aria-label="Toggle language">FR</button>
+</div>
+
+<!-- ══════════════════════
+     HERO
+     ══════════════════════ -->
+<section class="hero" id="hero">
+  <!-- Decorative -->
+  <div class="blob blob--blush blob-hero-1"></div>
+  <div class="blob blob--lavender blob-hero-2"></div>
+  <div class="blob blob--gold blob-hero-3"></div>
+  <div class="gold-ring ring-hero"></div>
+
+  <img src="assets/logo.jpeg" alt="" class="hero-logo reveal" aria-hidden="true">
+
+  <p class="hero-tagline reveal reveal-d1">
+    <span class="en">Psychotherapy &middot; Quebec &amp; Ontario</span>
+    <span class="fr">Psychoth&eacute;rapie &middot; Qu&eacute;bec &amp; Ontario</span>
+    <span class="es">Psicoterapia &middot; Quebec &amp; Ontario</span>
+  </p>
+
+  <h1 class="reveal reveal-d2">
+    <span class="en">A space to reconnect<br>with <em>yourself</em></span>
+    <span class="fr">Un espace pour se<br>reconnecter &agrave; <em>soi</em></span>
+    <span class="es">Un espacio para<br>reconectarte <em>contigo</em></span>
+  </h1>
+
+  <p class="hero-subtitle reveal reveal-d3">
+    <span class="en">Therapy grounded in perception and play&mdash;integrating creative approaches, somatic awareness, and relational depth to support your healing.</span>
+    <span class="fr">Une th&eacute;rapie ancr&eacute;e dans la perception et le jeu&mdash;int&eacute;grant cr&eacute;ativit&eacute;, conscience somatique et profondeur relationnelle pour accompagner votre gu&eacute;rison.</span>
+    <span class="es">Terapia basada en la percepci&oacute;n y el juego&mdash;integrando enfoques creativos, conciencia som&aacute;tica y profundidad relacional para acompa&ntilde;ar tu sanaci&oacute;n.</span>
+  </p>
+
+  <div class="hero-cta-group reveal reveal-d4">
+    <a href="#contact" class="btn-primary">
+      <span class="en">Book a Consultation</span>
+      <span class="fr">Prendre rendez-vous</span>
+      <span class="es">Reservar una consulta</span>
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+    <a href="#services" class="btn-ghost">
+      <span class="en">Explore Services</span>
+      <span class="fr">D&eacute;couvrir les services</span>
+      <span class="es">Explorar servicios</span>
+    </a>
+  </div>
+
+  <div class="hero-scroll reveal reveal-d5" aria-hidden="true">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ══════════════════════
+     MAIN CONTENT
+     ══════════════════════ -->
+<main id="main">
+
+<div class="divider"></div>
+
+<!-- ── Services ── -->
+<section class="services" id="services">
+  <div class="blob blob--gold blob-svc"></div>
+
+  <p class="section-label reveal"><span class="en">Services</span><span class="fr">Services</span><span class="es">Servicios</span></p>
+  <h2 class="section-heading reveal reveal-d1">
+    <span class="en">Therapy tailored to<br>where you are</span>
+    <span class="fr">Une th&eacute;rapie adapt&eacute;e<br>&agrave; l&agrave; o&ugrave; vous &ecirc;tes</span>
+    <span class="es">Terapia adaptada<br>a donde est&aacute;s</span>
+  </h2>
+  <p class="section-intro reveal reveal-d2">
+    <span class="en">Whether you're navigating a difficult transition, healing from past experiences, or seeking deeper self-understanding&mdash;I meet you where you are.</span>
+    <span class="fr">Que vous traversiez une transition difficile, gu&eacute;rissiez d&rsquo;exp&eacute;riences pass&eacute;es ou cherchiez une compr&eacute;hension plus profonde de vous-m&ecirc;me&mdash;je vous rencontre l&agrave; o&ugrave; vous &ecirc;tes.</span>
+    <span class="es">Ya sea que est&eacute;s atravesando una transici&oacute;n dif&iacute;cil, sanando experiencias pasadas o buscando un autoconocimiento m&aacute;s profundo&mdash;te encuentro donde est&aacute;s.</span>
+  </p>
+
+  <div class="services-grid">
+    <div class="service-item reveal reveal-d1">
+      <span class="service-number">01</span>
+      <h3><span class="en">Individual Therapy</span><span class="fr">Th&eacute;rapie individuelle</span><span class="es">Terapia individual</span></h3>
+      <p>
+        <span class="en">A reflective space to explore patterns, process emotions, and build a stronger relationship with yourself. Sessions integrate talk therapy with creative and somatic approaches.</span>
+        <span class="fr">Un espace de r&eacute;flexion pour explorer vos sch&eacute;mas, traiter vos &eacute;motions et b&acirc;tir une relation plus solide avec vous-m&ecirc;me.</span>
+        <span class="es">Un espacio reflexivo para explorar patrones, procesar emociones y construir una relaci&oacute;n m&aacute;s fuerte contigo. Las sesiones integran di&aacute;logo con enfoques creativos y som&aacute;ticos.</span>
+      </p>
+    </div>
+    <div class="service-item reveal reveal-d2">
+      <span class="service-number">02</span>
+      <h3><span class="en">Couples Therapy</span><span class="fr">Th&eacute;rapie de couple</span><span class="es">Terapia de pareja</span></h3>
+      <p>
+        <span class="en">Strengthen connection and navigate conflict through attachment-informed work. Together we build understanding, repair ruptures, and develop new ways of being with each other.</span>
+        <span class="fr">Renforcez votre connexion et naviguez les conflits gr&acirc;ce &agrave; un travail inform&eacute; par l&rsquo;attachement. Ensemble, nous r&eacute;parons les ruptures.</span>
+        <span class="es">Fortalece la conexi&oacute;n y navega los conflictos a trav&eacute;s de un trabajo basado en el apego. Juntos construimos comprensi&oacute;n, reparamos rupturas y desarrollamos nuevas formas de estar juntos.</span>
+      </p>
+    </div>
+    <div class="service-item reveal reveal-d3">
+      <span class="service-number">03</span>
+      <h3><span class="en">Trauma-Informed Care</span><span class="fr">Soins inform&eacute;s par le trauma</span><span class="es">Atenci&oacute;n informada por el trauma</span></h3>
+      <p>
+        <span class="en">Gentle, nervous system-aware work that honors your pace. Using somatic experiencing and mindfulness, we create safety in the body to process what words alone cannot hold.</span>
+        <span class="fr">Un travail doux et attentif au syst&egrave;me nerveux qui respecte votre rythme. Nous cr&eacute;ons un sentiment de s&eacute;curit&eacute; dans le corps.</span>
+        <span class="es">Un trabajo suave y consciente del sistema nervioso que respeta tu ritmo. Usando la experiencia som&aacute;tica y el mindfulness, creamos seguridad en el cuerpo para procesar lo que las palabras solas no pueden contener.</span>
+      </p>
+    </div>
+    <div class="service-item reveal reveal-d4">
+      <span class="service-number">04</span>
+      <h3><span class="en">Creative Approaches</span><span class="fr">Approches cr&eacute;atives</span><span class="es">Enfoques creativos</span></h3>
+      <p>
+        <span class="en">Play, art-making, and expressive modalities open doors that talk therapy alone may not. These are not about being artistic&mdash;they're about accessing deeper layers of experience.</span>
+        <span class="fr">Le jeu, la cr&eacute;ation et les modalit&eacute;s expressives ouvrent des portes que la parole seule ne peut ouvrir.</span>
+        <span class="es">El juego, la creaci&oacute;n art&iacute;stica y las modalidades expresivas abren puertas que el di&aacute;logo solo no puede. No se trata de ser artista&mdash;sino de acceder a capas m&aacute;s profundas de la experiencia.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Approach ── -->
+<section class="approach" id="approach">
+  <div class="approach-inner">
+    <div class="approach-visual">
+      <div class="gold-ring ring-approach"></div>
+      <div class="blob blob--lavender blob-approach"></div>
+      <div class="approach-quote-wrapper reveal">
+        <span class="approach-quote-mark" aria-hidden="true">&ldquo;</span>
+        <blockquote class="approach-quote">
+          <span class="en">The curious paradox is that when I accept myself just as I am, then I can change.</span>
+          <span class="fr">Le paradoxe curieux est que lorsque je m&rsquo;accepte tel que je suis, alors je peux changer.</span>
+          <span class="es">La curiosa paradoja es que cuando me acepto tal como soy, entonces puedo cambiar.</span>
+          <cite class="approach-quote-attr">Carl Rogers</cite>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="approach-content">
+      <p class="section-label reveal"><span class="en">Approach</span><span class="fr">Approche</span><span class="es">Enfoque</span></p>
+      <h2 class="section-heading reveal reveal-d1">
+        <span class="en">Integrative, embodied,<br>relational</span>
+        <span class="fr">Int&eacute;grative, incarn&eacute;e,<br>relationnelle</span>
+        <span class="es">Integrativa, encarnada,<br>relacional</span>
+      </h2>
+      <p class="approach-text reveal reveal-d2">
+        <span class="en">I don't believe in one-size-fits-all therapy. My practice draws from multiple traditions, woven together based on what you need in this moment. The body, the imagination, and the therapeutic relationship itself are all pathways toward growth.</span>
+        <span class="fr">Je ne crois pas en une th&eacute;rapie universelle. Ma pratique puise dans de multiples traditions, tiss&eacute;es ensemble selon ce dont vous avez besoin. Le corps, l&rsquo;imagination et la relation th&eacute;rapeutique sont des chemins vers la croissance.</span>
+        <span class="es">No creo en una terapia &uacute;nica para todos. Mi pr&aacute;ctica se nutre de m&uacute;ltiples tradiciones, entrelazadas seg&uacute;n lo que necesitas en este momento. El cuerpo, la imaginaci&oacute;n y la relaci&oacute;n terap&eacute;utica son caminos hacia el crecimiento.</span>
+      </p>
+
+      <div class="approach-methods reveal reveal-d3">
+        <div class="approach-method">
+          <span class="approach-method-dot"></span>
+          <span class="en">Humanistic &amp; Person-Centered Therapy</span>
+          <span class="fr">Th&eacute;rapie humaniste et centr&eacute;e sur la personne</span>
+          <span class="es">Terapia human&iacute;stica y centrada en la persona</span>
+        </div>
+        <div class="approach-method">
+          <span class="approach-method-dot"></span>
+          <span class="en">Attachment Theory &amp; Relational Work</span>
+          <span class="fr">Th&eacute;orie de l&rsquo;attachement et travail relationnel</span>
+          <span class="es">Teor&iacute;a del apego y trabajo relacional</span>
+        </div>
+        <div class="approach-method">
+          <span class="approach-method-dot"></span>
+          <span class="en">Cognitive-Behavioural Therapy (CBT)</span>
+          <span class="fr">Th&eacute;rapie cognitivo-comportementale (TCC)</span>
+          <span class="es">Terapia cognitivo-conductual (TCC)</span>
+        </div>
+        <div class="approach-method">
+          <span class="approach-method-dot"></span>
+          <span class="en">Mindfulness &amp; Somatic Experiencing</span>
+          <span class="fr">Pleine conscience et exp&eacute;rience somatique</span>
+          <span class="es">Mindfulness y experiencia som&aacute;tica</span>
+        </div>
+        <div class="approach-method">
+          <span class="approach-method-dot"></span>
+          <span class="en">Gestalt Therapy</span>
+          <span class="fr">Gestalt-th&eacute;rapie</span>
+          <span class="es">Terapia Gestalt</span>
+        </div>
+        <div class="approach-method">
+          <span class="approach-method-dot"></span>
+          <span class="en">Internal Family Systems (IFS)</span>
+          <span class="fr">Syst&egrave;mes familiaux int&eacute;rieurs (IFS)</span>
+          <span class="es">Sistemas familiares internos (IFS)</span>
+        </div>
+        <div class="approach-method">
+          <span class="approach-method-dot"></span>
+          <span class="en">Creative Arts &amp; Expressive Modalities</span>
+          <span class="fr">Arts cr&eacute;atifs et modalit&eacute;s expressives</span>
+          <span class="es">Artes creativas y modalidades expresivas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── About ── -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-photo-wrapper reveal">
+      <img src="assets/layla-photo.jpeg" alt="Layla Kabbaj, psychotherapist" class="about-photo" loading="lazy">
+      <div class="about-photo-ring"></div>
+      <div class="blob blob--blush about-photo-blob"></div>
+    </div>
+
+    <div class="about-content">
+      <p class="section-label reveal"><span class="en">About</span><span class="fr">&Agrave; propos</span><span class="es">Acerca</span></p>
+      <h2 class="section-heading reveal reveal-d1">Layla Kabbaj</h2>
+      <p class="about-text reveal reveal-d2">
+        <span class="en">I'm a psychotherapist practicing in Quebec and Ontario, trained in integrative and creative approaches to therapy. My work is rooted in the belief that healing happens when we can bring curiosity, safety, and play into the therapeutic space.</span>
+        <span class="fr">Je suis psychoth&eacute;rapeute pratiquant au Qu&eacute;bec et en Ontario, form&eacute;e aux approches int&eacute;gratives et cr&eacute;atives. Mon travail repose sur la conviction que la gu&eacute;rison survient lorsque nous apportons curiosit&eacute;, s&eacute;curit&eacute; et jeu dans l&rsquo;espace th&eacute;rapeutique.</span>
+        <span class="es">Soy psicoterapeuta practicando en Quebec y Ontario, formada en enfoques integrativos y creativos. Mi trabajo se basa en la creencia de que la sanaci&oacute;n ocurre cuando podemos traer curiosidad, seguridad y juego al espacio terap&eacute;utico.</span>
+      </p>
+      <p class="about-text reveal reveal-d3">
+        <span class="en">I work with individuals and couples navigating anxiety, trauma, relationship challenges, life transitions, and the quiet longing to feel more alive. Sessions are available in English, French, and Spanish, in person and online.</span>
+        <span class="fr">J&rsquo;accompagne des individus et des couples traversant l&rsquo;anxi&eacute;t&eacute;, le trauma, les d&eacute;fis relationnels, les transitions de vie, et ce d&eacute;sir silencieux de se sentir plus vivant. S&eacute;ances en anglais, fran&ccedil;ais et espagnol, en personne et en ligne.</span>
+        <span class="es">Trabajo con personas y parejas que atraviesan ansiedad, trauma, desaf&iacute;os relacionales, transiciones de vida, y ese anhelo silencioso de sentirse m&aacute;s vivo. Sesiones disponibles en ingl&eacute;s, franc&eacute;s y espa&ntilde;ol, presencial y en l&iacute;nea.</span>
+      </p>
+
+      <div class="about-credentials reveal reveal-d4">
+        <div class="credential">
+          <strong>RPQ</strong>
+          <span class="en">Registered Psychotherapist (Qualifying)</span>
+          <span class="fr">Psychoth&eacute;rapeute autoris&eacute;e (en formation)</span>
+          <span class="es">Psicoterapeuta registrada (en formaci&oacute;n)</span>
+        </div>
+        <div class="credential">
+          <strong><span class="en">Trilingual</span><span class="fr">Trilingue</span><span class="es">Trilingue</span></strong>
+          <span class="en">English, French &amp; Spanish</span>
+          <span class="fr">Anglais, fran&ccedil;ais &amp; espagnol</span>
+          <span class="es">Ingl&eacute;s, franc&eacute;s &amp; espa&ntilde;ol</span>
+        </div>
+        <div class="credential">
+          <strong><span class="en">Virtual &amp; In-Person</span><span class="fr">Virtuel &amp; En personne</span><span class="es">Virtual &amp; Presencial</span></strong>
+          <span class="en">Quebec &amp; Ontario</span>
+          <span class="fr">Qu&eacute;bec &amp; Ontario</span>
+          <span class="es">Quebec &amp; Ontario</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ── -->
+<section class="contact" id="contact">
+  <div class="blob blob--lavender blob-contact"></div>
+  <div class="gold-ring ring-contact"></div>
+
+  <div class="contact-inner">
+    <div class="contact-content">
+      <p class="section-label reveal">Contact</p>
+      <h2 class="section-heading reveal reveal-d1">
+        <span class="en">Let's begin</span>
+        <span class="fr">Commen&ccedil;ons</span>
+        <span class="es">Comencemos</span>
+      </h2>
+      <p class="contact-text reveal reveal-d2">
+        <span class="en">Reaching out is the first step. Whether you have questions or are ready to book, I'd love to hear from you. A free 15-minute consultation is available to ensure we're a good fit.</span>
+        <span class="fr">Communiquer est le premier pas. Que vous ayez des questions ou soyez pr&ecirc;t &agrave; r&eacute;server, j&rsquo;aimerais avoir de vos nouvelles. Une consultation gratuite de 15 minutes est disponible.</span>
+        <span class="es">Contactar es el primer paso. Ya sea que tengas preguntas o est&eacute;s listo para reservar, me encantar&iacute;a saber de ti. Una consulta gratuita de 15 minutos est&aacute; disponible para asegurarnos de que somos compatibles.</span>
+      </p>
+
+      <div class="contact-details reveal reveal-d3">
+        <div class="contact-detail">
+          <svg class="contact-detail-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l8 5 8-5M2 5v10h16V5H2z"/></svg>
+          <div>
+            <p class="contact-detail-label">Email</p>
+            <p class="contact-detail-value"><a href="mailto:hello@perceptionandplay.com">hello@perceptionandplay.com</a></p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <svg class="contact-detail-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2C6.13 2 3 5.13 3 9c0 5.25 7 9 7 9s7-3.75 7-9c0-3.87-3.13-7-7-7z"/><circle cx="10" cy="9" r="2.5"/></svg>
+          <div>
+            <p class="contact-detail-label"><span class="en">Location</span><span class="fr">Lieu</span><span class="es">Ubicaci&oacute;n</span></p>
+            <p class="contact-detail-value">
+              <span class="en">Quebec &amp; Ontario &middot; Virtual &amp; In-Person</span>
+              <span class="fr">Qu&eacute;bec &amp; Ontario &middot; Virtuel &amp; En personne</span>
+              <span class="es">Quebec &amp; Ontario &middot; Virtual &amp; Presencial</span>
+            </p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <svg class="contact-detail-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M6 10h8M10 6v8"/></svg>
+          <div>
+            <p class="contact-detail-label"><span class="en">Languages</span><span class="fr">Langues</span><span class="es">Idiomas</span></p>
+            <p class="contact-detail-value">English, Fran&ccedil;ais &amp; Espa&ntilde;ol</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-booking">
+      <div class="booking-card reveal">
+        <h3>
+          <span class="en">Ready to start?</span>
+          <span class="fr">Pr&ecirc;t &agrave; commencer?</span>
+          <span class="es">&iquest;Listo para comenzar?</span>
+        </h3>
+        <p>
+          <span class="en">Book a free 15-minute consultation to see if we're a good fit. No pressure, just a conversation.</span>
+          <span class="fr">R&eacute;servez une consultation gratuite de 15 minutes pour voir si nous sommes compatibles. Sans pression, juste une conversation.</span>
+          <span class="es">Reserva una consulta gratuita de 15 minutos para ver si somos compatibles. Sin presi&oacute;n, solo una conversaci&oacute;n.</span>
+        </p>
+        <a href="https://calendly.com/" target="_blank" rel="noopener" class="booking-btn">
+          <span class="en">Book a Consultation</span>
+          <span class="fr">Prendre rendez-vous</span>
+          <span class="es">Reservar una consulta</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <p class="footer-left">&copy; 2026 Perception &amp; Play Psychotherapy. <span class="en">All rights reserved.</span><span class="fr">Tous droits r&eacute;serv&eacute;s.</span><span class="es">Todos los derechos reservados.</span></p>
+  <ul class="footer-right">
+    <li><a href="#hero"><span class="en">Back to top</span><span class="fr">Haut de page</span><span class="es">Volver arriba</span></a></li>
+    <li><a href="mailto:hello@perceptionandplay.com">Email</a></li>
+  </ul>
+</footer>
+
+<script>
+/* ── Scroll Reveal ── */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ── Nav scroll state ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+/* ── Mobile nav ── */
+const burger = document.getElementById('burger');
+const mobileNav = document.getElementById('mobileNav');
+const mobileLinks = mobileNav.querySelectorAll('a, button');
+
+function toggleMobileNav() {
+  const open = !mobileNav.classList.contains('open');
+  burger.classList.toggle('open', open);
+  mobileNav.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+  if (open) mobileLinks[0].focus();
+}
+
+function closeMobileNav() {
+  burger.classList.remove('open');
+  mobileNav.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+burger.addEventListener('click', toggleMobileNav);
+mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
+
+/* Focus trap in mobile nav */
+mobileNav.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') { closeMobileNav(); burger.focus(); return; }
+  if (e.key !== 'Tab') return;
+  const first = mobileLinks[0], last = mobileLinks[mobileLinks.length - 1];
+  if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+});
+
+/* ── Language toggle (EN → FR → ES → EN) ── */
+const langCycle = { en: 'fr', fr: 'es', es: 'en' };
+const langLabel = { en: 'FR', fr: 'ES', es: 'EN' };
+function setLang(lang) {
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('.lang-toggle').forEach(b => b.textContent = langLabel[lang]);
+}
+function nextLang() {
+  setLang(langCycle[document.documentElement.getAttribute('data-lang')] || 'en');
+}
+document.getElementById('langToggle').addEventListener('click', nextLang);
+document.getElementById('langToggleMobile').addEventListener('click', nextLang);
+</script>
+
+</body>
+</html>
