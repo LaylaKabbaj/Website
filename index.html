@@ -170,10 +170,14 @@ nav.scrolled {
 }
 
 .nav-logo {
-  width: 54px; height: 54px;
+  width: 64px; height: 64px;
   object-fit: contain;
   transition: transform 0.3s ease;
   mix-blend-mode: multiply;
+  border-radius: 50%;
+}
+nav.scrolled .nav-logo {
+  width: 48px; height: 48px;
 }
 .nav-logo:hover { transform: scale(1.06); }
 
@@ -468,6 +472,8 @@ nav.scrolled {
   padding: clamp(3.5rem, 7vw, 6rem) clamp(2rem, 6vw, 6rem);
   position: relative;
   overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .section-label {
@@ -480,16 +486,16 @@ nav.scrolled {
 }
 
 .section-heading {
-  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
   font-weight: 300;
   color: var(--forest);
   margin-bottom: 0.75rem;
 }
 
 .section-intro {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text-body);
-  max-width: 540px;
+  max-width: 620px;
   margin-bottom: clamp(2rem, 3.5vw, 3rem);
   line-height: 1.8;
 }
@@ -498,7 +504,6 @@ nav.scrolled {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
-  max-width: 1000px;
 }
 
 .service-item {
@@ -625,10 +630,10 @@ nav.scrolled {
 }
 
 .approach-text {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text-body);
   line-height: 1.8;
-  max-width: 480px;
+  max-width: 520px;
   margin-bottom: 1.75rem;
 }
 
@@ -676,6 +681,8 @@ nav.scrolled {
   background:
     radial-gradient(ellipse 50% 40% at 15% 80%, rgba(212, 181, 173, 0.18), transparent),
     var(--cream);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .about-grid {
@@ -726,10 +733,10 @@ nav.scrolled {
 .about-content { position: relative; z-index: 2; }
 
 .about-text {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text-body);
   line-height: 1.85;
-  max-width: 500px;
+  max-width: 540px;
 }
 .about-text + .about-text { margin-top: 1.25rem; }
 
@@ -790,10 +797,10 @@ nav.scrolled {
 }
 
 .contact-text {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: rgba(240, 230, 216, 0.65);
   line-height: 1.85;
-  max-width: 440px;
+  max-width: 480px;
   margin-bottom: 2rem;
 }
 
@@ -818,7 +825,7 @@ nav.scrolled {
   margin-bottom: 0.2rem;
 }
 .contact-detail-value {
-  font-size: 0.92rem;
+  font-size: 1rem;
   color: var(--cream);
 }
 .contact-detail-value a {
@@ -856,7 +863,7 @@ nav.scrolled {
 }
 
 .booking-card p {
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: rgba(240, 230, 216, 0.55);
   line-height: 1.75;
   margin-bottom: 1.75rem;
@@ -983,7 +990,7 @@ footer {
   .section-heading { font-size: 1.7rem; }
   .about-credentials { flex-direction: column; gap: 1.5rem; }
   nav { padding: 0.9rem 1.25rem; }
-  .nav-logo { width: 44px; height: 44px; }
+  .nav-logo { width: 50px; height: 50px; }
   .service-item { padding: 1.75rem 1.5rem; }
 }
 
