@@ -9,6 +9,7 @@
 <meta property="og:description" content="Trauma-informed, attachment-based psychotherapy in Quebec and Ontario.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://perceptionandplay.com">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='none' stroke='%23C4A265' stroke-width='1.5'/><text x='16' y='22' text-anchor='middle' font-family='serif' font-size='16' fill='%232D3D2D'>P</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
@@ -955,6 +956,240 @@ footer {
 .footer-right a:hover { color: var(--gold-soft); }
 
 /* ══════════════════════
+   WHAT TO EXPECT — Warm narrative
+   ══════════════════════ */
+.expect {
+  background: var(--blush);
+  position: relative;
+  overflow: hidden;
+}
+.expect-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: clamp(4rem, 8vw, 7rem) clamp(2rem, 6vw, 6rem);
+  text-align: center;
+}
+.expect .section-label { color: var(--forest-mid); }
+.expect-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.85rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--forest);
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+.expect-details {
+  display: flex;
+  justify-content: center;
+  gap: clamp(2rem, 4vw, 4rem);
+  flex-wrap: wrap;
+}
+.expect-detail {
+  text-align: center;
+  max-width: 200px;
+}
+.expect-detail-icon {
+  width: 32px; height: 32px;
+  margin: 0 auto 0.75rem;
+  color: var(--gold);
+}
+.expect-detail h4 {
+  font-size: 1.05rem;
+  color: var(--forest);
+  margin-bottom: 0.35rem;
+}
+.expect-detail p {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+.expect .blob-expect {
+  width: 250px; height: 230px;
+  top: -30px; right: -40px;
+  opacity: 0.12;
+  animation: drift 25s ease-in-out infinite;
+}
+.expect .ring-expect {
+  width: 350px; height: 350px;
+  bottom: -80px; left: -80px;
+  opacity: 0.15;
+  animation: breathe 20s ease-in-out infinite;
+}
+
+/* ══════════════════════
+   IS THIS FOR YOU — Recognition
+   ══════════════════════ */
+.recognition {
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(2rem, 6vw, 6rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+.recognition-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 5vw, 5rem);
+  align-items: start;
+}
+.recognition-content { max-width: 480px; }
+.recognition-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.recognition-item {
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  padding-left: 2rem;
+  position: relative;
+}
+.recognition-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  background: none;
+  transition: background-color 0.3s ease;
+}
+.recognition-item:hover::before {
+  background: var(--gold);
+}
+.recognition-cta {
+  margin-top: 2.5rem;
+}
+
+/* ══════════════════════
+   FAQ — Accordion
+   ══════════════════════ */
+.faq {
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(2rem, 6vw, 6rem);
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+.faq-list {
+  margin-top: clamp(2rem, 3vw, 3rem);
+}
+.faq-item {
+  border-bottom: 1px solid rgba(45, 61, 45, 0.08);
+}
+.faq-item:first-child {
+  border-top: 1px solid rgba(45, 61, 45, 0.08);
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 1.25rem 2.5rem 1.25rem 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  font-weight: 500;
+  color: var(--forest);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+  line-height: 1.35;
+}
+.faq-question:hover { color: var(--gold); }
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--gold);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.faq-item.open .faq-question::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.faq-item.open .faq-answer {
+  grid-template-rows: 1fr;
+}
+.faq-answer-inner {
+  overflow: hidden;
+}
+.faq-answer p {
+  padding: 0 0 1.5rem 0;
+  font-size: 0.98rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  max-width: 650px;
+}
+
+/* ══════════════════════
+   TESTIMONIALS
+   ══════════════════════ */
+.testimonials {
+  background: var(--forest);
+  padding: clamp(3.5rem, 7vw, 5rem) clamp(2rem, 6vw, 6rem);
+  position: relative;
+  overflow: hidden;
+}
+.testimonials-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.testimonials .section-label { color: var(--gold-soft); }
+.testimonials .section-heading { color: var(--cream); margin-bottom: clamp(2rem, 4vw, 3rem); }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+.testimonial {
+  position: relative;
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  border: 1px solid rgba(240, 230, 216, 0.08);
+  border-radius: 2px;
+}
+.testimonial-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+.testimonial-quote::before {
+  content: '\201C';
+  font-size: 2.5rem;
+  color: var(--gold-soft);
+  line-height: 0.5;
+  display: block;
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+}
+.testimonial-author {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: rgba(240, 230, 216, 0.45);
+}
+.testimonials .blob-test {
+  width: 220px; height: 200px;
+  bottom: -30px; right: -40px;
+  opacity: 0.05;
+  animation: drift 28s ease-in-out infinite;
+}
+
+/* ══════════════════════
    LANGUAGE SYSTEM
    ══════════════════════ */
 [data-lang="en"] .fr, [data-lang="en"] .es { display: none; }
@@ -990,6 +1225,10 @@ footer {
 
   .contact-inner { grid-template-columns: 1fr; }
   .contact-booking { padding: 3rem 2rem; }
+
+  .recognition-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .expect-details { flex-direction: column; align-items: center; }
 }
 
 @media (max-width: 600px) {
@@ -1028,6 +1267,7 @@ footer {
       <li><a href="#services"><span class="en">Services</span><span class="fr">Services</span><span class="es">Servicios</span></a></li>
       <li><a href="#approach"><span class="en">Approach</span><span class="fr">Approche</span><span class="es">Enfoque</span></a></li>
       <li><a href="#about"><span class="en">About</span><span class="fr">&Agrave; propos</span><span class="es">Acerca</span></a></li>
+      <li><a href="#faq"><span class="en">FAQ</span><span class="fr">FAQ</span><span class="es">FAQ</span></a></li>
       <li><a href="#contact"><span class="en">Contact</span><span class="fr">Contact</span><span class="es">Contacto</span></a></li>
     </ul>
     <div class="lang-switcher" id="langSwitcher">
@@ -1046,6 +1286,7 @@ footer {
   <a href="#services" class="mobile-nav-link"><span class="en">Services</span><span class="fr">Services</span><span class="es">Servicios</span></a>
   <a href="#approach" class="mobile-nav-link"><span class="en">Approach</span><span class="fr">Approche</span><span class="es">Enfoque</span></a>
   <a href="#about" class="mobile-nav-link"><span class="en">About</span><span class="fr">&Agrave; propos</span><span class="es">Acerca</span></a>
+  <a href="#faq" class="mobile-nav-link"><span class="en">FAQ</span><span class="fr">FAQ</span><span class="es">FAQ</span></a>
   <a href="#contact" class="mobile-nav-link"><span class="en">Contact</span><span class="fr">Contact</span><span class="es">Contacto</span></a>
   <div class="lang-switcher" id="langSwitcherMobile">
     <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
@@ -1109,6 +1350,41 @@ footer {
      ══════════════════════ -->
 <main id="main">
 
+<!-- ── What to Expect ── -->
+<section class="expect">
+  <div class="blob blob--lavender blob-expect"></div>
+  <div class="gold-ring ring-expect"></div>
+  <div class="expect-inner">
+    <p class="section-label reveal">
+      <span class="en">Your First Session</span>
+      <span class="fr">Votre premi&egrave;re s&eacute;ance</span>
+      <span class="es">Tu primera sesi&oacute;n</span>
+    </p>
+    <p class="expect-text reveal reveal-d1">
+      <span class="en">You don't need to have the right words. You don't even need to know what you want to work on. The first session is simply a space to arrive&mdash;to be heard without judgment, to feel the room, and to begin at whatever pace feels right for you.</span>
+      <span class="fr">Vous n&rsquo;avez pas besoin d&rsquo;avoir les bons mots. Vous n&rsquo;avez m&ecirc;me pas besoin de savoir sur quoi vous voulez travailler. La premi&egrave;re s&eacute;ance est simplement un espace pour arriver&mdash;&ecirc;tre entendu sans jugement, sentir l&rsquo;espace, et commencer au rythme qui vous convient.</span>
+      <span class="es">No necesitas tener las palabras correctas. Ni siquiera necesitas saber en qu&eacute; quieres trabajar. La primera sesi&oacute;n es simplemente un espacio para llegar&mdash;ser escuchado sin juicio, sentir el espacio, y comenzar al ritmo que te resulte c&oacute;modo.</span>
+    </p>
+    <div class="expect-details reveal reveal-d2">
+      <div class="expect-detail">
+        <svg class="expect-detail-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="16" r="12"/><path d="M16 10v6l4 3"/></svg>
+        <h4><span class="en">50 minutes</span><span class="fr">50 minutes</span><span class="es">50 minutos</span></h4>
+        <p><span class="en">Individual sessions</span><span class="fr">S&eacute;ances individuelles</span><span class="es">Sesiones individuales</span></p>
+      </div>
+      <div class="expect-detail">
+        <svg class="expect-detail-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 8h16v16H8z"/><path d="M12 6v4M20 6v4M8 14h16"/></svg>
+        <h4><span class="en">75 minutes</span><span class="fr">75 minutes</span><span class="es">75 minutos</span></h4>
+        <p><span class="en">Couples sessions</span><span class="fr">S&eacute;ances de couple</span><span class="es">Sesiones de pareja</span></p>
+      </div>
+      <div class="expect-detail">
+        <svg class="expect-detail-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 4a6 6 0 00-6 6c0 6 6 12 6 12s6-6 6-12a6 6 0 00-6-6z"/><circle cx="16" cy="10" r="2"/></svg>
+        <h4><span class="en">Your choice</span><span class="fr">Votre choix</span><span class="es">Tu elecci&oacute;n</span></h4>
+        <p><span class="en">Virtual or in-person</span><span class="fr">Virtuel ou en personne</span><span class="es">Virtual o presencial</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="divider"></div>
 
 <!-- ── Services ── -->
@@ -1164,6 +1440,61 @@ footer {
         <span class="es">El juego, la creaci&oacute;n art&iacute;stica y las modalidades expresivas abren puertas que el di&aacute;logo solo no puede. No se trata de ser artista&mdash;sino de acceder a capas m&aacute;s profundas de la experiencia.</span>
       </p>
     </div>
+  </div>
+</section>
+
+<!-- ── Is This For You — Persona Journey ── -->
+<section class="recognition" id="recognition">
+  <div class="recognition-grid">
+    <div class="recognition-content">
+      <p class="section-label reveal">
+        <span class="en">Is this for you?</span>
+        <span class="fr">Est-ce pour vous?</span>
+        <span class="es">&iquest;Es para ti?</span>
+      </p>
+      <h2 class="section-heading reveal reveal-d1">
+        <span class="en">You might recognize<br>yourself here</span>
+        <span class="fr">Vous vous reconna&icirc;trez<br>peut-&ecirc;tre ici</span>
+        <span class="es">Quiz&aacute;s te reconozcas<br>aqu&iacute;</span>
+      </h2>
+      <p class="approach-text reveal reveal-d2" style="margin-bottom:0">
+        <span class="en">Therapy isn't only for moments of crisis. Many people I work with simply feel that something is off&mdash;and they're ready to explore what that means.</span>
+        <span class="fr">La th&eacute;rapie n&rsquo;est pas seulement pour les moments de crise. Beaucoup de personnes que j&rsquo;accompagne sentent simplement que quelque chose ne va pas&mdash;et sont pr&ecirc;tes &agrave; explorer ce que cela signifie.</span>
+        <span class="es">La terapia no es solo para momentos de crisis. Muchas personas con las que trabajo simplemente sienten que algo no est&aacute; bien&mdash;y est&aacute;n listas para explorar lo que eso significa.</span>
+      </p>
+    </div>
+    <ul class="recognition-list reveal reveal-d3">
+      <li class="recognition-item">
+        <span class="en">You feel stuck in patterns you can't seem to break&mdash;in relationships, at work, or with yourself</span>
+        <span class="fr">Vous vous sentez pris dans des sch&eacute;mas que vous n&rsquo;arrivez pas &agrave; briser&mdash;en relation, au travail, ou avec vous-m&ecirc;me</span>
+        <span class="es">Te sientes atrapado en patrones que no puedes romper&mdash;en relaciones, en el trabajo, o contigo mismo</span>
+      </li>
+      <li class="recognition-item">
+        <span class="en">Anxiety has become your baseline, and you're exhausted from managing it alone</span>
+        <span class="fr">L&rsquo;anxi&eacute;t&eacute; est devenue votre &eacute;tat par d&eacute;faut, et vous &ecirc;tes &eacute;puis&eacute; de la g&eacute;rer seul</span>
+        <span class="es">La ansiedad se ha convertido en tu estado base, y est&aacute;s agotado de manejarla solo</span>
+      </li>
+      <li class="recognition-item">
+        <span class="en">A past experience still shapes how you show up in the present, even years later</span>
+        <span class="fr">Une exp&eacute;rience pass&eacute;e influence encore la fa&ccedil;on dont vous vous pr&eacute;sentez au pr&eacute;sent, m&ecirc;me des ann&eacute;es plus tard</span>
+        <span class="es">Una experiencia pasada a&uacute;n determina c&oacute;mo te presentas en el presente, incluso a&ntilde;os despu&eacute;s</span>
+      </li>
+      <li class="recognition-item">
+        <span class="en">Your relationship keeps hitting the same walls, and you're not sure how to move through them together</span>
+        <span class="fr">Votre relation se heurte toujours aux m&ecirc;mes murs, et vous ne savez pas comment les traverser ensemble</span>
+        <span class="es">Tu relaci&oacute;n sigue chocando contra las mismas paredes, y no sabes c&oacute;mo atravesarlas juntos</span>
+      </li>
+      <li class="recognition-item">
+        <span class="en">You're going through a major life transition and need a grounding presence</span>
+        <span class="fr">Vous traversez une grande transition de vie et avez besoin d&rsquo;une pr&eacute;sence ancr&eacute;e</span>
+        <span class="es">Est&aacute;s atravesando una gran transici&oacute;n de vida y necesitas una presencia que te ancle</span>
+      </li>
+      <li class="recognition-item">
+        <span class="en">You feel a quiet longing to understand yourself more deeply&mdash;to feel more alive, more present, more <em>you</em></span>
+        <span class="fr">Vous ressentez un d&eacute;sir silencieux de vous comprendre plus profond&eacute;ment&mdash;de vous sentir plus vivant, plus pr&eacute;sent, plus <em>vous</em></span>
+        <span class="es">Sientes un anhelo silencioso de entenderte m&aacute;s profundamente&mdash;de sentirte m&aacute;s vivo, m&aacute;s presente, m&aacute;s <em>t&uacute;</em></span>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -1296,6 +1627,147 @@ footer {
   </div>
 </section>
 
+<!-- ── Testimonials ── -->
+<section class="testimonials">
+  <div class="blob blob--blush blob-test"></div>
+  <div class="testimonials-inner">
+    <p class="section-label reveal">
+      <span class="en">Words from clients</span>
+      <span class="fr">Paroles de clients</span>
+      <span class="es">Palabras de clientes</span>
+    </p>
+    <h2 class="section-heading reveal reveal-d1">
+      <span class="en">What it feels like<br>to be heard</span>
+      <span class="fr">Ce que &ccedil;a fait<br>d&rsquo;&ecirc;tre entendu</span>
+      <span class="es">Lo que se siente<br>ser escuchado</span>
+    </h2>
+    <div class="testimonials-grid">
+      <div class="testimonial reveal reveal-d1">
+        <p class="testimonial-quote">
+          <span class="en">I spent years thinking therapy wasn't for me. With Layla, I finally understood what it means to feel safe enough to be honest with yourself.</span>
+          <span class="fr">J&rsquo;ai pass&eacute; des ann&eacute;es &agrave; penser que la th&eacute;rapie n&rsquo;&eacute;tait pas pour moi. Avec Layla, j&rsquo;ai enfin compris ce que signifie se sentir assez en s&eacute;curit&eacute; pour &ecirc;tre honn&ecirc;te avec soi-m&ecirc;me.</span>
+          <span class="es">Pas&eacute; a&ntilde;os pensando que la terapia no era para m&iacute;. Con Layla, finalmente entend&iacute; lo que significa sentirse lo suficientemente seguro para ser honesto contigo mismo.</span>
+        </p>
+        <p class="testimonial-author">&mdash; S.M.</p>
+      </div>
+      <div class="testimonial reveal reveal-d2">
+        <p class="testimonial-quote">
+          <span class="en">She helped us find our way back to each other. The creative approaches surprised us&mdash;they unlocked things we couldn't access through talking alone.</span>
+          <span class="fr">Elle nous a aid&eacute;s &agrave; nous retrouver. Les approches cr&eacute;atives nous ont surpris&mdash;elles ont d&eacute;bloqu&eacute; des choses inaccessibles par la parole seule.</span>
+          <span class="es">Nos ayud&oacute; a encontrar el camino de vuelta el uno al otro. Los enfoques creativos nos sorprendieron&mdash;desbloquearon cosas que no pod&iacute;amos acceder solo hablando.</span>
+        </p>
+        <p class="testimonial-author">&mdash; A. &amp; J.</p>
+      </div>
+      <div class="testimonial reveal reveal-d3">
+        <p class="testimonial-quote">
+          <span class="en">For the first time, someone helped me understand why I react the way I do&mdash;without making me feel broken. I finally feel like I'm on my own side.</span>
+          <span class="fr">Pour la premi&egrave;re fois, quelqu&rsquo;un m&rsquo;a aid&eacute; &agrave; comprendre pourquoi je r&eacute;agis comme je le fais&mdash;sans me faire sentir bris&eacute;. Je sens enfin que je suis de mon c&ocirc;t&eacute;.</span>
+          <span class="es">Por primera vez, alguien me ayud&oacute; a entender por qu&eacute; reacciono como lo hago&mdash;sin hacerme sentir roto. Finalmente siento que estoy de mi propio lado.</span>
+        </p>
+        <p class="testimonial-author">&mdash; C.L.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── FAQ ── -->
+<section class="faq" id="faq">
+  <p class="section-label reveal">
+    <span class="en">Common Questions</span>
+    <span class="fr">Questions fr&eacute;quentes</span>
+    <span class="es">Preguntas frecuentes</span>
+  </p>
+  <h2 class="section-heading reveal reveal-d1">
+    <span class="en">Before you reach out</span>
+    <span class="fr">Avant de nous contacter</span>
+    <span class="es">Antes de contactar</span>
+  </h2>
+
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <button class="faq-question" aria-expanded="false">
+        <span class="en">How much do sessions cost?</span>
+        <span class="fr">Combien co&ucirc;tent les s&eacute;ances?</span>
+        <span class="es">&iquest;Cu&aacute;nto cuestan las sesiones?</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner"><p>
+        <span class="en">Individual sessions are $120 (50 min) and couples sessions are $160 (75 min). Receipts are provided for insurance reimbursement. A sliding scale may be available&mdash;please ask.</span>
+        <span class="fr">Les s&eacute;ances individuelles sont &agrave; 120$ (50 min) et les s&eacute;ances de couple &agrave; 160$ (75 min). Des re&ccedil;us sont fournis pour le remboursement par les assurances. Un tarif ajust&eacute; peut &ecirc;tre disponible&mdash;n&rsquo;h&eacute;sitez pas &agrave; demander.</span>
+        <span class="es">Las sesiones individuales cuestan $120 (50 min) y las de pareja $160 (75 min). Se proporcionan recibos para reembolso de seguros. Una tarifa ajustada puede estar disponible&mdash;preg&uacute;ntame.</span>
+      </p></div></div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-question" aria-expanded="false">
+        <span class="en">Do you accept insurance?</span>
+        <span class="fr">Acceptez-vous les assurances?</span>
+        <span class="es">&iquest;Aceptas seguros?</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner"><p>
+        <span class="en">I provide receipts from a Registered Psychotherapist (Qualifying) that can be submitted to most private insurance plans. Please check with your provider to confirm coverage for psychotherapy services.</span>
+        <span class="fr">Je fournis des re&ccedil;us de psychoth&eacute;rapeute autoris&eacute;e (en formation) pouvant &ecirc;tre soumis &agrave; la plupart des assurances priv&eacute;es. V&eacute;rifiez aupr&egrave;s de votre assureur pour confirmer la couverture.</span>
+        <span class="es">Proporciono recibos de Psicoterapeuta Registrada (en formaci&oacute;n) que pueden presentarse a la mayor&iacute;a de los seguros privados. Consulta con tu proveedor para confirmar la cobertura.</span>
+      </p></div></div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-question" aria-expanded="false">
+        <span class="en">What's the difference between virtual and in-person?</span>
+        <span class="fr">Quelle est la diff&eacute;rence entre virtuel et en personne?</span>
+        <span class="es">&iquest;Cu&aacute;l es la diferencia entre virtual y presencial?</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner"><p>
+        <span class="en">Both formats are equally effective. Virtual sessions happen via a secure video platform, offering flexibility and comfort. In-person sessions allow for more embodied and creative work. Many clients do a mix of both.</span>
+        <span class="fr">Les deux formats sont &eacute;galement efficaces. Les s&eacute;ances virtuelles se font via une plateforme vid&eacute;o s&eacute;curis&eacute;e, offrant flexibilit&eacute; et confort. Les s&eacute;ances en personne permettent un travail plus incarn&eacute; et cr&eacute;atif. Plusieurs clients font un m&eacute;lange des deux.</span>
+        <span class="es">Ambos formatos son igualmente efectivos. Las sesiones virtuales se realizan por una plataforma segura de video, ofreciendo flexibilidad y comodidad. Las presenciales permiten un trabajo m&aacute;s encarnado y creativo. Muchos clientes hacen una mezcla de ambos.</span>
+      </p></div></div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-question" aria-expanded="false">
+        <span class="en">How often should I come?</span>
+        <span class="fr">&Agrave; quelle fr&eacute;quence devrais-je venir?</span>
+        <span class="es">&iquest;Con qu&eacute; frecuencia debo venir?</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner"><p>
+        <span class="en">Most clients start with weekly sessions to build momentum, then adjust as needed. Some move to biweekly as things stabilize. There's no minimum commitment&mdash;we'll find a rhythm together.</span>
+        <span class="fr">La plupart des clients commencent par des s&eacute;ances hebdomadaires pour cr&eacute;er un &eacute;lan, puis ajustent selon les besoins. Certains passent aux deux semaines quand les choses se stabilisent. Il n&rsquo;y a pas d&rsquo;engagement minimum&mdash;nous trouverons un rythme ensemble.</span>
+        <span class="es">La mayor&iacute;a de los clientes comienzan con sesiones semanales para crear impulso, luego ajustan seg&uacute;n sea necesario. Algunos pasan a quincenal cuando las cosas se estabilizan. No hay compromiso m&iacute;nimo&mdash;encontraremos un ritmo juntos.</span>
+      </p></div></div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-question" aria-expanded="false">
+        <span class="en">What's your cancellation policy?</span>
+        <span class="fr">Quelle est votre politique d&rsquo;annulation?</span>
+        <span class="es">&iquest;Cu&aacute;l es tu pol&iacute;tica de cancelaci&oacute;n?</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner"><p>
+        <span class="en">Please provide at least 24 hours notice to cancel or reschedule. Late cancellations or missed sessions are charged in full. Life happens&mdash;emergencies are always handled with care.</span>
+        <span class="fr">Veuillez fournir un pr&eacute;avis d&rsquo;au moins 24 heures pour annuler ou reporter. Les annulations tardives ou les absences sont factur&eacute;es en totalit&eacute;. La vie arrive&mdash;les urgences sont toujours trait&eacute;es avec soin.</span>
+        <span class="es">Por favor proporciona al menos 24 horas de aviso para cancelar o reprogramar. Las cancelaciones tard&iacute;as o sesiones perdidas se cobran en su totalidad. La vida pasa&mdash;las emergencias siempre se manejan con cuidado.</span>
+      </p></div></div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-question" aria-expanded="false">
+        <span class="en">I've never been to therapy before. Is that okay?</span>
+        <span class="fr">Je n&rsquo;ai jamais fait de th&eacute;rapie. Est-ce correct?</span>
+        <span class="es">Nunca he ido a terapia. &iquest;Est&aacute; bien?</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner"><p>
+        <span class="en">Absolutely. Many of my clients are coming to therapy for the first time. There's no wrong way to start. The free consultation is specifically designed to ease any uncertainty and see if we're a good fit.</span>
+        <span class="fr">Absolument. Plusieurs de mes clients viennent en th&eacute;rapie pour la premi&egrave;re fois. Il n&rsquo;y a pas de mauvaise fa&ccedil;on de commencer. La consultation gratuite est sp&eacute;cifiquement con&ccedil;ue pour apaiser toute incertitude.</span>
+        <span class="es">Absolutamente. Muchos de mis clientes vienen a terapia por primera vez. No hay una forma incorrecta de empezar. La consulta gratuita est&aacute; dise&ntilde;ada espec&iacute;ficamente para aliviar cualquier incertidumbre.</span>
+      </p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- ── Contact ── -->
 <section class="contact" id="contact">
   <div class="blob blob--lavender blob-contact"></div>
@@ -1320,7 +1792,7 @@ footer {
           <svg class="contact-detail-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l8 5 8-5M2 5v10h16V5H2z"/></svg>
           <div>
             <p class="contact-detail-label">Email</p>
-            <p class="contact-detail-value"><a href="mailto:hello@perceptionandplay.com">hello@perceptionandplay.com</a></p>
+            <p class="contact-detail-value"><a href="mailto:layla@perceptionandplay.ca">layla@perceptionandplay.ca</a></p>
           </div>
         </div>
         <div class="contact-detail">
@@ -1356,7 +1828,7 @@ footer {
           <span class="fr">R&eacute;servez une consultation gratuite de 15 minutes pour voir si nous sommes compatibles. Sans pression, juste une conversation.</span>
           <span class="es">Reserva una consulta gratuita de 15 minutos para ver si somos compatibles. Sin presi&oacute;n, solo una conversaci&oacute;n.</span>
         </p>
-        <a href="mailto:hello@perceptionandplay.com?subject=Consultation%20Request" class="booking-btn">
+        <a href="mailto:layla@perceptionandplay.ca?subject=Consultation%20Request" class="booking-btn">
           <span class="en">Book a Consultation</span>
           <span class="fr">Prendre rendez-vous</span>
           <span class="es">Reservar una consulta</span>
@@ -1374,7 +1846,7 @@ footer {
   <p class="footer-left">&copy; 2026 Perception &amp; Play Psychotherapy. <span class="en">All rights reserved.</span><span class="fr">Tous droits r&eacute;serv&eacute;s.</span><span class="es">Todos los derechos reservados.</span></p>
   <ul class="footer-right">
     <li><a href="#hero"><span class="en">Back to top</span><span class="fr">Haut de page</span><span class="es">Volver arriba</span></a></li>
-    <li><a href="mailto:hello@perceptionandplay.com">Email</a></li>
+    <li><a href="mailto:layla@perceptionandplay.ca">Email</a></li>
   </ul>
 </footer>
 
@@ -1437,6 +1909,24 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', () => setLang(btn.getAttribute('data-lang')));
 });
 setLang('en');
+
+/* ── FAQ Accordion ── */
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+    // Toggle clicked
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
 </script>
 
 </body>
