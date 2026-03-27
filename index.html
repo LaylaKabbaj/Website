@@ -1321,10 +1321,53 @@ footer {
 }
 
 /* ══════════════════════
-   SERVICE CARDS INTERACTIVE
+   EXPANDABLE ITEMS (services, approach, recognition)
    ══════════════════════ */
+.expandable {
+  cursor: pointer;
+  position: relative;
+}
+.expandable-trigger {
+  position: relative;
+  padding-right: 2rem;
+}
+.expandable-trigger::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--gold);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.expandable.open .expandable-trigger::after {
+  transform: rotate(45deg);
+}
+.expandable-detail {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.expandable.open .expandable-detail {
+  grid-template-rows: 1fr;
+}
+.expandable-detail-inner {
+  overflow: hidden;
+}
+.expandable-detail p {
+  padding-top: 0.75rem;
+  font-size: 0.92rem;
+  color: var(--text-body);
+  line-height: 1.75;
+  border-top: 1px solid rgba(45, 61, 45, 0.06);
+  margin-top: 0.75rem;
+}
+
+/* Service items */
 .service-item {
-  cursor: default;
+  cursor: pointer;
 }
 .service-item::after {
   content: '';
@@ -1334,7 +1377,40 @@ footer {
   background: var(--gold);
   transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.service-item:hover::after { width: 100%; }
+.service-item:hover::after,
+.service-item.open::after { width: 100%; }
+
+/* Approach method expand */
+.approach-method {
+  cursor: pointer;
+}
+.approach-method .expandable-trigger::after {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+}
+.approach-method.open .expandable-trigger::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+.approach-method .expandable-detail p {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: none;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Recognition expand */
+.recognition-item .expandable-detail p {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: none;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
 
 /* ══════════════════════
    TESTIMONIAL CAROUSEL (mobile)
@@ -1564,41 +1640,61 @@ footer {
   </p>
 
   <div class="services-grid">
-    <div class="service-item reveal reveal-d1">
+    <div class="service-item expandable reveal reveal-d1">
       <span class="service-number">01</span>
-      <h3><span class="en">Individual Therapy</span><span class="fr">Th&eacute;rapie individuelle</span><span class="es">Terapia individual</span></h3>
+      <h3 class="expandable-trigger"><span class="en">Individual Therapy</span><span class="fr">Th&eacute;rapie individuelle</span><span class="es">Terapia individual</span></h3>
       <p>
-        <span class="en">A reflective space to explore patterns, process emotions, and build a stronger relationship with yourself. Sessions integrate talk therapy with creative and somatic approaches.</span>
+        <span class="en">A reflective space to explore patterns, process emotions, and build a stronger relationship with yourself.</span>
         <span class="fr">Un espace de r&eacute;flexion pour explorer vos sch&eacute;mas, traiter vos &eacute;motions et b&acirc;tir une relation plus solide avec vous-m&ecirc;me.</span>
-        <span class="es">Un espacio reflexivo para explorar patrones, procesar emociones y construir una relaci&oacute;n m&aacute;s fuerte contigo. Las sesiones integran di&aacute;logo con enfoques creativos y som&aacute;ticos.</span>
+        <span class="es">Un espacio reflexivo para explorar patrones, procesar emociones y construir una relaci&oacute;n m&aacute;s fuerte contigo.</span>
       </p>
+      <div class="expandable-detail"><div class="expandable-detail-inner"><p>
+        <span class="en">Sessions are 60 minutes and integrate talk therapy with creative and somatic approaches. We work with anxiety, depression, self-esteem, identity, grief, and life transitions. Each session is tailored to what you bring&mdash;there's no script, no homework unless you want it.</span>
+        <span class="fr">Les s&eacute;ances durent 60 minutes et int&egrave;grent la parole avec des approches cr&eacute;atives et somatiques. Nous travaillons l&rsquo;anxi&eacute;t&eacute;, la d&eacute;pression, l&rsquo;estime de soi, l&rsquo;identit&eacute;, le deuil et les transitions. Chaque s&eacute;ance s&rsquo;adapte &agrave; ce que vous apportez.</span>
+        <span class="es">Las sesiones son de 60 minutos e integran di&aacute;logo con enfoques creativos y som&aacute;ticos. Trabajamos ansiedad, depresi&oacute;n, autoestima, identidad, duelo y transiciones. Cada sesi&oacute;n se adapta a lo que traes.</span>
+      </p></div></div>
     </div>
-    <div class="service-item reveal reveal-d2">
+    <div class="service-item expandable reveal reveal-d2">
       <span class="service-number">02</span>
-      <h3><span class="en">Couples Therapy</span><span class="fr">Th&eacute;rapie de couple</span><span class="es">Terapia de pareja</span></h3>
+      <h3 class="expandable-trigger"><span class="en">Couples Therapy</span><span class="fr">Th&eacute;rapie de couple</span><span class="es">Terapia de pareja</span></h3>
       <p>
-        <span class="en">Strengthen connection and navigate conflict through attachment-informed work. Together we build understanding, repair ruptures, and develop new ways of being with each other.</span>
-        <span class="fr">Renforcez votre connexion et naviguez les conflits gr&acirc;ce &agrave; un travail inform&eacute; par l&rsquo;attachement. Ensemble, nous r&eacute;parons les ruptures.</span>
-        <span class="es">Fortalece la conexi&oacute;n y navega los conflictos a trav&eacute;s de un trabajo basado en el apego. Juntos construimos comprensi&oacute;n, reparamos rupturas y desarrollamos nuevas formas de estar juntos.</span>
+        <span class="en">Strengthen connection and navigate conflict through attachment-informed work.</span>
+        <span class="fr">Renforcez votre connexion et naviguez les conflits gr&acirc;ce &agrave; un travail inform&eacute; par l&rsquo;attachement.</span>
+        <span class="es">Fortalece la conexi&oacute;n y navega los conflictos a trav&eacute;s de un trabajo basado en el apego.</span>
       </p>
+      <div class="expandable-detail"><div class="expandable-detail-inner"><p>
+        <span class="en">Sessions are 75 minutes. Together we build understanding, repair ruptures, and develop new ways of being with each other. I work with communication breakdowns, trust issues, intimacy difficulties, and couples navigating major life changes. Both partners must be willing to engage.</span>
+        <span class="fr">Les s&eacute;ances durent 75 minutes. Ensemble, nous b&acirc;tissons la compr&eacute;hension, r&eacute;parons les ruptures et d&eacute;veloppons de nouvelles fa&ccedil;ons d&rsquo;&ecirc;tre ensemble. Je travaille les probl&egrave;mes de communication, la confiance, l&rsquo;intimit&eacute; et les grands changements de vie.</span>
+        <span class="es">Las sesiones son de 75 minutos. Juntos construimos comprensi&oacute;n, reparamos rupturas y desarrollamos nuevas formas de estar juntos. Trabajo con problemas de comunicaci&oacute;n, confianza, intimidad y parejas navegando grandes cambios.</span>
+      </p></div></div>
     </div>
-    <div class="service-item reveal reveal-d3">
+    <div class="service-item expandable reveal reveal-d3">
       <span class="service-number">03</span>
-      <h3><span class="en">Trauma-Informed Care</span><span class="fr">Soins inform&eacute;s par le trauma</span><span class="es">Atenci&oacute;n informada por el trauma</span></h3>
+      <h3 class="expandable-trigger"><span class="en">Trauma-Informed Care</span><span class="fr">Soins inform&eacute;s par le trauma</span><span class="es">Atenci&oacute;n informada por el trauma</span></h3>
       <p>
-        <span class="en">Gentle, nervous system-aware work that honors your pace. Using somatic experiencing and mindfulness, we create safety in the body to process what words alone cannot hold.</span>
-        <span class="fr">Un travail doux et attentif au syst&egrave;me nerveux qui respecte votre rythme. Nous cr&eacute;ons un sentiment de s&eacute;curit&eacute; dans le corps.</span>
-        <span class="es">Un trabajo suave y consciente del sistema nervioso que respeta tu ritmo. Usando la experiencia som&aacute;tica y el mindfulness, creamos seguridad en el cuerpo para procesar lo que las palabras solas no pueden contener.</span>
+        <span class="en">Gentle, nervous system-aware work that honors your pace.</span>
+        <span class="fr">Un travail doux et attentif au syst&egrave;me nerveux qui respecte votre rythme.</span>
+        <span class="es">Un trabajo suave y consciente del sistema nervioso que respeta tu ritmo.</span>
       </p>
+      <div class="expandable-detail"><div class="expandable-detail-inner"><p>
+        <span class="en">Using somatic experiencing and mindfulness, we create safety in the body to process what words alone cannot hold. This work is for anyone carrying the weight of difficult experiences&mdash;whether a single event or patterns of relational hurt. We go at your pace, always.</span>
+        <span class="fr">&Agrave; travers l&rsquo;exp&eacute;rience somatique et la pleine conscience, nous cr&eacute;ons de la s&eacute;curit&eacute; dans le corps pour traiter ce que les mots seuls ne peuvent contenir. Ce travail est pour quiconque porte le poids d&rsquo;exp&eacute;riences difficiles. Nous allons &agrave; votre rythme, toujours.</span>
+        <span class="es">Usando la experiencia som&aacute;tica y el mindfulness, creamos seguridad en el cuerpo para procesar lo que las palabras solas no pueden contener. Este trabajo es para cualquiera que cargue el peso de experiencias dif&iacute;ciles. Vamos a tu ritmo, siempre.</span>
+      </p></div></div>
     </div>
-    <div class="service-item reveal reveal-d4">
+    <div class="service-item expandable reveal reveal-d4">
       <span class="service-number">04</span>
-      <h3><span class="en">Creative Approaches</span><span class="fr">Approches cr&eacute;atives</span><span class="es">Enfoques creativos</span></h3>
+      <h3 class="expandable-trigger"><span class="en">Creative Approaches</span><span class="fr">Approches cr&eacute;atives</span><span class="es">Enfoques creativos</span></h3>
       <p>
-        <span class="en">Play, art-making, and expressive modalities open doors that talk therapy alone may not. These are not about being artistic&mdash;they're about accessing deeper layers of experience.</span>
+        <span class="en">Play, art-making, and expressive modalities open doors that talk therapy alone may not.</span>
         <span class="fr">Le jeu, la cr&eacute;ation et les modalit&eacute;s expressives ouvrent des portes que la parole seule ne peut ouvrir.</span>
-        <span class="es">El juego, la creaci&oacute;n art&iacute;stica y las modalidades expresivas abren puertas que el di&aacute;logo solo no puede. No se trata de ser artista&mdash;sino de acceder a capas m&aacute;s profundas de la experiencia.</span>
+        <span class="es">El juego, la creaci&oacute;n art&iacute;stica y las modalidades expresivas abren puertas que el di&aacute;logo solo no puede.</span>
       </p>
+      <div class="expandable-detail"><div class="expandable-detail-inner"><p>
+        <span class="en">These are not about being artistic&mdash;they're about accessing deeper layers of experience. Through drawing, movement, sandtray, or guided imagery, we bypass the thinking mind and connect with parts of you that might not have words yet. Surprisingly powerful, even for skeptics.</span>
+        <span class="fr">Il ne s&rsquo;agit pas d&rsquo;&ecirc;tre artiste&mdash;mais d&rsquo;acc&eacute;der &agrave; des couches plus profondes de l&rsquo;exp&eacute;rience. Par le dessin, le mouvement, le bac &agrave; sable ou l&rsquo;imagerie guid&eacute;e, nous contournons l&rsquo;esprit analytique et nous connectons &agrave; des parties de vous qui n&rsquo;ont peut-&ecirc;tre pas encore de mots.</span>
+        <span class="es">No se trata de ser artista&mdash;sino de acceder a capas m&aacute;s profundas de la experiencia. A trav&eacute;s del dibujo, movimiento, bandeja de arena o imaginer&iacute;a guiada, pasamos por alto la mente pensante y conectamos con partes de ti que quiz&aacute;s a&uacute;n no tienen palabras.</span>
+      </p></div></div>
     </div>
   </div>
 </section>
@@ -1696,47 +1792,54 @@ footer {
       </p>
 
       <div class="approach-methods reveal reveal-d3">
-        <div class="approach-method">
-          <span class="approach-method-dot"></span>
+        <div class="approach-method expandable">
+          <div class="expandable-trigger"><span class="approach-method-dot"></span>
           <span class="en">Humanistic &amp; Person-Centered Therapy</span>
           <span class="fr">Th&eacute;rapie humaniste et centr&eacute;e sur la personne</span>
-          <span class="es">Terapia human&iacute;stica y centrada en la persona</span>
+          <span class="es">Terapia human&iacute;stica y centrada en la persona</span></div>
+          <div class="expandable-detail"><div class="expandable-detail-inner"><p><span class="en">You are the expert on your own life. I provide warmth, empathy, and genuine presence&mdash;a relationship where you can explore freely.</span><span class="fr">Vous &ecirc;tes l&rsquo;expert de votre propre vie. J&rsquo;offre chaleur, empathie et pr&eacute;sence authentique.</span><span class="es">T&uacute; eres el experto en tu propia vida. Ofrezco calidez, empat&iacute;a y presencia genuina.</span></p></div></div>
         </div>
-        <div class="approach-method">
-          <span class="approach-method-dot"></span>
+        <div class="approach-method expandable">
+          <div class="expandable-trigger"><span class="approach-method-dot"></span>
           <span class="en">Attachment Theory &amp; Relational Work</span>
           <span class="fr">Th&eacute;orie de l&rsquo;attachement et travail relationnel</span>
-          <span class="es">Teor&iacute;a del apego y trabajo relacional</span>
+          <span class="es">Teor&iacute;a del apego y trabajo relacional</span></div>
+          <div class="expandable-detail"><div class="expandable-detail-inner"><p><span class="en">How we learned to connect as children shapes how we love as adults. We explore these patterns to build more secure, fulfilling relationships.</span><span class="fr">La fa&ccedil;on dont nous avons appris &agrave; nous connecter enfants fa&ccedil;onne nos relations adultes. Nous explorons ces sch&eacute;mas pour des liens plus s&eacute;curisants.</span><span class="es">C&oacute;mo aprendimos a conectar de ni&ntilde;os moldea c&oacute;mo amamos de adultos. Exploramos estos patrones para relaciones m&aacute;s seguras.</span></p></div></div>
         </div>
-        <div class="approach-method">
-          <span class="approach-method-dot"></span>
+        <div class="approach-method expandable">
+          <div class="expandable-trigger"><span class="approach-method-dot"></span>
           <span class="en">Cognitive-Behavioural Therapy (CBT)</span>
           <span class="fr">Th&eacute;rapie cognitivo-comportementale (TCC)</span>
-          <span class="es">Terapia cognitivo-conductual (TCC)</span>
+          <span class="es">Terapia cognitivo-conductual (TCC)</span></div>
+          <div class="expandable-detail"><div class="expandable-detail-inner"><p><span class="en">Practical tools to identify and shift unhelpful thought patterns. Especially effective for anxiety, depression, and building coping strategies.</span><span class="fr">Des outils pratiques pour identifier et transformer les pens&eacute;es non aidantes. Particuli&egrave;rement efficace pour l&rsquo;anxi&eacute;t&eacute; et la d&eacute;pression.</span><span class="es">Herramientas pr&aacute;cticas para identificar y cambiar patrones de pensamiento. Especialmente efectiva para ansiedad y depresi&oacute;n.</span></p></div></div>
         </div>
-        <div class="approach-method">
-          <span class="approach-method-dot"></span>
+        <div class="approach-method expandable">
+          <div class="expandable-trigger"><span class="approach-method-dot"></span>
           <span class="en">Mindfulness &amp; Somatic Experiencing</span>
           <span class="fr">Pleine conscience et exp&eacute;rience somatique</span>
-          <span class="es">Mindfulness y experiencia som&aacute;tica</span>
+          <span class="es">Mindfulness y experiencia som&aacute;tica</span></div>
+          <div class="expandable-detail"><div class="expandable-detail-inner"><p><span class="en">The body keeps the score. We tune into physical sensations and breath to release tension, regulate the nervous system, and access wisdom beyond words.</span><span class="fr">Le corps garde la trace. Nous nous accordons aux sensations physiques et &agrave; la respiration pour lib&eacute;rer les tensions et r&eacute;guler le syst&egrave;me nerveux.</span><span class="es">El cuerpo lleva la cuenta. Nos sintonizamos con las sensaciones f&iacute;sicas y la respiraci&oacute;n para liberar tensi&oacute;n y regular el sistema nervioso.</span></p></div></div>
         </div>
-        <div class="approach-method">
-          <span class="approach-method-dot"></span>
+        <div class="approach-method expandable">
+          <div class="expandable-trigger"><span class="approach-method-dot"></span>
           <span class="en">Gestalt Therapy</span>
           <span class="fr">Gestalt-th&eacute;rapie</span>
-          <span class="es">Terapia Gestalt</span>
+          <span class="es">Terapia Gestalt</span></div>
+          <div class="expandable-detail"><div class="expandable-detail-inner"><p><span class="en">Focused on the here-and-now. Through experiential exercises we bring awareness to how you are in this moment&mdash;not just what you think about.</span><span class="fr">Centr&eacute;e sur l&rsquo;ici et maintenant. &Agrave; travers des exercices exp&eacute;rientiels, nous prenons conscience de comment vous &ecirc;tes dans ce moment.</span><span class="es">Enfocada en el aqu&iacute; y ahora. A trav&eacute;s de ejercicios experienciales, tomamos conciencia de c&oacute;mo est&aacute;s en este momento.</span></p></div></div>
         </div>
-        <div class="approach-method">
-          <span class="approach-method-dot"></span>
+        <div class="approach-method expandable">
+          <div class="expandable-trigger"><span class="approach-method-dot"></span>
           <span class="en">Internal Family Systems (IFS)</span>
           <span class="fr">Syst&egrave;mes familiaux int&eacute;rieurs (IFS)</span>
-          <span class="es">Sistemas familiares internos (IFS)</span>
+          <span class="es">Sistemas familiares internos (IFS)</span></div>
+          <div class="expandable-detail"><div class="expandable-detail-inner"><p><span class="en">We all have inner parts&mdash;the critic, the protector, the wounded child. IFS helps you get to know them with curiosity instead of judgment.</span><span class="fr">Nous avons tous des parties int&eacute;rieures&mdash;le critique, le protecteur, l&rsquo;enfant bless&eacute;. L&rsquo;IFS vous aide &agrave; les conna&icirc;tre avec curiosit&eacute; plut&ocirc;t que jugement.</span><span class="es">Todos tenemos partes internas&mdash;el cr&iacute;tico, el protector, el ni&ntilde;o herido. IFS te ayuda a conocerlas con curiosidad en vez de juicio.</span></p></div></div>
         </div>
-        <div class="approach-method">
-          <span class="approach-method-dot"></span>
+        <div class="approach-method expandable">
+          <div class="expandable-trigger"><span class="approach-method-dot"></span>
           <span class="en">Creative Arts &amp; Expressive Modalities</span>
           <span class="fr">Arts cr&eacute;atifs et modalit&eacute;s expressives</span>
-          <span class="es">Artes creativas y modalidades expresivas</span>
+          <span class="es">Artes creativas y modalidades expresivas</span></div>
+          <div class="expandable-detail"><div class="expandable-detail-inner"><p><span class="en">Drawing, movement, sandtray, guided imagery&mdash;creative tools that bypass the analytical mind and reach what words can't.</span><span class="fr">Dessin, mouvement, bac &agrave; sable, imagerie guid&eacute;e&mdash;des outils cr&eacute;atifs qui contournent l&rsquo;esprit analytique.</span><span class="es">Dibujo, movimiento, bandeja de arena, imaginer&iacute;a guiada&mdash;herramientas creativas que pasan por alto la mente anal&iacute;tica.</span></p></div></div>
         </div>
       </div>
     </div>
@@ -2174,6 +2277,14 @@ window.addEventListener('scroll', () => {
     ticking = true;
   }
 }, { passive: true });
+
+/* ── Expandable Items (services, approach methods) ── */
+document.querySelectorAll('.expandable').forEach(item => {
+  item.addEventListener('click', (e) => {
+    if (e.target.closest('a')) return; // don't interfere with links
+    item.classList.toggle('open');
+  });
+});
 
 /* ── FAQ Accordion ── */
 document.querySelectorAll('.faq-question').forEach(btn => {
