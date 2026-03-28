@@ -1038,34 +1038,9 @@ footer {
 }
 .recognition-content { max-width: 480px; }
 .recognition-list {
-  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-}
-.recognition-item {
-  font-size: 1.05rem;
-  color: var(--text-body);
-  line-height: 1.7;
-  padding-left: 2rem;
-  position: relative;
-}
-.recognition-item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.5em;
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  border: 1.5px solid var(--gold);
-  background: none;
-  transition: background-color 0.3s ease;
-}
-.recognition-item:hover::before {
-  background: var(--gold);
-}
-.recognition-cta {
-  margin-top: 2.5rem;
+  gap: 0;
 }
 
 /* ══════════════════════
@@ -1237,7 +1212,13 @@ footer {
   transition: background-color 0.3s ease;
 }
 .sticky-cta-btn:hover { background: var(--cream); color: var(--forest); }
-@media (min-width: 901px) { .sticky-cta { display: none; } }
+@media (min-width: 901px) {
+  .sticky-cta {
+    padding: 0.6rem 2rem;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
 
 /* ══════════════════════
    BACK TO TOP
@@ -1288,41 +1269,8 @@ footer {
 .nav-links a.active { color: var(--gold); }
 
 /* ══════════════════════
-   PERSONA CHECKMARKS
+   RECOGNITION ITEMS (expandable)
    ══════════════════════ */
-.recognition-item {
-  cursor: pointer;
-  transition: color 0.3s ease, padding-left 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.recognition-item.checked {
-  color: var(--forest);
-  padding-left: 2.5rem;
-}
-.recognition-item.checked::before {
-  background: var(--gold);
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(196, 162, 101, 0.2);
-}
-.recognition-message {
-  margin-top: 2rem;
-  padding: 1.5rem 2rem;
-  background: rgba(196, 162, 101, 0.08);
-  border-left: 3px solid var(--gold);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.2rem;
-  font-style: italic;
-  color: var(--forest);
-  line-height: 1.5;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  display: none;
-}
-.recognition-message.visible {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* ══════════════════════
    EXPANDABLE ITEMS (services, approach, recognition)
@@ -1404,13 +1352,39 @@ footer {
 }
 
 /* Recognition expand */
+.recognition-item {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(45, 61, 45, 0.06);
+  list-style: none;
+}
+.recognition-item:first-child {
+  border-top: 1px solid rgba(45, 61, 45, 0.06);
+}
+.recognition-item .expandable-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-right: 2rem;
+}
+.recognition-item .expandable-trigger::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+}
+.recognition-item.open .expandable-trigger::before {
+  background: var(--gold);
+}
 .recognition-item .expandable-detail p {
   font-style: italic;
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   border-top: none;
   padding-top: 0.5rem;
-  margin-top: 0.5rem;
+  padding-left: 1.6rem;
+  margin-top: 0.35rem;
 }
 
 /* ══════════════════════
@@ -1720,43 +1694,80 @@ footer {
         <span class="es">La terapia no es solo para momentos de crisis. Muchas personas con las que trabajo simplemente sienten que algo no est&aacute; bien&mdash;y est&aacute;n listas para explorar lo que eso significa.</span>
       </p>
     </div>
-    <ul class="recognition-list reveal reveal-d3">
-      <li class="recognition-item">
-        <span class="en">You feel stuck in patterns you can't seem to break&mdash;in relationships, at work, or with yourself</span>
-        <span class="fr">Vous vous sentez pris dans des sch&eacute;mas que vous n&rsquo;arrivez pas &agrave; briser&mdash;en relation, au travail, ou avec vous-m&ecirc;me</span>
-        <span class="es">Te sientes atrapado en patrones que no puedes romper&mdash;en relaciones, en el trabajo, o contigo mismo</span>
-      </li>
-      <li class="recognition-item">
-        <span class="en">Anxiety has become your baseline, and you're exhausted from managing it alone</span>
-        <span class="fr">L&rsquo;anxi&eacute;t&eacute; est devenue votre &eacute;tat par d&eacute;faut, et vous &ecirc;tes &eacute;puis&eacute; de la g&eacute;rer seul</span>
-        <span class="es">La ansiedad se ha convertido en tu estado base, y est&aacute;s agotado de manejarla solo</span>
-      </li>
-      <li class="recognition-item">
-        <span class="en">A past experience still shapes how you show up in the present, even years later</span>
-        <span class="fr">Une exp&eacute;rience pass&eacute;e influence encore la fa&ccedil;on dont vous vous pr&eacute;sentez au pr&eacute;sent, m&ecirc;me des ann&eacute;es plus tard</span>
-        <span class="es">Una experiencia pasada a&uacute;n determina c&oacute;mo te presentas en el presente, incluso a&ntilde;os despu&eacute;s</span>
-      </li>
-      <li class="recognition-item">
-        <span class="en">Your relationship keeps hitting the same walls, and you're not sure how to move through them together</span>
-        <span class="fr">Votre relation se heurte toujours aux m&ecirc;mes murs, et vous ne savez pas comment les traverser ensemble</span>
-        <span class="es">Tu relaci&oacute;n sigue chocando contra las mismas paredes, y no sabes c&oacute;mo atravesarlas juntos</span>
-      </li>
-      <li class="recognition-item">
-        <span class="en">You're going through a major life transition and need a grounding presence</span>
-        <span class="fr">Vous traversez une grande transition de vie et avez besoin d&rsquo;une pr&eacute;sence ancr&eacute;e</span>
-        <span class="es">Est&aacute;s atravesando una gran transici&oacute;n de vida y necesitas una presencia que te ancle</span>
-      </li>
-      <li class="recognition-item">
-        <span class="en">You feel a quiet longing to understand yourself more deeply&mdash;to feel more alive, more present, more <em>you</em></span>
-        <span class="fr">Vous ressentez un d&eacute;sir silencieux de vous comprendre plus profond&eacute;ment&mdash;de vous sentir plus vivant, plus pr&eacute;sent, plus <em>vous</em></span>
-        <span class="es">Sientes un anhelo silencioso de entenderte m&aacute;s profundamente&mdash;de sentirte m&aacute;s vivo, m&aacute;s presente, m&aacute;s <em>t&uacute;</em></span>
-      </li>
-    </ul>
-  </div>
-  <div class="recognition-message" id="recognitionMsg">
-    <span class="en">If even one of these resonated, therapy can help. You don't have to figure it out alone.</span>
-    <span class="fr">Si m&ecirc;me un seul de ces points r&eacute;sonne en vous, la th&eacute;rapie peut aider. Vous n&rsquo;avez pas &agrave; comprendre seul.</span>
-    <span class="es">Si incluso uno de estos reson&oacute; contigo, la terapia puede ayudar. No tienes que resolverlo solo.</span>
+    <div class="recognition-list reveal reveal-d3">
+      <div class="recognition-item expandable">
+        <div class="expandable-trigger">
+          <span class="en">You feel stuck in patterns you can't seem to break</span>
+          <span class="fr">Vous vous sentez pris dans des sch&eacute;mas impossibles &agrave; briser</span>
+          <span class="es">Te sientes atrapado en patrones que no puedes romper</span>
+        </div>
+        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
+          <span class="en">In relationships, at work, or with yourself&mdash;you keep ending up in the same place. Together we uncover what's driving these cycles and find new ways through them. You're not broken; you're repeating what you learned.</span>
+          <span class="fr">En relation, au travail, ou avec vous-m&ecirc;me&mdash;vous finissez toujours au m&ecirc;me endroit. Ensemble, nous d&eacute;couvrons ce qui alimente ces cycles et trouvons de nouvelles voies. Vous n&rsquo;&ecirc;tes pas bris&eacute;; vous r&eacute;p&eacute;tez ce que vous avez appris.</span>
+          <span class="es">En relaciones, trabajo, o contigo mismo&mdash;siempre terminas en el mismo lugar. Juntos descubrimos qu&eacute; alimenta estos ciclos y encontramos nuevos caminos. No est&aacute;s roto; est&aacute;s repitiendo lo que aprendiste.</span>
+        </p></div></div>
+      </div>
+      <div class="recognition-item expandable">
+        <div class="expandable-trigger">
+          <span class="en">Anxiety has become your baseline</span>
+          <span class="fr">L&rsquo;anxi&eacute;t&eacute; est devenue votre &eacute;tat normal</span>
+          <span class="es">La ansiedad se ha convertido en tu estado normal</span>
+        </div>
+        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
+          <span class="en">You're exhausted from managing it alone&mdash;the racing thoughts, the knot in your chest, the feeling that something is always about to go wrong. We work with both your mind and your body to help your nervous system find calm again.</span>
+          <span class="fr">Vous &ecirc;tes &eacute;puis&eacute; de la g&eacute;rer seul&mdash;les pens&eacute;es qui s&rsquo;emballent, le n&oelig;ud dans la poitrine, le sentiment que quelque chose va mal tourner. Nous travaillons avec votre esprit et votre corps pour retrouver le calme.</span>
+          <span class="es">Est&aacute;s agotado de manejarla solo&mdash;los pensamientos acelerados, el nudo en el pecho, la sensaci&oacute;n de que algo siempre est&aacute; por salir mal. Trabajamos con tu mente y tu cuerpo para que tu sistema nervioso encuentre la calma.</span>
+        </p></div></div>
+      </div>
+      <div class="recognition-item expandable">
+        <div class="expandable-trigger">
+          <span class="en">A past experience still shapes your present</span>
+          <span class="fr">Une exp&eacute;rience pass&eacute;e influence encore votre pr&eacute;sent</span>
+          <span class="es">Una experiencia pasada a&uacute;n moldea tu presente</span>
+        </div>
+        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
+          <span class="en">Even years later, it shows up in how you react, what you avoid, and what triggers you. Trauma-informed work means going at your pace&mdash;not reliving the past, but gently freeing yourself from its grip on your present.</span>
+          <span class="fr">M&ecirc;me des ann&eacute;es plus tard, &ccedil;a se manifeste dans vos r&eacute;actions, ce que vous &eacute;vitez, ce qui vous d&eacute;clenche. Un travail inform&eacute; par le trauma signifie aller &agrave; votre rythme&mdash;non pas revivre le pass&eacute;, mais doucement vous lib&eacute;rer de son emprise sur votre pr&eacute;sent.</span>
+          <span class="es">Incluso a&ntilde;os despu&eacute;s, aparece en c&oacute;mo reaccionas, qu&eacute; evitas, qu&eacute; te activa. El trabajo informado por el trauma significa ir a tu ritmo&mdash;no revivir el pasado, sino liberarte suavemente de su control sobre tu presente.</span>
+        </p></div></div>
+      </div>
+      <div class="recognition-item expandable">
+        <div class="expandable-trigger">
+          <span class="en">Your relationship keeps hitting the same walls</span>
+          <span class="fr">Votre relation se heurte toujours aux m&ecirc;mes murs</span>
+          <span class="es">Tu relaci&oacute;n sigue chocando contra las mismas paredes</span>
+        </div>
+        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
+          <span class="en">The same fights, the same distance, the same feeling of not being heard. Couples therapy helps you understand each other's patterns and build a new way of being together&mdash;one where both people feel safe enough to be honest.</span>
+          <span class="fr">Les m&ecirc;mes disputes, la m&ecirc;me distance, le m&ecirc;me sentiment de ne pas &ecirc;tre entendu. La th&eacute;rapie de couple vous aide &agrave; comprendre les sch&eacute;mas de l&rsquo;autre et &agrave; construire une nouvelle fa&ccedil;on d&rsquo;&ecirc;tre ensemble.</span>
+          <span class="es">Las mismas peleas, la misma distancia, la misma sensaci&oacute;n de no ser escuchado. La terapia de pareja les ayuda a entender los patrones del otro y construir una nueva forma de estar juntos.</span>
+        </p></div></div>
+      </div>
+      <div class="recognition-item expandable">
+        <div class="expandable-trigger">
+          <span class="en">You're navigating a major life change</span>
+          <span class="fr">Vous traversez un grand changement de vie</span>
+          <span class="es">Est&aacute;s atravesando un gran cambio de vida</span>
+        </div>
+        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
+          <span class="en">A move, a loss, a breakup, a career shift, becoming a parent&mdash;transitions shake our sense of who we are. Having someone steady to process with makes the unknown feel more manageable.</span>
+          <span class="fr">Un d&eacute;m&eacute;nagement, une perte, une rupture, un changement de carri&egrave;re, devenir parent&mdash;les transitions &eacute;branlent notre sens de qui nous sommes. Avoir quelqu&rsquo;un de stable pour traverser rend l&rsquo;inconnu plus g&eacute;rable.</span>
+          <span class="es">Una mudanza, una p&eacute;rdida, una ruptura, un cambio de carrera, ser padre&mdash;las transiciones sacuden nuestro sentido de qui&eacute;nes somos. Tener a alguien estable para procesar hace que lo desconocido sea m&aacute;s manejable.</span>
+        </p></div></div>
+      </div>
+      <div class="recognition-item expandable">
+        <div class="expandable-trigger">
+          <span class="en">You long to feel more alive, more <em>you</em></span>
+          <span class="fr">Vous d&eacute;sirez vous sentir plus vivant, plus <em>vous</em></span>
+          <span class="es">Anhelas sentirte m&aacute;s vivo, m&aacute;s <em>t&uacute;</em></span>
+        </div>
+        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
+          <span class="en">Nothing is technically &ldquo;wrong&rdquo;&mdash;but something feels missing. A quiet desire for deeper self-understanding, more presence, more aliveness. This is one of the most beautiful reasons to start therapy.</span>
+          <span class="fr">Rien ne va techniquement &laquo;&nbsp;mal&nbsp;&raquo;&mdash;mais quelque chose manque. Un d&eacute;sir silencieux de mieux se comprendre, d&rsquo;&ecirc;tre plus pr&eacute;sent, plus vivant. C&rsquo;est l&rsquo;une des plus belles raisons de commencer la th&eacute;rapie.</span>
+          <span class="es">T&eacute;cnicamente nada est&aacute; &ldquo;mal&rdquo;&mdash;pero algo falta. Un deseo silencioso de entenderte mejor, estar m&aacute;s presente, sentirte m&aacute;s vivo. Esta es una de las razones m&aacute;s hermosas para empezar terapia.</span>
+        </p></div></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -2215,10 +2226,10 @@ window.addEventListener('scroll', () => {
   // Progress bar
   if (scrollProgress) scrollProgress.style.width = pct + '%';
 
-  // Sticky CTA — show after scrolling past hero
+  // Sticky CTA — show after scrolling past hero, hide only near very bottom
   if (stickyCta) {
-    const heroBottom = heroSection ? heroSection.offsetTop + heroSection.offsetHeight : 600;
-    stickyCta.classList.toggle('visible', scrolled > heroBottom && scrolled < docHeight - 300);
+    const heroBottom = heroSection ? heroSection.offsetTop + heroSection.offsetHeight * 0.5 : 400;
+    stickyCta.classList.toggle('visible', scrolled > heroBottom && scrolled < docHeight - 100);
   }
 
   // Back to top
@@ -2243,23 +2254,6 @@ const sectionObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' });
 
 navSections.forEach(s => sectionObs.observe(s));
-
-/* ── Persona Checkmarks ── */
-const recognitionItems = document.querySelectorAll('.recognition-item');
-const recognitionMsg = document.getElementById('recognitionMsg');
-let checkedCount = 0;
-
-recognitionItems.forEach(item => {
-  item.addEventListener('click', () => {
-    item.classList.toggle('checked');
-    checkedCount = document.querySelectorAll('.recognition-item.checked').length;
-    if (checkedCount >= 1 && recognitionMsg) {
-      recognitionMsg.classList.add('visible');
-    } else if (recognitionMsg) {
-      recognitionMsg.classList.remove('visible');
-    }
-  });
-});
 
 /* ── Parallax Blobs on Scroll ── */
 const blobs = document.querySelectorAll('.blob');
