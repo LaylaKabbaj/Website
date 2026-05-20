@@ -1374,6 +1374,36 @@ footer {
 }
 
 /* ══════════════════════
+   CRISIS FAQ + RESOURCES
+   ══════════════════════ */
+.faq-item--crisis {
+  border-left: 3px solid var(--blush-deep);
+  padding-left: 0.85rem;
+  background: rgba(232, 213, 208, 0.18);
+}
+.faq-item--crisis .faq-question { color: var(--forest); }
+.crisis-resources {
+  list-style: none;
+  margin-top: 1rem;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.crisis-resources li {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  line-height: 1.55;
+}
+.crisis-resources li strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  color: var(--forest);
+  font-weight: 500;
+  margin-right: 0.25rem;
+}
+
+/* ══════════════════════
    TRUST / PROFESSIONAL STANDARDS
    ══════════════════════ */
 .trust {
@@ -2540,79 +2570,139 @@ footer {
     <div class="faq-item reveal">
       <button class="faq-question" aria-expanded="false">
         <span class="en">How much do sessions cost?</span>
-        <span class="fr">Combien co&ucirc;tent les s&eacute;ances?</span>
+        <span class="fr">Combien co&ucirc;tent les s&eacute;ances&nbsp;?</span>
         <span class="es">&iquest;Cu&aacute;nto cuestan las sesiones?</span>
       </button>
       <div class="faq-answer"><div class="faq-answer-inner"><p>
-        <span class="en">Individual sessions are $140 (60 min) and couples sessions are $200 (75 min). Receipts are provided for insurance reimbursement. A sliding scale may be available&mdash;please ask.</span>
-        <span class="fr">Les s&eacute;ances individuelles sont &agrave; 140$ (60 min) et les s&eacute;ances de couple &agrave; 200$ (75 min). Des re&ccedil;us sont fournis pour le remboursement par les assurances. Un tarif ajust&eacute; peut &ecirc;tre disponible&mdash;n&rsquo;h&eacute;sitez pas &agrave; demander.</span>
-        <span class="es">Las sesiones individuales cuestan $140 (60 min) y las de pareja $200 (75 min). Se proporcionan recibos para reembolso de seguros. Una tarifa ajustada puede estar disponible&mdash;preg&uacute;ntame.</span>
+        <span class="en">Individual psychotherapy is $140 CAD per 50-minute session. Couples psychotherapy is $190 CAD per session. The 15-minute initial consultation is free.</span>
+        <span class="fr">La psychoth&eacute;rapie individuelle est &agrave; 140&nbsp;$ CAD pour une s&eacute;ance de 50 minutes. La psychoth&eacute;rapie de couple est &agrave; 190&nbsp;$ CAD par s&eacute;ance. La consultation initiale de 15 minutes est gratuite.</span>
+        <span class="es">La psicoterapia individual cuesta 140 CAD por sesi&oacute;n de 50 minutos. La psicoterapia de pareja cuesta 190 CAD por sesi&oacute;n. La consulta inicial de 15 minutos es gratuita.</span>
       </p></div></div>
     </div>
 
     <div class="faq-item reveal">
       <button class="faq-question" aria-expanded="false">
-        <span class="en">Do you accept insurance?</span>
-        <span class="fr">Acceptez-vous les assurances?</span>
-        <span class="es">&iquest;Aceptas seguros?</span>
+        <span class="en">How long is each session?</span>
+        <span class="fr">Combien de temps dure chaque s&eacute;ance&nbsp;?</span>
+        <span class="es">&iquest;Cu&aacute;nto dura cada sesi&oacute;n?</span>
       </button>
       <div class="faq-answer"><div class="faq-answer-inner"><p>
-        <span class="en">I provide receipts from a Registered Psychotherapist (Qualifying) that can be submitted to most private insurance plans. Please check with your provider to confirm coverage for psychotherapy services.</span>
-        <span class="fr">Je fournis des re&ccedil;us de psychoth&eacute;rapeute autoris&eacute;e (en formation) pouvant &ecirc;tre soumis &agrave; la plupart des assurances priv&eacute;es. V&eacute;rifiez aupr&egrave;s de votre assureur pour confirmer la couverture.</span>
-        <span class="es">Proporciono recibos de Psicoterapeuta Registrada (en formaci&oacute;n) que pueden presentarse a la mayor&iacute;a de los seguros privados. Consulta con tu proveedor para confirmar la cobertura.</span>
+        <span class="en">Sessions are 50 minutes. The initial 15-minute consultation is shorter and serves to discuss fit before booking a first session.</span>
+        <span class="fr">Les s&eacute;ances durent 50 minutes. La consultation initiale de 15 minutes est plus courte et sert &agrave; discuter de l&rsquo;ad&eacute;quation avant de r&eacute;server une premi&egrave;re s&eacute;ance.</span>
+        <span class="es">Las sesiones duran 50 minutos. La consulta inicial de 15 minutos es m&aacute;s breve y sirve para conversar sobre la compatibilidad antes de reservar una primera sesi&oacute;n.</span>
       </p></div></div>
     </div>
 
     <div class="faq-item reveal">
       <button class="faq-question" aria-expanded="false">
-        <span class="en">What's the difference between virtual and in-person?</span>
-        <span class="fr">Quelle est la diff&eacute;rence entre virtuel et en personne?</span>
-        <span class="es">&iquest;Cu&aacute;l es la diferencia entre virtual y presencial?</span>
+        <span class="en">Where are sessions held?</span>
+        <span class="fr">O&ugrave; ont lieu les s&eacute;ances&nbsp;?</span>
+        <span class="es">&iquest;D&oacute;nde se realizan las sesiones?</span>
       </button>
       <div class="faq-answer"><div class="faq-answer-inner"><p>
-        <span class="en">Both formats are equally effective. Virtual sessions happen via a secure video platform, offering flexibility and comfort. In-person sessions allow for more embodied and creative work. Many clients do a mix of both.</span>
-        <span class="fr">Les deux formats sont &eacute;galement efficaces. Les s&eacute;ances virtuelles se font via une plateforme vid&eacute;o s&eacute;curis&eacute;e, offrant flexibilit&eacute; et confort. Les s&eacute;ances en personne permettent un travail plus incarn&eacute; et cr&eacute;atif. Plusieurs clients font un m&eacute;lange des deux.</span>
-        <span class="es">Ambos formatos son igualmente efectivos. Las sesiones virtuales se realizan por una plataforma segura de video, ofreciendo flexibilidad y comodidad. Las presenciales permiten un trabajo m&aacute;s encarnado y creativo. Muchos clientes hacen una mezcla de ambos.</span>
+        <span class="en">All sessions are offered virtually, by secure video platform. I currently see clients located in Ontario and British Columbia, Canada. In-person sessions are not offered at this time.</span>
+        <span class="fr">Toutes les s&eacute;ances sont offertes virtuellement, par plateforme vid&eacute;o s&eacute;curis&eacute;e. Je re&ccedil;ois actuellement des clients situ&eacute;s en Ontario et en Colombie-Britannique, au Canada. Les s&eacute;ances en personne ne sont pas offertes pour le moment.</span>
+        <span class="es">Todas las sesiones se ofrecen de manera virtual, por plataforma de video segura. Actualmente atiendo a clientes ubicados en Ontario y Columbia Brit&aacute;nica, Canad&aacute;. Por el momento no se ofrecen sesiones presenciales.</span>
       </p></div></div>
     </div>
 
     <div class="faq-item reveal">
       <button class="faq-question" aria-expanded="false">
-        <span class="en">How often should I come?</span>
-        <span class="fr">&Agrave; quelle fr&eacute;quence devrais-je venir?</span>
-        <span class="es">&iquest;Con qu&eacute; frecuencia debo venir?</span>
+        <span class="en">When and how do I pay?</span>
+        <span class="fr">Quand et comment dois-je payer&nbsp;?</span>
+        <span class="es">&iquest;Cu&aacute;ndo y c&oacute;mo se paga?</span>
       </button>
       <div class="faq-answer"><div class="faq-answer-inner"><p>
-        <span class="en">Most clients start with weekly sessions to build momentum, then adjust as needed. Some move to biweekly as things stabilize. There's no minimum commitment&mdash;we'll find a rhythm together.</span>
-        <span class="fr">La plupart des clients commencent par des s&eacute;ances hebdomadaires pour cr&eacute;er un &eacute;lan, puis ajustent selon les besoins. Certains passent aux deux semaines quand les choses se stabilisent. Il n&rsquo;y a pas d&rsquo;engagement minimum&mdash;nous trouverons un rythme ensemble.</span>
-        <span class="es">La mayor&iacute;a de los clientes comienzan con sesiones semanales para crear impulso, luego ajustan seg&uacute;n sea necesario. Algunos pasan a quincenal cuando las cosas se estabilizan. No hay compromiso m&iacute;nimo&mdash;encontraremos un ritmo juntos.</span>
+        <span class="en">Fees are due at the end of each session. Payment instructions are provided during the initial consultation.</span>
+        <span class="fr">Les frais sont dus &agrave; la fin de chaque s&eacute;ance. Les instructions de paiement vous sont communiqu&eacute;es durant la consultation initiale.</span>
+        <span class="es">Los honorarios se pagan al final de cada sesi&oacute;n. Las instrucciones de pago se proporcionan durante la consulta inicial.</span>
       </p></div></div>
     </div>
 
     <div class="faq-item reveal">
       <button class="faq-question" aria-expanded="false">
-        <span class="en">What's your cancellation policy?</span>
-        <span class="fr">Quelle est votre politique d&rsquo;annulation?</span>
+        <span class="en">Do you provide insurance receipts?</span>
+        <span class="fr">Fournissez-vous des re&ccedil;us pour l&rsquo;assurance&nbsp;?</span>
+        <span class="es">&iquest;Proporcionas recibos para el seguro?</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner"><p>
+        <span class="en">Yes. Psychotherapy receipts are provided for insurance reimbursement where applicable. Coverage for psychotherapy varies by plan, so clients are encouraged to verify with their insurer in advance.</span>
+        <span class="fr">Oui. Des re&ccedil;us de psychoth&eacute;rapie sont fournis pour le remboursement par les assurances, lorsqu&rsquo;applicable. La couverture pour la psychoth&eacute;rapie varie selon le r&eacute;gime; il est donc recommand&eacute; aux clients de v&eacute;rifier aupr&egrave;s de leur assureur &agrave; l&rsquo;avance.</span>
+        <span class="es">S&iacute;. Se proporcionan recibos de psicoterapia para reembolso por el seguro, cuando aplica. La cobertura para la psicoterapia var&iacute;a seg&uacute;n el plan; se recomienda a los clientes verificar con su aseguradora con antelaci&oacute;n.</span>
+      </p></div></div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-question" aria-expanded="false">
+        <span class="en">What is your cancellation policy?</span>
+        <span class="fr">Quelle est votre politique d&rsquo;annulation&nbsp;?</span>
         <span class="es">&iquest;Cu&aacute;l es tu pol&iacute;tica de cancelaci&oacute;n?</span>
       </button>
       <div class="faq-answer"><div class="faq-answer-inner"><p>
-        <span class="en">Please provide at least 24 hours notice to cancel or reschedule. Late cancellations or missed sessions are charged in full. Life happens&mdash;emergencies are always handled with care.</span>
-        <span class="fr">Veuillez fournir un pr&eacute;avis d&rsquo;au moins 24 heures pour annuler ou reporter. Les annulations tardives ou les absences sont factur&eacute;es en totalit&eacute;. La vie arrive&mdash;les urgences sont toujours trait&eacute;es avec soin.</span>
-        <span class="es">Por favor proporciona al menos 24 horas de aviso para cancelar o reprogramar. Las cancelaciones tard&iacute;as o sesiones perdidas se cobran en su totalidad. La vida pasa&mdash;las emergencias siempre se manejan con cuidado.</span>
+        <span class="en">48 hours&rsquo; notice is required to cancel or reschedule. Sessions cancelled with less than 48 hours&rsquo; notice are charged in full.</span>
+        <span class="fr">Un pr&eacute;avis de 48&nbsp;heures est requis pour annuler ou reporter. Les s&eacute;ances annul&eacute;es avec moins de 48&nbsp;heures de pr&eacute;avis sont factur&eacute;es en totalit&eacute;.</span>
+        <span class="es">Se requiere un aviso de 48&nbsp;horas para cancelar o reprogramar. Las sesiones canceladas con menos de 48&nbsp;horas de aviso se cobran en su totalidad.</span>
       </p></div></div>
     </div>
 
     <div class="faq-item reveal">
       <button class="faq-question" aria-expanded="false">
-        <span class="en">I've never been to therapy before. Is that okay?</span>
-        <span class="fr">Je n&rsquo;ai jamais fait de th&eacute;rapie. Est-ce correct?</span>
+        <span class="en">How often should we meet?</span>
+        <span class="fr">&Agrave; quelle fr&eacute;quence devrions-nous nous rencontrer&nbsp;?</span>
+        <span class="es">&iquest;Con qu&eacute; frecuencia debemos vernos?</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner"><p>
+        <span class="en">Many clients begin with weekly sessions to build momentum, and adjust the rhythm over time as needs evolve. There is no minimum commitment&mdash;frequency is decided collaboratively.</span>
+        <span class="fr">Beaucoup de clients commencent par des s&eacute;ances hebdomadaires pour cr&eacute;er un &eacute;lan, puis ajustent le rythme au fil du temps selon l&rsquo;&eacute;volution de leurs besoins. Il n&rsquo;y a pas d&rsquo;engagement minimum&mdash;la fr&eacute;quence se d&eacute;cide ensemble.</span>
+        <span class="es">Muchos clientes empiezan con sesiones semanales para crear impulso, y ajustan el ritmo con el tiempo seg&uacute;n evolucionan sus necesidades. No hay compromiso m&iacute;nimo&mdash;la frecuencia se decide en conjunto.</span>
+      </p></div></div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-question" aria-expanded="false">
+        <span class="en">I&rsquo;ve never been to therapy before. Is that okay?</span>
+        <span class="fr">Je n&rsquo;ai jamais fait de th&eacute;rapie. Est-ce correct&nbsp;?</span>
         <span class="es">Nunca he ido a terapia. &iquest;Est&aacute; bien?</span>
       </button>
       <div class="faq-answer"><div class="faq-answer-inner"><p>
-        <span class="en">Absolutely. Many of my clients are coming to therapy for the first time. There's no wrong way to start. The free consultation is specifically designed to ease any uncertainty and see if we're a good fit.</span>
-        <span class="fr">Absolument. Plusieurs de mes clients viennent en th&eacute;rapie pour la premi&egrave;re fois. Il n&rsquo;y a pas de mauvaise fa&ccedil;on de commencer. La consultation gratuite est sp&eacute;cifiquement con&ccedil;ue pour apaiser toute incertitude.</span>
-        <span class="es">Absolutamente. Muchos de mis clientes vienen a terapia por primera vez. No hay una forma incorrecta de empezar. La consulta gratuita est&aacute; dise&ntilde;ada espec&iacute;ficamente para aliviar cualquier incertidumbre.</span>
+        <span class="en">Absolutely. Many of the people I work with are coming to therapy for the first time. The free 15-minute consultation is specifically designed to ease any uncertainty and see if we&rsquo;re a good fit before committing to a first session.</span>
+        <span class="fr">Absolument. Beaucoup de personnes que j&rsquo;accompagne viennent en th&eacute;rapie pour la premi&egrave;re fois. La consultation gratuite de 15 minutes est sp&eacute;cifiquement con&ccedil;ue pour apaiser toute incertitude et voir si nous sommes un bon match avant de vous engager &agrave; une premi&egrave;re s&eacute;ance.</span>
+        <span class="es">Absolutamente. Muchas de las personas con quienes trabajo vienen a terapia por primera vez. La consulta gratuita de 15 minutos est&aacute; dise&ntilde;ada espec&iacute;ficamente para aliviar cualquier incertidumbre y ver si somos compatibles antes de comprometerte con una primera sesi&oacute;n.</span>
       </p></div></div>
+    </div>
+
+    <div class="faq-item faq-item--crisis reveal">
+      <button class="faq-question" aria-expanded="false">
+        <span class="en">Is this practice appropriate for emergencies or crisis?</span>
+        <span class="fr">Cette pratique est-elle appropri&eacute;e pour les urgences ou les crises&nbsp;?</span>
+        <span class="es">&iquest;Esta pr&aacute;ctica es apropiada para emergencias o crisis?</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner"><p>
+        <span class="en"><strong>No.</strong> This practice is not appropriate for emergencies or crisis situations. If you are in immediate danger or require urgent support, please contact emergency services or a local crisis resource:</span>
+        <span class="fr"><strong>Non.</strong> Cette pratique n&rsquo;est pas appropri&eacute;e pour les urgences ou les situations de crise. Si vous &ecirc;tes en danger imm&eacute;diat ou avez besoin d&rsquo;un soutien urgent, veuillez contacter les services d&rsquo;urgence ou une ressource de crise locale&nbsp;:</span>
+        <span class="es"><strong>No.</strong> Esta pr&aacute;ctica no es apropiada para emergencias o situaciones de crisis. Si te encuentras en peligro inmediato o necesitas apoyo urgente, por favor contacta a los servicios de emergencia o a un recurso de crisis local:</span>
+      </p>
+      <ul class="crisis-resources">
+        <li>
+          <strong>911</strong>
+          <span class="en">&mdash; Emergency services (Canada)</span>
+          <span class="fr">&mdash; Services d&rsquo;urgence (Canada)</span>
+          <span class="es">&mdash; Servicios de emergencia (Canad&aacute;)</span>
+        </li>
+        <li>
+          <strong>9-8-8</strong>
+          <span class="en">&mdash; Suicide Crisis Helpline (call or text, Canada)</span>
+          <span class="fr">&mdash; Ligne d&rsquo;aide en cas de crise suicidaire (appel ou texto, Canada)</span>
+          <span class="es">&mdash; L&iacute;nea de ayuda en crisis suicida (llamada o texto, Canad&aacute;)</span>
+        </li>
+        <li>
+          <strong>1-833-456-4566</strong>
+          <span class="en">&mdash; Talk Suicide Canada</span>
+          <span class="fr">&mdash; Parlons suicide Canada</span>
+          <span class="es">&mdash; Talk Suicide Canada</span>
+        </li>
+      </ul>
+      </div></div>
     </div>
   </div>
 </section>
