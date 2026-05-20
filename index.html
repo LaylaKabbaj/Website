@@ -882,6 +882,18 @@ nav.scrolled .nav-logo {
 
 .contact-details { display: flex; flex-direction: column; gap: 1.25rem; }
 
+.contact-crisis-note {
+  margin-top: 1.75rem;
+  padding: 1rem 1.25rem;
+  background: rgba(232, 213, 208, 0.1);
+  border-left: 2px solid rgba(232, 213, 208, 0.4);
+  font-size: 0.85rem;
+  color: rgba(240, 230, 216, 0.7);
+  line-height: 1.6;
+  max-width: 500px;
+}
+.contact-crisis-note strong { color: var(--cream); }
+
 .contact-detail {
   display: flex;
   align-items: flex-start;
@@ -993,33 +1005,84 @@ nav.scrolled .nav-logo {
 footer {
   background: var(--forest);
   border-top: 1px solid rgba(240, 230, 216, 0.05);
-  padding: 1.75rem clamp(2rem, 6vw, 6rem);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  padding: clamp(2.5rem, 4.5vw, 4rem) clamp(2rem, 6vw, 6rem) 1.5rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+@media (max-width: 640px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
+.footer-brand {
+  color: rgba(240, 230, 216, 0.6);
+}
+.footer-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.25rem;
+}
+.footer-designation {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  margin-bottom: 0.75rem;
+}
+.footer-meta {
+  font-size: 0.82rem;
+  color: rgba(240, 230, 216, 0.55);
+  line-height: 1.55;
 }
 
-.footer-left {
-  font-size: 0.75rem;
-  color: rgba(240, 230, 216, 0.3);
-  letter-spacing: 0.04em;
+.footer-links { display: flex; justify-content: flex-end; }
+@media (max-width: 640px) {
+  .footer-links { justify-content: flex-start; }
 }
 
 .footer-right {
-  display: flex;
-  gap: 1.75rem;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 0.55rem 2rem;
   list-style: none;
 }
 .footer-right a {
   font-size: 0.72rem;
-  color: rgba(240, 230, 216, 0.35);
+  color: rgba(240, 230, 216, 0.5);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   transition: color 0.3s ease;
 }
 .footer-right a:hover { color: var(--gold-soft); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(240, 230, 216, 0.08);
+  padding-top: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.footer-crisis {
+  font-size: 0.78rem;
+  color: rgba(240, 230, 216, 0.65);
+  line-height: 1.55;
+  max-width: 760px;
+}
+.footer-crisis strong { color: var(--cream); }
+
+.footer-left {
+  font-size: 0.7rem;
+  color: rgba(240, 230, 216, 0.35);
+  letter-spacing: 0.06em;
+}
 
 /* ══════════════════════
    WHAT TO EXPECT — Warm narrative
@@ -2716,16 +2779,20 @@ footer {
 
   <div class="contact-inner">
     <div class="contact-content">
-      <p class="section-label reveal">Contact</p>
+      <p class="section-label reveal">
+        <span class="en">Contact</span>
+        <span class="fr">Contact</span>
+        <span class="es">Contacto</span>
+      </p>
       <h2 class="section-heading reveal reveal-d1">
-        <span class="en">Let's begin</span>
+        <span class="en">Let&rsquo;s begin</span>
         <span class="fr">Commen&ccedil;ons</span>
         <span class="es">Comencemos</span>
       </h2>
       <p class="contact-text reveal reveal-d2">
-        <span class="en">Reaching out is the first step. Whether you have questions or are ready to book, I'd love to hear from you. A free 15-minute consultation is available to ensure we're a good fit.</span>
-        <span class="fr">Communiquer est le premier pas. Que vous ayez des questions ou soyez pr&ecirc;t &agrave; r&eacute;server, j&rsquo;aimerais avoir de vos nouvelles. Une consultation gratuite de 15 minutes est disponible.</span>
-        <span class="es">Contactar es el primer paso. Ya sea que tengas preguntas o est&eacute;s listo para reservar, me encantar&iacute;a saber de ti. Una consulta gratuita de 15 minutos est&aacute; disponible para asegurarnos de que somos compatibles.</span>
+        <span class="en">Reaching out is the first step. A free 15-minute phone consultation is available to see if we&rsquo;re a good fit before booking a session.</span>
+        <span class="fr">Communiquer est le premier pas. Une consultation t&eacute;l&eacute;phonique gratuite de 15 minutes est disponible pour voir si nous sommes un bon match avant de r&eacute;server une s&eacute;ance.</span>
+        <span class="es">Contactar es el primer paso. Hay disponible una consulta telef&oacute;nica gratuita de 15 minutos para ver si somos compatibles antes de reservar una sesi&oacute;n.</span>
       </p>
 
       <div class="contact-details reveal reveal-d3">
@@ -2737,24 +2804,34 @@ footer {
           </div>
         </div>
         <div class="contact-detail">
-          <svg class="contact-detail-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2C6.13 2 3 5.13 3 9c0 5.25 7 9 7 9s7-3.75 7-9c0-3.87-3.13-7-7-7z"/><circle cx="10" cy="9" r="2.5"/></svg>
+          <svg class="contact-detail-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="14" height="10" rx="1.5"/><path d="M7 18h6M10 15v3"/></svg>
           <div>
-            <p class="contact-detail-label"><span class="en">Location</span><span class="fr">Lieu</span><span class="es">Ubicaci&oacute;n</span></p>
+            <p class="contact-detail-label">
+              <span class="en">Practice</span>
+              <span class="fr">Pratique</span>
+              <span class="es">Pr&aacute;ctica</span>
+            </p>
             <p class="contact-detail-value">
-              <span class="en">Quebec &amp; Ontario &middot; Virtual &amp; In-Person</span>
-              <span class="fr">Qu&eacute;bec &amp; Ontario &middot; Virtuel &amp; En personne</span>
-              <span class="es">Quebec &amp; Ontario &middot; Virtual &amp; Presencial</span>
+              <span class="en">Virtual only &middot; Ontario &amp; British Columbia</span>
+              <span class="fr">Virtuel uniquement &middot; Ontario &amp; Colombie-Britannique</span>
+              <span class="es">Solo virtual &middot; Ontario &amp; Columbia Brit&aacute;nica</span>
             </p>
           </div>
         </div>
         <div class="contact-detail">
-          <svg class="contact-detail-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M6 10h8M10 6v8"/></svg>
+          <svg class="contact-detail-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M2 10h16M10 2a14 14 0 010 16M10 2a14 14 0 000 16"/></svg>
           <div>
             <p class="contact-detail-label"><span class="en">Languages</span><span class="fr">Langues</span><span class="es">Idiomas</span></p>
-            <p class="contact-detail-value">English, Fran&ccedil;ais &amp; Espa&ntilde;ol</p>
+            <p class="contact-detail-value">English &middot; Fran&ccedil;ais &middot; Espa&ntilde;ol</p>
           </div>
         </div>
       </div>
+
+      <p class="contact-crisis-note reveal reveal-d4">
+        <span class="en"><strong>Not for emergencies.</strong> If you are in immediate danger or require urgent support, please contact <strong>911</strong> or the <strong>9-8-8 Suicide Crisis Helpline</strong>.</span>
+        <span class="fr"><strong>Pas pour les urgences.</strong> Si vous &ecirc;tes en danger imm&eacute;diat ou avez besoin d&rsquo;un soutien urgent, veuillez contacter le <strong>911</strong> ou la <strong>ligne 9-8-8</strong> (crise suicidaire).</span>
+        <span class="es"><strong>No para emergencias.</strong> Si te encuentras en peligro inmediato o necesitas apoyo urgente, contacta al <strong>911</strong> o a la <strong>l&iacute;nea 9-8-8</strong> (crisis suicida).</span>
+      </p>
     </div>
 
     <div class="contact-booking">
@@ -2765,14 +2842,14 @@ footer {
           <span class="es">&iquest;Listo para comenzar?</span>
         </h3>
         <p>
-          <span class="en">Book a free 15-minute consultation to see if we're a good fit. No pressure, just a conversation.</span>
-          <span class="fr">R&eacute;servez une consultation gratuite de 15 minutes pour voir si nous sommes compatibles. Sans pression, juste une conversation.</span>
-          <span class="es">Reserva una consulta gratuita de 15 minutos para ver si somos compatibles. Sin presi&oacute;n, solo una conversaci&oacute;n.</span>
+          <span class="en">Book a free 15-minute phone consultation. No pressure&mdash;a short conversation to see if my practice is the right fit for what you&rsquo;re looking for.</span>
+          <span class="fr">R&eacute;servez une consultation t&eacute;l&eacute;phonique gratuite de 15 minutes. Sans pression&mdash;une courte conversation pour voir si ma pratique correspond &agrave; ce que vous recherchez.</span>
+          <span class="es">Reserva una consulta telef&oacute;nica gratuita de 15 minutos. Sin presi&oacute;n&mdash;una breve conversaci&oacute;n para ver si mi pr&aacute;ctica es la adecuada para lo que est&aacute;s buscando.</span>
         </p>
         <a href="mailto:layla@perceptionandplay.ca?subject=Free%2015-min%20Consultation" class="booking-btn">
-          <span class="en">Book a Consultation</span>
-          <span class="fr">Prendre rendez-vous</span>
-          <span class="es">Reservar una consulta</span>
+          <span class="en">Book Free Consultation</span>
+          <span class="fr">R&eacute;server une consultation gratuite</span>
+          <span class="es">Reservar consulta gratuita</span>
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
         </a>
       </div>
@@ -2784,11 +2861,39 @@ footer {
 
 <!-- ── Footer ── -->
 <footer>
-  <p class="footer-left">&copy; 2026 Perception &amp; Play Psychotherapy. <span class="en">All rights reserved.</span><span class="fr">Tous droits r&eacute;serv&eacute;s.</span><span class="es">Todos los derechos reservados.</span></p>
-  <ul class="footer-right">
-    <li><a href="#hero"><span class="en">Back to top</span><span class="fr">Haut de page</span><span class="es">Volver arriba</span></a></li>
-    <li><a href="mailto:layla@perceptionandplay.ca">Email</a></li>
-  </ul>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <p class="footer-name">Layla Kabbaj</p>
+      <p class="footer-designation">
+        <span class="en">Registered Psychotherapist (Qualifying)</span>
+        <span class="fr">Psychoth&eacute;rapeute autoris&eacute;e (en formation)</span>
+        <span class="es">Psicoterapeuta registrada (en formaci&oacute;n)</span>
+      </p>
+      <p class="footer-meta">
+        <span class="en">Virtual psychotherapy &middot; Ontario &amp; British Columbia</span>
+        <span class="fr">Psychoth&eacute;rapie virtuelle &middot; Ontario &amp; Colombie-Britannique</span>
+        <span class="es">Psicoterapia virtual &middot; Ontario &amp; Columbia Brit&aacute;nica</span>
+      </p>
+    </div>
+    <div class="footer-links">
+      <ul class="footer-right">
+        <li><a href="#approach"><span class="en">How I Work</span><span class="fr">Mon approche</span><span class="es">Mi enfoque</span></a></li>
+        <li><a href="#services"><span class="en">Services</span><span class="fr">Services</span><span class="es">Servicios</span></a></li>
+        <li><a href="#about"><span class="en">About</span><span class="fr">&Agrave; propos</span><span class="es">Acerca</span></a></li>
+        <li><a href="#faq"><span class="en">FAQ</span><span class="fr">FAQ</span><span class="es">FAQ</span></a></li>
+        <li><a href="mailto:layla@perceptionandplay.ca">Email</a></li>
+        <li><a href="#hero"><span class="en">Back to top</span><span class="fr">Haut de page</span><span class="es">Volver arriba</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-crisis">
+      <span class="en"><strong>Not for emergencies.</strong> If you are in immediate danger or require urgent support, please contact <strong>911</strong> or the <strong>9-8-8 Suicide Crisis Helpline</strong> (Canada).</span>
+      <span class="fr"><strong>Pas pour les urgences.</strong> Si vous &ecirc;tes en danger imm&eacute;diat ou avez besoin d&rsquo;un soutien urgent, veuillez contacter le <strong>911</strong> ou la <strong>ligne 9-8-8</strong> (Canada).</span>
+      <span class="es"><strong>No para emergencias.</strong> Si te encuentras en peligro inmediato o necesitas apoyo urgente, contacta al <strong>911</strong> o a la <strong>l&iacute;nea 9-8-8</strong> (Canad&aacute;).</span>
+    </p>
+    <p class="footer-left">&copy; 2026 Perception &amp; Play Psychotherapy &middot; Layla Kabbaj. <span class="en">All rights reserved.</span><span class="fr">Tous droits r&eacute;serv&eacute;s.</span><span class="es">Todos los derechos reservados.</span></p>
+  </div>
 </footer>
 
 <!-- Scroll progress bar -->
