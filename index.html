@@ -554,6 +554,33 @@ nav.scrolled .nav-logo {
   color: var(--text-body);
   line-height: 1.75;
 }
+.service-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0 1.1rem !important;
+  font-size: 0.88rem !important;
+  line-height: 1.4 !important;
+  color: var(--text-muted) !important;
+}
+.service-fee {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--gold);
+  letter-spacing: 0.01em;
+}
+.service-fee--free {
+  font-size: 1.15rem;
+}
+.service-duration {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
 
 .services .blob-svc {
   width: 300px; height: 280px;
@@ -2236,71 +2263,99 @@ footer {
 
   <p class="section-label reveal"><span class="en">Services</span><span class="fr">Services</span><span class="es">Servicios</span></p>
   <h2 class="section-heading reveal reveal-d1">
-    <span class="en">Therapy tailored to<br>where you are</span>
-    <span class="fr">Une th&eacute;rapie adapt&eacute;e<br>&agrave; l&agrave; o&ugrave; vous &ecirc;tes</span>
-    <span class="es">Terapia adaptada<br>a donde est&aacute;s</span>
+    <span class="en">Virtual psychotherapy<br>sessions</span>
+    <span class="fr">S&eacute;ances de psychoth&eacute;rapie<br>virtuelles</span>
+    <span class="es">Sesiones virtuales<br>de psicoterapia</span>
   </h2>
   <p class="section-intro reveal reveal-d2">
-    <span class="en">Whether you're navigating a difficult transition, healing from past experiences, or seeking deeper self-understanding&mdash;I meet you where you are.</span>
-    <span class="fr">Que vous traversiez une transition difficile, gu&eacute;rissiez d&rsquo;exp&eacute;riences pass&eacute;es ou cherchiez une compr&eacute;hension plus profonde de vous-m&ecirc;me&mdash;je vous rencontre l&agrave; o&ugrave; vous &ecirc;tes.</span>
-    <span class="es">Ya sea que est&eacute;s atravesando una transici&oacute;n dif&iacute;cil, sanando experiencias pasadas o buscando un autoconocimiento m&aacute;s profundo&mdash;te encuentro donde est&aacute;s.</span>
+    <span class="en">Sessions are 50 minutes and offered exclusively online for clients located in Ontario and British Columbia. A free 15-minute phone consultation is available to see if we&rsquo;re a good fit.</span>
+    <span class="fr">Les s&eacute;ances durent 50 minutes et sont offertes exclusivement en ligne aux clients situ&eacute;s en Ontario et en Colombie-Britannique. Une consultation t&eacute;l&eacute;phonique gratuite de 15 minutes est disponible pour voir si nous sommes un bon match.</span>
+    <span class="es">Las sesiones duran 50 minutos y se ofrecen exclusivamente en l&iacute;nea para clientes ubicados en Ontario y Columbia Brit&aacute;nica. Hay disponible una consulta telef&oacute;nica gratuita de 15 minutos para ver si somos compatibles.</span>
   </p>
 
   <div class="services-grid">
     <div class="service-item expandable reveal reveal-d1">
       <span class="service-number">01</span>
-      <h3 class="expandable-trigger"><span class="en">Individual Therapy</span><span class="fr">Th&eacute;rapie individuelle</span><span class="es">Terapia individual</span></h3>
+      <h3 class="expandable-trigger">
+        <span class="en">Individual Psychotherapy</span>
+        <span class="fr">Psychoth&eacute;rapie individuelle</span>
+        <span class="es">Psicoterapia individual</span>
+      </h3>
+      <p class="service-meta">
+        <span class="service-fee">$140 CAD</span>
+        <span class="service-duration">
+          <span class="en">50-minute session</span>
+          <span class="fr">s&eacute;ance de 50 minutes</span>
+          <span class="es">sesi&oacute;n de 50 minutos</span>
+        </span>
+      </p>
       <p>
-        <span class="en">A reflective space to explore patterns, process emotions, and build a stronger relationship with yourself.</span>
-        <span class="fr">Un espace de r&eacute;flexion pour explorer vos sch&eacute;mas, traiter vos &eacute;motions et b&acirc;tir une relation plus solide avec vous-m&ecirc;me.</span>
-        <span class="es">Un espacio reflexivo para explorar patrones, procesar emociones y construir una relaci&oacute;n m&aacute;s fuerte contigo.</span>
+        <span class="en">A reflective, attuned space for one person to explore emotions, recurring patterns, and what is happening internally.</span>
+        <span class="fr">Un espace r&eacute;flexif et attentif pour une personne afin d&rsquo;explorer ses &eacute;motions, ses sch&eacute;mas r&eacute;p&eacute;titifs et ce qui se passe int&eacute;rieurement.</span>
+        <span class="es">Un espacio reflexivo y sintonizado para que una persona explore emociones, patrones repetitivos y lo que sucede internamente.</span>
       </p>
       <div class="expandable-detail"><div class="expandable-detail-inner"><p>
-        <span class="en">Sessions are 60 minutes and integrate talk therapy with creative and somatic approaches. We work with anxiety, depression, self-esteem, identity, grief, and life transitions. Each session is tailored to what you bring&mdash;there's no script, no homework unless you want it.</span>
-        <span class="fr">Les s&eacute;ances durent 60 minutes et int&egrave;grent la parole avec des approches cr&eacute;atives et somatiques. Nous travaillons l&rsquo;anxi&eacute;t&eacute;, la d&eacute;pression, l&rsquo;estime de soi, l&rsquo;identit&eacute;, le deuil et les transitions. Chaque s&eacute;ance s&rsquo;adapte &agrave; ce que vous apportez.</span>
-        <span class="es">Las sesiones son de 60 minutos e integran di&aacute;logo con enfoques creativos y som&aacute;ticos. Trabajamos ansiedad, depresi&oacute;n, autoestima, identidad, duelo y transiciones. Cada sesi&oacute;n se adapta a lo que traes.</span>
+        <span class="en">Work often focuses on anxiety, emotional overwhelm, attachment patterns, internal conflict, life transitions, and difficulty understanding emotional reactions. Depending on the client, sessions may incorporate somatic awareness, parts-informed exploration, metaphor, or creative approaches.</span>
+        <span class="fr">Le travail porte souvent sur l&rsquo;anxi&eacute;t&eacute;, la surcharge &eacute;motionnelle, les sch&eacute;mas d&rsquo;attachement, les conflits internes, les transitions de vie et la difficult&eacute; &agrave; comprendre les r&eacute;actions &eacute;motionnelles. Selon les besoins, j&rsquo;int&egrave;gre la conscience somatique, une exploration inform&eacute;e par les parties, des m&eacute;taphores ou des approches cr&eacute;atives.</span>
+        <span class="es">El trabajo suele enfocarse en ansiedad, sobrecarga emocional, patrones de apego, conflicto interno, transiciones de vida y dificultad para comprender las reacciones emocionales. Seg&uacute;n el cliente, las sesiones pueden incorporar conciencia som&aacute;tica, exploraci&oacute;n basada en partes internas, met&aacute;foras o enfoques creativos.</span>
       </p></div></div>
     </div>
+
     <div class="service-item expandable reveal reveal-d2">
       <span class="service-number">02</span>
-      <h3 class="expandable-trigger"><span class="en">Couples Therapy</span><span class="fr">Th&eacute;rapie de couple</span><span class="es">Terapia de pareja</span></h3>
+      <h3 class="expandable-trigger">
+        <span class="en">Couples Psychotherapy</span>
+        <span class="fr">Psychoth&eacute;rapie de couple</span>
+        <span class="es">Psicoterapia de pareja</span>
+      </h3>
+      <p class="service-meta">
+        <span class="service-fee">$190 CAD</span>
+        <span class="service-duration">
+          <span class="en">per session</span>
+          <span class="fr">par s&eacute;ance</span>
+          <span class="es">por sesi&oacute;n</span>
+        </span>
+      </p>
       <p>
-        <span class="en">Strengthen connection and navigate conflict through attachment-informed work.</span>
-        <span class="fr">Renforcez votre connexion et naviguez les conflits gr&acirc;ce &agrave; un travail inform&eacute; par l&rsquo;attachement.</span>
-        <span class="es">Fortalece la conexi&oacute;n y navega los conflictos a trav&eacute;s de un trabajo basado en el apego.</span>
+        <span class="en">A space for two partners to work on connection, conflict patterns, communication, and the relational dynamics shaping the relationship.</span>
+        <span class="fr">Un espace pour deux partenaires afin de travailler la connexion, les sch&eacute;mas de conflit, la communication et les dynamiques relationnelles qui fa&ccedil;onnent la relation.</span>
+        <span class="es">Un espacio para dos parejas para trabajar la conexi&oacute;n, los patrones de conflicto, la comunicaci&oacute;n y las din&aacute;micas relacionales que dan forma a la relaci&oacute;n.</span>
       </p>
       <div class="expandable-detail"><div class="expandable-detail-inner"><p>
-        <span class="en">Sessions are 75 minutes. Together we build understanding, repair ruptures, and develop new ways of being with each other. I work with communication breakdowns, trust issues, intimacy difficulties, and couples navigating major life changes. Both partners must be willing to engage.</span>
-        <span class="fr">Les s&eacute;ances durent 75 minutes. Ensemble, nous b&acirc;tissons la compr&eacute;hension, r&eacute;parons les ruptures et d&eacute;veloppons de nouvelles fa&ccedil;ons d&rsquo;&ecirc;tre ensemble. Je travaille les probl&egrave;mes de communication, la confiance, l&rsquo;intimit&eacute; et les grands changements de vie.</span>
-        <span class="es">Las sesiones son de 75 minutos. Juntos construimos comprensi&oacute;n, reparamos rupturas y desarrollamos nuevas formas de estar juntos. Trabajo con problemas de comunicaci&oacute;n, confianza, intimidad y parejas navegando grandes cambios.</span>
+        <span class="en">Work often focuses on attachment patterns playing out between partners, communication breakdowns, emotional intensity, repair after conflict, and rebuilding safety and trust. Both partners must be willing to engage in the work.</span>
+        <span class="fr">Le travail porte souvent sur les sch&eacute;mas d&rsquo;attachement qui se jouent entre les partenaires, les ruptures de communication, l&rsquo;intensit&eacute; &eacute;motionnelle, la r&eacute;paration apr&egrave;s un conflit, et la reconstruction de la s&eacute;curit&eacute; et de la confiance. Les deux partenaires doivent &ecirc;tre dispos&eacute;s &agrave; s&rsquo;engager.</span>
+        <span class="es">El trabajo suele enfocarse en los patrones de apego que se manifiestan entre los miembros de la pareja, las rupturas en la comunicaci&oacute;n, la intensidad emocional, la reparaci&oacute;n despu&eacute;s del conflicto, y la reconstrucci&oacute;n de la seguridad y la confianza. Ambos miembros deben estar dispuestos a involucrarse.</span>
       </p></div></div>
     </div>
+
     <div class="service-item expandable reveal reveal-d3">
       <span class="service-number">03</span>
-      <h3 class="expandable-trigger"><span class="en">Trauma-Informed Care</span><span class="fr">Soins inform&eacute;s par le trauma</span><span class="es">Atenci&oacute;n informada por el trauma</span></h3>
+      <h3 class="expandable-trigger">
+        <span class="en">Free 15-Minute Consultation</span>
+        <span class="fr">Consultation gratuite de 15 minutes</span>
+        <span class="es">Consulta gratuita de 15 minutos</span>
+      </h3>
+      <p class="service-meta">
+        <span class="service-fee service-fee--free">
+          <span class="en">Complimentary</span>
+          <span class="fr">Gratuit</span>
+          <span class="es">Gratis</span>
+        </span>
+        <span class="service-duration">
+          <span class="en">15-minute phone call</span>
+          <span class="fr">appel t&eacute;l&eacute;phonique de 15 min</span>
+          <span class="es">llamada telef&oacute;nica de 15 min</span>
+        </span>
+      </p>
       <p>
-        <span class="en">Gentle, nervous system-aware work that honors your pace.</span>
-        <span class="fr">Un travail doux et attentif au syst&egrave;me nerveux qui respecte votre rythme.</span>
-        <span class="es">Un trabajo suave y consciente del sistema nervioso que respeta tu ritmo.</span>
+        <span class="en">A short, no-pressure phone call to share what brings you, hear how I work, and see if we&rsquo;re a good fit before booking a first session.</span>
+        <span class="fr">Un court appel sans pression pour partager ce qui vous am&egrave;ne, entendre comment je travaille, et voir si nous sommes un bon match avant de r&eacute;server une premi&egrave;re s&eacute;ance.</span>
+        <span class="es">Una breve llamada sin presi&oacute;n para compartir lo que te trae, escuchar c&oacute;mo trabajo y ver si somos compatibles antes de reservar una primera sesi&oacute;n.</span>
       </p>
       <div class="expandable-detail"><div class="expandable-detail-inner"><p>
-        <span class="en">Using somatic experiencing and mindfulness, we create safety in the body to process what words alone cannot hold. This work is for anyone carrying the weight of difficult experiences&mdash;whether a single event or patterns of relational hurt. We go at your pace, always.</span>
-        <span class="fr">&Agrave; travers l&rsquo;exp&eacute;rience somatique et la pleine conscience, nous cr&eacute;ons de la s&eacute;curit&eacute; dans le corps pour traiter ce que les mots seuls ne peuvent contenir. Ce travail est pour quiconque porte le poids d&rsquo;exp&eacute;riences difficiles. Nous allons &agrave; votre rythme, toujours.</span>
-        <span class="es">Usando la experiencia som&aacute;tica y el mindfulness, creamos seguridad en el cuerpo para procesar lo que las palabras solas no pueden contener. Este trabajo es para cualquiera que cargue el peso de experiencias dif&iacute;ciles. Vamos a tu ritmo, siempre.</span>
-      </p></div></div>
-    </div>
-    <div class="service-item expandable reveal reveal-d4">
-      <span class="service-number">04</span>
-      <h3 class="expandable-trigger"><span class="en">Creative Approaches</span><span class="fr">Approches cr&eacute;atives</span><span class="es">Enfoques creativos</span></h3>
-      <p>
-        <span class="en">Play, art-making, and expressive modalities open doors that talk therapy alone may not.</span>
-        <span class="fr">Le jeu, la cr&eacute;ation et les modalit&eacute;s expressives ouvrent des portes que la parole seule ne peut ouvrir.</span>
-        <span class="es">El juego, la creaci&oacute;n art&iacute;stica y las modalidades expresivas abren puertas que el di&aacute;logo solo no puede.</span>
-      </p>
-      <div class="expandable-detail"><div class="expandable-detail-inner"><p>
-        <span class="en">These are not about being artistic&mdash;they're about accessing deeper layers of experience. Through drawing, movement, sandtray, or guided imagery, we bypass the thinking mind and connect with parts of you that might not have words yet. Surprisingly powerful, even for skeptics.</span>
-        <span class="fr">Il ne s&rsquo;agit pas d&rsquo;&ecirc;tre artiste&mdash;mais d&rsquo;acc&eacute;der &agrave; des couches plus profondes de l&rsquo;exp&eacute;rience. Par le dessin, le mouvement, le bac &agrave; sable ou l&rsquo;imagerie guid&eacute;e, nous contournons l&rsquo;esprit analytique et nous connectons &agrave; des parties de vous qui n&rsquo;ont peut-&ecirc;tre pas encore de mots.</span>
-        <span class="es">No se trata de ser artista&mdash;sino de acceder a capas m&aacute;s profundas de la experiencia. A trav&eacute;s del dibujo, movimiento, bandeja de arena o imaginer&iacute;a guiada, pasamos por alto la mente pensante y conectamos con partes de ti que quiz&aacute;s a&uacute;n no tienen palabras.</span>
+        <span class="en">No clinical questions are answered during the consultation&mdash;its purpose is fit and orientation, not therapy. Available for prospective individual and couples clients.</span>
+        <span class="fr">Aucune question clinique n&rsquo;est r&eacute;pondue durant la consultation&mdash;son but est l&rsquo;ad&eacute;quation et l&rsquo;orientation, pas la th&eacute;rapie. Disponible pour les clients individuels et les couples potentiels.</span>
+        <span class="es">No se responden preguntas cl&iacute;nicas durante la consulta&mdash;su prop&oacute;sito es la compatibilidad y orientaci&oacute;n, no la terapia. Disponible para futuros clientes individuales y parejas.</span>
       </p></div></div>
     </div>
   </div>
