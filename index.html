@@ -749,6 +749,15 @@ nav.scrolled .nav-logo {
 
 .about-content { position: relative; z-index: 2; }
 
+.about-credential-line {
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin: 0.5rem 0 1.5rem;
+}
+
 .about-text {
   font-size: 1.05rem;
   color: var(--text-body);
@@ -756,31 +765,54 @@ nav.scrolled .nav-logo {
   max-width: 540px;
 }
 .about-text + .about-text { margin-top: 1.25rem; }
+.about-text--accent {
+  font-size: 1.05rem;
+  color: var(--forest);
+  font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1.6;
+  padding: 1rem 0 0;
+  border-top: 1px solid rgba(196, 162, 101, 0.25);
+  margin-top: 1.75rem !important;
+}
 
 .about-credentials {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
+  margin-top: 2.25rem;
+  padding-top: 1.75rem;
   border-top: 1px solid rgba(45, 61, 45, 0.08);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
 .credential {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  line-height: 1.5;
 }
+.credential-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+.credential > div { min-width: 0; }
 .credential strong {
   display: block;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 400;
   text-transform: none;
   letter-spacing: 0;
   color: var(--forest);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.25;
 }
 
 /* ══════════════════════
@@ -2288,35 +2320,74 @@ footer {
     <div class="about-content">
       <p class="section-label reveal"><span class="en">About</span><span class="fr">&Agrave; propos</span><span class="es">Acerca</span></p>
       <h2 class="section-heading reveal reveal-d1">Layla Kabbaj</h2>
-      <p class="about-text reveal reveal-d2">
-        <span class="en">I'm a psychotherapist practicing in Quebec and Ontario, trained in integrative and creative approaches to therapy. My work is rooted in the belief that healing happens when we can bring curiosity, safety, and play into the therapeutic space.</span>
-        <span class="fr">Je suis psychoth&eacute;rapeute pratiquant au Qu&eacute;bec et en Ontario, form&eacute;e aux approches int&eacute;gratives et cr&eacute;atives. Mon travail repose sur la conviction que la gu&eacute;rison survient lorsque nous apportons curiosit&eacute;, s&eacute;curit&eacute; et jeu dans l&rsquo;espace th&eacute;rapeutique.</span>
-        <span class="es">Soy psicoterapeuta practicando en Quebec y Ontario, formada en enfoques integrativos y creativos. Mi trabajo se basa en la creencia de que la sanaci&oacute;n ocurre cuando podemos traer curiosidad, seguridad y juego al espacio terap&eacute;utico.</span>
-      </p>
-      <p class="about-text reveal reveal-d3">
-        <span class="en">I work with individuals and couples navigating anxiety, trauma, relationship challenges, life transitions, and the quiet longing to feel more alive. Sessions are available in English, French, and Spanish, in person and online.</span>
-        <span class="fr">J&rsquo;accompagne des individus et des couples traversant l&rsquo;anxi&eacute;t&eacute;, le trauma, les d&eacute;fis relationnels, les transitions de vie, et ce d&eacute;sir silencieux de se sentir plus vivant. S&eacute;ances en anglais, fran&ccedil;ais et espagnol, en personne et en ligne.</span>
-        <span class="es">Trabajo con personas y parejas que atraviesan ansiedad, trauma, desaf&iacute;os relacionales, transiciones de vida, y ese anhelo silencioso de sentirse m&aacute;s vivo. Sesiones disponibles en ingl&eacute;s, franc&eacute;s y espa&ntilde;ol, presencial y en l&iacute;nea.</span>
+      <p class="about-credential-line reveal reveal-d1">
+        <span class="en">Registered Psychotherapist (Qualifying)</span>
+        <span class="fr">Psychoth&eacute;rapeute autoris&eacute;e (en formation)</span>
+        <span class="es">Psicoterapeuta registrada (en formaci&oacute;n)</span>
       </p>
 
-      <div class="about-credentials reveal reveal-d4">
+      <p class="about-text reveal reveal-d2">
+        <span class="en">Hi, I&rsquo;m Layla.</span>
+        <span class="fr">Bonjour, je m&rsquo;appelle Layla.</span>
+        <span class="es">Hola, soy Layla.</span>
+      </p>
+      <p class="about-text reveal reveal-d2">
+        <span class="en">I offer a warm, reflective, and non-judgmental therapy space for individuals and couples who may feel emotionally overwhelmed, caught in recurring relational patterns, navigating anxiety, or struggling to make sense of what they feel internally.</span>
+        <span class="fr">J&rsquo;offre un espace th&eacute;rapeutique chaleureux, r&eacute;flexif et sans jugement aux individus et aux couples qui peuvent se sentir &eacute;motionnellement submerg&eacute;s, pris dans des sch&eacute;mas relationnels r&eacute;p&eacute;titifs, confront&eacute;s &agrave; l&rsquo;anxi&eacute;t&eacute; ou ayant de la difficult&eacute; &agrave; comprendre ce qu&rsquo;ils vivent int&eacute;rieurement.</span>
+        <span class="es">Ofrezco un espacio terap&eacute;utico c&aacute;lido, reflexivo y libre de juicio para personas individuales y parejas que puedan sentirse emocionalmente abrumadas, atrapadas en patrones relacionales repetitivos, enfrentando ansiedad o teniendo dificultad para comprender lo que est&aacute;n viviendo internamente.</span>
+      </p>
+      <p class="about-text reveal reveal-d3">
+        <span class="en">My work is grounded in trauma-informed, attachment-based, and integrative approaches, with a focus on helping clients better understand their emotions, needs, internal conflicts, and relationship dynamics. I believe meaningful change does not come from &ldquo;fixing&rdquo; ourselves, but from developing a clearer and more compassionate understanding of what is happening internally and why.</span>
+        <span class="fr">Mon approche est ancr&eacute;e dans des perspectives int&eacute;gratives, sensibles au trauma et bas&eacute;es sur l&rsquo;attachement, avec un accent sur l&rsquo;exploration des &eacute;motions, des besoins, des conflits internes et des dynamiques relationnelles. Je crois que le changement significatif ne vient pas du fait de &laquo;&nbsp;se r&eacute;parer&nbsp;&raquo;, mais plut&ocirc;t du d&eacute;veloppement d&rsquo;une compr&eacute;hension plus claire et plus compatissante de ce qui se passe en nous et pourquoi.</span>
+        <span class="es">Mi enfoque est&aacute; basado en perspectivas integrativas, informadas por el trauma y el apego, con &eacute;nfasis en ayudar a los clientes a comprender mejor sus emociones, necesidades, conflictos internos y din&aacute;micas relacionales. Creo que el cambio significativo no surge de &ldquo;arreglarnos&rdquo;, sino de desarrollar una comprensi&oacute;n m&aacute;s clara y compasiva de lo que ocurre dentro de nosotros y por qu&eacute;.</span>
+      </p>
+      <p class="about-text reveal reveal-d3">
+        <span class="en">In sessions, I often help clients slow things down, identify emotional patterns, make sense of conflicting internal experiences, and better understand the relational dynamics shaping their lives. Depending on the client, I may also incorporate somatic awareness, parts-informed exploration, metaphor, or creative approaches to make emotional experiences easier to understand and work with.</span>
+        <span class="fr">En s&eacute;ance, j&rsquo;aide souvent les clients &agrave; ralentir, &agrave; identifier leurs sch&eacute;mas &eacute;motionnels, &agrave; mieux comprendre leurs exp&eacute;riences internes conflictuelles et &agrave; explorer les dynamiques relationnelles qui influencent leur vie. Selon les besoins, j&rsquo;int&egrave;gre &eacute;galement la conscience somatique, une exploration inspir&eacute;e du travail avec les parties, des m&eacute;taphores ou des approches cr&eacute;atives afin de rendre l&rsquo;exp&eacute;rience &eacute;motionnelle plus accessible et compr&eacute;hensible.</span>
+        <span class="es">En sesi&oacute;n, suelo ayudar a los clientes a bajar el ritmo, identificar patrones emocionales, comprender experiencias internas conflictivas y explorar las din&aacute;micas relacionales que influyen en sus vidas. Dependiendo de las necesidades del cliente, tambi&eacute;n puedo incorporar conciencia som&aacute;tica, exploraci&oacute;n basada en partes internas, met&aacute;foras o enfoques creativos para hacer que la experiencia emocional sea m&aacute;s comprensible y accesible.</span>
+      </p>
+      <p class="about-text reveal reveal-d4">
+        <span class="en">My goal is to help clients build greater self-awareness, emotional clarity, agency, and trust in themselves.</span>
+        <span class="fr">Mon objectif est d&rsquo;aider les clients &agrave; d&eacute;velopper davantage de conscience de soi, de clart&eacute; &eacute;motionnelle, d&rsquo;autonomie et de confiance en eux-m&ecirc;mes.</span>
+        <span class="es">Mi objetivo es ayudar a los clientes a desarrollar mayor autoconocimiento, claridad emocional, autonom&iacute;a y confianza en s&iacute; mismos.</span>
+      </p>
+      <p class="about-text about-text--accent reveal reveal-d4">
+        <span class="en">I offer virtual psychotherapy sessions in English, French, and Spanish for clients located in Ontario and British Columbia.</span>
+        <span class="fr">J&rsquo;offre des s&eacute;ances de psychoth&eacute;rapie virtuelles en fran&ccedil;ais, en anglais et en espagnol aux clients situ&eacute;s en Ontario et en Colombie-Britannique.</span>
+        <span class="es">Ofrezco sesiones virtuales de psicoterapia en ingl&eacute;s, franc&eacute;s y espa&ntilde;ol para clientes ubicados en Ontario y Columbia Brit&aacute;nica.</span>
+      </p>
+
+      <div class="about-credentials reveal reveal-d5">
         <div class="credential">
-          <strong>RPQ</strong>
-          <span class="en">Registered Psychotherapist (Qualifying)</span>
-          <span class="fr">Psychoth&eacute;rapeute autoris&eacute;e (en formation)</span>
-          <span class="es">Psicoterapeuta registrada (en formaci&oacute;n)</span>
+          <svg class="credential-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+          <div>
+            <strong>
+              <span class="en">Registered Psychotherapist (Qualifying)</span>
+              <span class="fr">Psychoth&eacute;rapeute autoris&eacute;e (en formation)</span>
+              <span class="es">Psicoterapeuta registrada (en formaci&oacute;n)</span>
+            </strong>
+            <span class="en">Practising under clinical supervision</span>
+            <span class="fr">Sous supervision clinique</span>
+            <span class="es">Bajo supervisi&oacute;n cl&iacute;nica</span>
+          </div>
         </div>
         <div class="credential">
-          <strong><span class="en">Trilingual</span><span class="fr">Trilingue</span><span class="es">Trilingue</span></strong>
-          <span class="en">English, French &amp; Spanish</span>
-          <span class="fr">Anglais, fran&ccedil;ais &amp; espagnol</span>
-          <span class="es">Ingl&eacute;s, franc&eacute;s &amp; espa&ntilde;ol</span>
+          <svg class="credential-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+          <div>
+            <strong><span class="en">Trilingual</span><span class="fr">Trilingue</span><span class="es">Triling&uuml;e</span></strong>
+            <span class="en">English &middot; Fran&ccedil;ais &middot; Espa&ntilde;ol</span>
+            <span class="fr">Anglais &middot; fran&ccedil;ais &middot; espagnol</span>
+            <span class="es">Ingl&eacute;s &middot; franc&eacute;s &middot; espa&ntilde;ol</span>
+          </div>
         </div>
         <div class="credential">
-          <strong><span class="en">Virtual &amp; In-Person</span><span class="fr">Virtuel &amp; En personne</span><span class="es">Virtual &amp; Presencial</span></strong>
-          <span class="en">Quebec &amp; Ontario</span>
-          <span class="fr">Qu&eacute;bec &amp; Ontario</span>
-          <span class="es">Quebec &amp; Ontario</span>
+          <svg class="credential-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M8 21h8M12 18v3"/></svg>
+          <div>
+            <strong><span class="en">Virtual sessions only</span><span class="fr">S&eacute;ances virtuelles uniquement</span><span class="es">Sesiones virtuales solamente</span></strong>
+            <span class="en">Ontario &amp; British Columbia</span>
+            <span class="fr">Ontario &amp; Colombie-Britannique</span>
+            <span class="es">Ontario &amp; Columbia Brit&aacute;nica</span>
+          </div>
         </div>
       </div>
     </div>
