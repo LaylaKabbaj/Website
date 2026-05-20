@@ -1047,6 +1047,274 @@ footer {
 }
 
 /* ══════════════════════
+   HOW I WORK — Container
+   ══════════════════════ */
+.how-i-work {
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(2rem, 6vw, 6rem);
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.how-i-work-intro {
+  font-size: 1.1rem;
+  color: var(--text-body);
+  max-width: 680px;
+  line-height: 1.8;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* ══════════════════════
+   P&P LOOP — Framework
+   ══════════════════════ */
+.pp-loop {
+  margin: clamp(2rem, 4vw, 3.5rem) auto clamp(2.5rem, 5vw, 4rem);
+  max-width: 720px;
+  text-align: center;
+}
+.pp-loop-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--forest);
+  margin-bottom: 0.4rem;
+}
+.pp-loop-subtitle {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: clamp(2rem, 3.5vw, 3rem);
+}
+.pp-loop-diagram {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
+}
+.pp-loop-arrows {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.pp-loop-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.85rem, 1.3vw, 1rem);
+  color: var(--forest-mid);
+  font-style: italic;
+  max-width: 150px;
+  line-height: 1.55;
+}
+.pp-loop-center em {
+  font-style: italic;
+  color: var(--gold);
+}
+.pp-stage {
+  position: absolute;
+  width: clamp(135px, 26%, 165px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem;
+  text-align: center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s;
+  box-shadow: 0 4px 18px rgba(45, 61, 45, 0.06);
+}
+.pp-stage:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 28px rgba(45, 61, 45, 0.1);
+}
+.pp-stage-icon {
+  width: 18px;
+  height: 18px;
+  margin-bottom: 0.25rem;
+  color: var(--forest);
+  opacity: 0.5;
+}
+.pp-stage-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--forest);
+  margin-bottom: 0.3rem;
+  line-height: 1.1;
+}
+.pp-stage-desc {
+  font-size: clamp(0.68rem, 0.9vw, 0.76rem);
+  color: var(--forest-mid);
+  line-height: 1.4;
+  max-width: 110px;
+}
+.pp-stage--perception {
+  background: #B8C9AB;
+  top: 0;
+  left: 50%;
+  margin-left: calc(clamp(135px, 26%, 165px) / -2);
+}
+.pp-stage--play {
+  background: #B8C5D4;
+  bottom: 4%;
+  right: 0;
+}
+.pp-stage--integration {
+  background: #E2CCA0;
+  bottom: 4%;
+  left: 0;
+}
+.pp-loop-tagline {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.15rem, 1.9vw, 1.5rem);
+  font-style: italic;
+  color: var(--forest);
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+.pp-loop-tagline em {
+  color: var(--gold);
+  font-style: italic;
+}
+@media (max-width: 600px) {
+  .pp-loop-diagram {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    align-items: center;
+    max-width: 320px;
+  }
+  .pp-loop-arrows { display: none; }
+  .pp-loop-center {
+    position: static;
+    transform: none;
+    max-width: 100%;
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+  }
+  .pp-stage {
+    position: static;
+    transform: none;
+    margin: 0 !important;
+    width: 175px;
+  }
+  .pp-stage-desc { max-width: 130px; }
+}
+
+/* ══════════════════════
+   THERAPY FEELS LIKE
+   ══════════════════════ */
+.therapy-feel {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(2rem, 4vw, 3.5rem);
+  border-top: 1px solid rgba(196, 162, 101, 0.2);
+}
+.therapy-feel h3 {
+  font-size: clamp(1.7rem, 2.7vw, 2.1rem);
+  font-weight: 400;
+  color: var(--forest);
+  margin-bottom: 1rem;
+}
+.therapy-feel-text {
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  max-width: 680px;
+  margin-bottom: 1.75rem;
+}
+.therapy-feel-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.55rem 1.5rem;
+  list-style: none;
+  max-width: 760px;
+}
+.therapy-feel-list li {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  padding: 0.45rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.therapy-feel-list li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ══════════════════════
+   PERSONALIZED RESOURCES
+   ══════════════════════ */
+.resources-block {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 30%, rgba(196, 162, 101, 0.1), transparent),
+    var(--cream-light);
+  border-left: 2px solid var(--gold-soft);
+  max-width: 820px;
+}
+.resources-block-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+.resources-block h3 {
+  font-size: clamp(1.5rem, 2.4vw, 1.85rem);
+  font-weight: 400;
+  color: var(--forest);
+  margin-bottom: 1rem;
+}
+.resources-block p {
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.resources-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.25rem;
+}
+.resources-examples span {
+  font-size: 0.8rem;
+  padding: 0.4rem 0.95rem;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(45, 61, 45, 0.1);
+  border-radius: 2rem;
+  color: var(--forest);
+}
+.resources-block-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 1.25rem;
+  line-height: 1.6;
+}
+
+/* ══════════════════════
    FAQ — Accordion
    ══════════════════════ */
 .faq {
@@ -1564,38 +1832,321 @@ footer {
      ══════════════════════ -->
 <main id="main">
 
-<!-- ── What to Expect ── -->
-<section class="expect">
-  <div class="blob blob--lavender blob-expect"></div>
-  <div class="gold-ring ring-expect"></div>
-  <div class="expect-inner">
-    <p class="section-label reveal">
-      <span class="en">Your First Session</span>
-      <span class="fr">Votre premi&egrave;re s&eacute;ance</span>
-      <span class="es">Tu primera sesi&oacute;n</span>
-    </p>
-    <p class="expect-text reveal reveal-d1">
-      <span class="en">You don't need to have the right words. You don't even need to know what you want to work on. The first session is simply a space to arrive&mdash;to be heard without judgment, to feel the room, and to begin at whatever pace feels right for you.</span>
-      <span class="fr">Vous n&rsquo;avez pas besoin d&rsquo;avoir les bons mots. Vous n&rsquo;avez m&ecirc;me pas besoin de savoir sur quoi vous voulez travailler. La premi&egrave;re s&eacute;ance est simplement un espace pour arriver&mdash;&ecirc;tre entendu sans jugement, sentir l&rsquo;espace, et commencer au rythme qui vous convient.</span>
-      <span class="es">No necesitas tener las palabras correctas. Ni siquiera necesitas saber en qu&eacute; quieres trabajar. La primera sesi&oacute;n es simplemente un espacio para llegar&mdash;ser escuchado sin juicio, sentir el espacio, y comenzar al ritmo que te resulte c&oacute;modo.</span>
-    </p>
-    <div class="expect-details reveal reveal-d2">
-      <div class="expect-detail">
-        <svg class="expect-detail-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="16" r="12"/><path d="M16 10v6l4 3"/></svg>
-        <h4><span class="en">60 minutes</span><span class="fr">60 minutes</span><span class="es">60 minutos</span></h4>
-        <p><span class="en">Individual sessions</span><span class="fr">S&eacute;ances individuelles</span><span class="es">Sesiones individuales</span></p>
+<!-- ── Recognition ── -->
+<section class="recognition" id="recognition">
+  <div class="recognition-grid">
+    <div class="recognition-content">
+      <p class="section-label reveal">
+        <span class="en">Recognition</span>
+        <span class="fr">Reconnaissance</span>
+        <span class="es">Reconocimiento</span>
+      </p>
+      <h2 class="section-heading reveal reveal-d1">
+        <span class="en">You may recognize<br>yourself here</span>
+        <span class="fr">Vous pourriez vous<br>reconna&icirc;tre ici</span>
+        <span class="es">Puede que te<br>reconozcas aqu&iacute;</span>
+      </h2>
+      <p class="approach-text reveal reveal-d2" style="margin-bottom:0">
+        <span class="en">Many of the people I work with don&rsquo;t arrive in crisis. They arrive trying to make sense of what they&rsquo;re feeling&mdash;and looking for clearer language to describe it.</span>
+        <span class="fr">Beaucoup de personnes que j&rsquo;accompagne n&rsquo;arrivent pas en crise. Elles arrivent en cherchant &agrave; donner du sens &agrave; ce qu&rsquo;elles ressentent&mdash;et &agrave; trouver un langage plus clair pour le d&eacute;crire.</span>
+        <span class="es">Muchas de las personas con quienes trabajo no llegan en crisis. Llegan tratando de dar sentido a lo que sienten&mdash;y buscando un lenguaje m&aacute;s claro para describirlo.</span>
+      </p>
+    </div>
+    <div class="recognition-list reveal reveal-d3">
+
+      <div class="recognition-item expandable">
+        <div class="expandable-trigger">
+          <span class="en">Anxiety has become your baseline</span>
+          <span class="fr">L&rsquo;anxi&eacute;t&eacute; est devenue votre &eacute;tat de base</span>
+          <span class="es">La ansiedad se ha vuelto tu estado base</span>
+        </div>
+        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
+          <span class="en">Racing thoughts, a chronic knot in your chest, the sense that something is always about to go wrong. We work with both mind and body so your system can find steadiness again.</span>
+          <span class="fr">Des pens&eacute;es qui s&rsquo;emballent, un n&oelig;ud chronique dans la poitrine, le sentiment que quelque chose va toujours mal tourner. Nous travaillons avec l&rsquo;esprit et le corps pour que votre syst&egrave;me retrouve une stabilit&eacute;.</span>
+          <span class="es">Pensamientos acelerados, un nudo cr&oacute;nico en el pecho, la sensaci&oacute;n de que algo siempre est&aacute; por salir mal. Trabajamos con la mente y el cuerpo para que tu sistema encuentre estabilidad de nuevo.</span>
+        </p></div></div>
       </div>
-      <div class="expect-detail">
-        <svg class="expect-detail-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 8h16v16H8z"/><path d="M12 6v4M20 6v4M8 14h16"/></svg>
-        <h4><span class="en">75 minutes</span><span class="fr">75 minutes</span><span class="es">75 minutos</span></h4>
-        <p><span class="en">Couples sessions</span><span class="fr">S&eacute;ances de couple</span><span class="es">Sesiones de pareja</span></p>
+
+      <div class="recognition-item expandable">
+        <div class="expandable-trigger">
+          <span class="en">Emotional overwhelm shows up more often than you&rsquo;d like</span>
+          <span class="fr">La surcharge &eacute;motionnelle revient plus souvent que vous ne le voudriez</span>
+          <span class="es">La sobrecarga emocional aparece m&aacute;s a menudo de lo que quisieras</span>
+        </div>
+        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
+          <span class="en">You feel more deeply than most, and reactions arrive faster than you can name them. Together we slow things down to understand what your sensitivity is asking for&mdash;and how to honour it without being flooded by it.</span>
+          <span class="fr">Vous ressentez plus profond&eacute;ment que la plupart, et les r&eacute;actions arrivent plus vite que vous ne pouvez les nommer. Ensemble, nous ralentissons pour comprendre ce que votre sensibilit&eacute; demande&mdash;et comment l&rsquo;honorer sans en &ecirc;tre submerg&eacute;.</span>
+          <span class="es">Sientes con m&aacute;s profundidad que la mayor&iacute;a, y las reacciones llegan m&aacute;s r&aacute;pido de lo que puedes nombrarlas. Juntos bajamos el ritmo para entender qu&eacute; pide tu sensibilidad&mdash;y c&oacute;mo honrarla sin verte desbordado.</span>
+        </p></div></div>
       </div>
-      <div class="expect-detail">
-        <svg class="expect-detail-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 4a6 6 0 00-6 6c0 6 6 12 6 12s6-6 6-12a6 6 0 00-6-6z"/><circle cx="16" cy="10" r="2"/></svg>
-        <h4><span class="en">Your choice</span><span class="fr">Votre choix</span><span class="es">Tu elecci&oacute;n</span></h4>
-        <p><span class="en">Virtual or in-person</span><span class="fr">Virtuel ou en personne</span><span class="es">Virtual o presencial</span></p>
+
+      <div class="recognition-item expandable">
+        <div class="expandable-trigger">
+          <span class="en">Closeness brings up anxiety or patterns you didn&rsquo;t expect</span>
+          <span class="fr">La proximit&eacute; fait surgir de l&rsquo;anxi&eacute;t&eacute; ou des sch&eacute;mas que vous n&rsquo;attendiez pas</span>
+          <span class="es">La cercan&iacute;a despierta ansiedad o patrones que no esperabas</span>
+        </div>
+        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
+          <span class="en">The way you connected with caregivers shapes how you love, fight, and trust as an adult. We map your attachment patterns so they stop running the show&mdash;and begin to inform it instead.</span>
+          <span class="fr">Votre fa&ccedil;on de vous lier &agrave; vos figures d&rsquo;attachement enfant influence comment vous aimez, vous disputez et faites confiance adulte. Nous cartographions ces sch&eacute;mas pour qu&rsquo;ils cessent de tout diriger&mdash;et qu&rsquo;ils commencent plut&ocirc;t &agrave; &eacute;clairer.</span>
+          <span class="es">La forma en que te conectaste con tus cuidadores moldea c&oacute;mo amas, peleas y conf&iacute;as de adulto. Mapeamos tus patrones de apego para que dejen de dirigirlo todo&mdash;y empiecen a informarlo en su lugar.</span>
+        </p></div></div>
+      </div>
+
+      <div class="recognition-item expandable">
+        <div class="expandable-trigger">
+          <span class="en">Your relationships often feel emotionally intense</span>
+          <span class="fr">Vos relations sont souvent &eacute;motionnellement intenses</span>
+          <span class="es">Tus relaciones suelen sentirse emocionalmente intensas</span>
+        </div>
+        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
+          <span class="en">Conflict escalates faster than you&rsquo;d like, repair feels harder than it should, and the same disagreements keep coming back. We work on what fuels the intensity&mdash;and on what makes connection feel safer.</span>
+          <span class="fr">Le conflit s&rsquo;intensifie plus vite que vous ne le souhaiteriez, la r&eacute;paration semble plus difficile qu&rsquo;elle ne devrait, et les m&ecirc;mes disputes reviennent. Nous travaillons sur ce qui alimente l&rsquo;intensit&eacute;&mdash;et sur ce qui rend la connexion plus s&eacute;curisante.</span>
+          <span class="es">El conflicto escala m&aacute;s r&aacute;pido de lo que quisieras, la reparaci&oacute;n se siente m&aacute;s dif&iacute;cil de lo que deber&iacute;a, y los mismos desacuerdos siguen volviendo. Trabajamos sobre lo que alimenta la intensidad&mdash;y sobre lo que hace que la conexi&oacute;n se sienta m&aacute;s segura.</span>
+        </p></div></div>
+      </div>
+
+      <div class="recognition-item expandable">
+        <div class="expandable-trigger">
+          <span class="en">Internal conflict pulls you in opposite directions</span>
+          <span class="fr">Un conflit interne vous tire dans des directions oppos&eacute;es</span>
+          <span class="es">Un conflicto interno te jala en direcciones opuestas</span>
+        </div>
+        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
+          <span class="en">Part of you wants to stay, part wants to leave. Part reaches out, part shuts down. We make space for each side to be heard&mdash;so you stop fighting yourself and start understanding what&rsquo;s underneath.</span>
+          <span class="fr">Une partie de vous veut rester, une autre veut partir. Une partie tend la main, une autre se ferme. Nous faisons de l&rsquo;espace pour que chaque c&ocirc;t&eacute; soit entendu&mdash;afin que vous cessiez de vous combattre et commenciez &agrave; comprendre ce qui se trouve dessous.</span>
+          <span class="es">Una parte de ti quiere quedarse, otra quiere irse. Una parte se acerca, otra se cierra. Hacemos espacio para que cada lado sea escuchado&mdash;para que dejes de luchar contigo mismo y empieces a entender lo que hay debajo.</span>
+        </p></div></div>
+      </div>
+
+      <div class="recognition-item expandable">
+        <div class="expandable-trigger">
+          <span class="en">Your reactions confuse you, even when you&rsquo;ve thought about them</span>
+          <span class="fr">Vos r&eacute;actions vous confondent, m&ecirc;me apr&egrave;s y avoir r&eacute;fl&eacute;chi</span>
+          <span class="es">Tus reacciones te confunden, incluso despu&eacute;s de pensarlas</span>
+        </div>
+        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
+          <span class="en">You can describe what happened. You can&rsquo;t always explain why it still pulls at you. Together we build language for what understanding alone can&rsquo;t reach&mdash;so the loop becomes less confusing to live inside.</span>
+          <span class="fr">Vous pouvez d&eacute;crire ce qui s&rsquo;est pass&eacute;. Vous ne pouvez pas toujours expliquer pourquoi cela vous affecte encore. Ensemble, nous d&eacute;veloppons un langage pour ce que la compr&eacute;hension seule ne peut atteindre&mdash;afin que la boucle soit moins d&eacute;routante &agrave; habiter.</span>
+          <span class="es">Puedes describir lo que pas&oacute;. No siempre puedes explicar por qu&eacute; a&uacute;n te afecta. Juntos construimos un lenguaje para lo que la comprensi&oacute;n sola no puede alcanzar&mdash;para que el bucle se sienta menos confuso por dentro.</span>
+        </p></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── How I Work + P&P Loop + Therapy feels like + Resources ── -->
+<section class="how-i-work" id="approach">
+  <p class="section-label reveal">
+    <span class="en">How I Work</span>
+    <span class="fr">Mon approche</span>
+    <span class="es">Mi enfoque</span>
+  </p>
+  <h2 class="section-heading reveal reveal-d1">
+    <span class="en">A clearer language for<br>what you&rsquo;re experiencing</span>
+    <span class="fr">Un langage plus clair<br>pour ce que vous vivez</span>
+    <span class="es">Un lenguaje m&aacute;s claro<br>para lo que est&aacute;s viviendo</span>
+  </h2>
+  <p class="how-i-work-intro reveal reveal-d2">
+    <span class="en">I help clients build a clearer language for what they&rsquo;re experiencing&mdash;so emotional patterns feel less confusing, overwhelming, or difficult to navigate.</span>
+    <span class="fr">J&rsquo;aide mes clients &agrave; d&eacute;velopper un langage plus clair pour ce qu&rsquo;ils vivent&mdash;afin que les sch&eacute;mas &eacute;motionnels soient moins confus, accablants ou difficiles &agrave; traverser.</span>
+    <span class="es">Ayudo a mis clientes a construir un lenguaje m&aacute;s claro para lo que est&aacute;n viviendo&mdash;para que los patrones emocionales se sientan menos confusos, abrumadores o dif&iacute;ciles de navegar.</span>
+  </p>
+
+  <!-- ── The P&P Loop ── -->
+  <div class="pp-loop reveal">
+    <h3 class="pp-loop-title">
+      <span class="en">The P&amp;P Loop</span>
+      <span class="fr">La boucle P&amp;P</span>
+      <span class="es">El bucle P&amp;P</span>
+    </h3>
+    <span class="pp-loop-subtitle">
+      <span class="en">A framework for emotional movement</span>
+      <span class="fr">Un cadre pour le mouvement &eacute;motionnel</span>
+      <span class="es">Un marco para el movimiento emocional</span>
+    </span>
+
+    <div class="pp-loop-diagram">
+      <svg class="pp-loop-arrows" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <defs>
+          <marker id="ppArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#D4B5AD"/>
+          </marker>
+        </defs>
+        <!-- Perception (top) → Play (bottom right) -->
+        <path d="M 395 130 Q 540 250 470 470" fill="none" stroke="#D4B5AD" stroke-width="2" stroke-linecap="round" marker-end="url(#ppArrow)" opacity="0.85"/>
+        <!-- Play → Integration (bottom left) -->
+        <path d="M 410 540 Q 300 590 190 540" fill="none" stroke="#D4B5AD" stroke-width="2" stroke-linecap="round" marker-end="url(#ppArrow)" opacity="0.85"/>
+        <!-- Integration → Perception -->
+        <path d="M 130 470 Q 60 250 205 130" fill="none" stroke="#D4B5AD" stroke-width="2" stroke-linecap="round" marker-end="url(#ppArrow)" opacity="0.85"/>
+      </svg>
+
+      <div class="pp-loop-center">
+        <span class="en">At the center is <em>you</em>&mdash;with all your inner parts and complexities.</span>
+        <span class="fr">Au centre, c&rsquo;est <em>vous</em>&mdash;avec toutes vos parties int&eacute;rieures et leurs complexit&eacute;s.</span>
+        <span class="es">En el centro est&aacute;s <em>t&uacute;</em>&mdash;con todas tus partes internas y complejidades.</span>
+      </div>
+
+      <div class="pp-stage pp-stage--perception">
+        <svg class="pp-stage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+        <span class="pp-stage-name">
+          <span class="en">Perception</span>
+          <span class="fr">Perception</span>
+          <span class="es">Percepci&oacute;n</span>
+        </span>
+        <p class="pp-stage-desc">
+          <span class="en">Noticing what is happening internally and relationally.</span>
+          <span class="fr">Remarquer ce qui se passe en soi et dans les relations.</span>
+          <span class="es">Notar lo que sucede internamente y en las relaciones.</span>
+        </p>
+      </div>
+
+      <div class="pp-stage pp-stage--play">
+        <svg class="pp-stage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="12" cy="6" r="2.4"/>
+          <circle cx="18" cy="12" r="2.4"/>
+          <circle cx="12" cy="18" r="2.4"/>
+          <circle cx="6" cy="12" r="2.4"/>
+          <circle cx="12" cy="12" r="1.4"/>
+        </svg>
+        <span class="pp-stage-name">
+          <span class="en">Play</span>
+          <span class="fr">Jeu</span>
+          <span class="es">Juego</span>
+        </span>
+        <p class="pp-stage-desc">
+          <span class="en">Creating curiosity, flexibility, and space for new emotional movement.</span>
+          <span class="fr">Cr&eacute;er curiosit&eacute;, flexibilit&eacute; et espace pour un nouveau mouvement &eacute;motionnel.</span>
+          <span class="es">Crear curiosidad, flexibilidad y espacio para un nuevo movimiento emocional.</span>
+        </p>
+      </div>
+
+      <div class="pp-stage pp-stage--integration">
+        <svg class="pp-stage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M5 19c0-7 7-14 14-14 0 7-7 14-14 14z"/>
+          <path d="M5 19l7-7"/>
+        </svg>
+        <span class="pp-stage-name">
+          <span class="en">Integration</span>
+          <span class="fr">Int&eacute;gration</span>
+          <span class="es">Integraci&oacute;n</span>
+        </span>
+        <p class="pp-stage-desc">
+          <span class="en">Making meaning, building understanding, and creating lasting change.</span>
+          <span class="fr">Construire du sens, d&eacute;velopper la compr&eacute;hension et cr&eacute;er un changement durable.</span>
+          <span class="es">Dar sentido, construir comprensi&oacute;n y crear un cambio duradero.</span>
+        </p>
       </div>
     </div>
+
+    <p class="pp-loop-tagline">
+      <span class="en">Awareness doesn&rsquo;t stop the loop. But it can change <em>how it moves</em>.</span>
+      <span class="fr">La conscience n&rsquo;arr&ecirc;te pas la boucle. Mais elle peut changer <em>la fa&ccedil;on dont elle se d&eacute;ploie</em>.</span>
+      <span class="es">La conciencia no detiene el bucle. Pero puede cambiar <em>c&oacute;mo se mueve</em>.</span>
+    </p>
+  </div>
+
+  <!-- ── What therapy may feel like ── -->
+  <div class="therapy-feel reveal">
+    <p class="section-label">
+      <span class="en">What therapy may feel like</span>
+      <span class="fr">&Agrave; quoi peut ressembler la th&eacute;rapie</span>
+      <span class="es">C&oacute;mo puede sentirse la terapia</span>
+    </p>
+    <h3>
+      <span class="en">A reflective, attuned, collaborative space</span>
+      <span class="fr">Un espace r&eacute;flexif, attentif et collaboratif</span>
+      <span class="es">Un espacio reflexivo, sintonizado y colaborativo</span>
+    </h3>
+    <p class="therapy-feel-text">
+      <span class="en">Sessions are collaborative and emotionally attuned. We move at a thoughtful pace, with structure when it serves the work, and warmth throughout.</span>
+      <span class="fr">Les s&eacute;ances sont collaboratives et &eacute;motionnellement attentives. Nous avan&ccedil;ons &agrave; un rythme r&eacute;fl&eacute;chi, avec de la structure quand cela sert le travail, et de la chaleur en continu.</span>
+      <span class="es">Las sesiones son colaborativas y emocionalmente sintonizadas. Avanzamos a un ritmo reflexivo, con estructura cuando sirve al trabajo, y calidez en todo momento.</span>
+    </p>
+    <ul class="therapy-feel-list">
+      <li>
+        <span class="en">Collaborative and reflective</span>
+        <span class="fr">Collaboratif et r&eacute;flexif</span>
+        <span class="es">Colaborativo y reflexivo</span>
+      </li>
+      <li>
+        <span class="en">Emotionally attuned</span>
+        <span class="fr">&Eacute;motionnellement attentif</span>
+        <span class="es">Emocionalmente sintonizado</span>
+      </li>
+      <li>
+        <span class="en">Thoughtfully paced</span>
+        <span class="fr">Au rythme r&eacute;fl&eacute;chi</span>
+        <span class="es">Con ritmo reflexivo</span>
+      </li>
+      <li>
+        <span class="en">Structured when helpful</span>
+        <span class="fr">Structur&eacute; quand c&rsquo;est utile</span>
+        <span class="es">Estructurado cuando ayuda</span>
+      </li>
+      <li>
+        <span class="en">Warm and non-judgmental</span>
+        <span class="fr">Chaleureux et sans jugement</span>
+        <span class="es">C&aacute;lido y sin juicio</span>
+      </li>
+      <li>
+        <span class="en">Personalized when clinically appropriate</span>
+        <span class="fr">Personnalis&eacute; quand cliniquement appropri&eacute;</span>
+        <span class="es">Personalizado cuando es cl&iacute;nicamente apropiado</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ── Personalized Resources ── -->
+  <div class="resources-block reveal">
+    <p class="resources-block-label">
+      <span class="en">Personalized Resources</span>
+      <span class="fr">Ressources personnalis&eacute;es</span>
+      <span class="es">Recursos personalizados</span>
+    </p>
+    <h3>
+      <span class="en">Tools tailored to your treatment goals</span>
+      <span class="fr">Des outils adapt&eacute;s &agrave; vos objectifs th&eacute;rapeutiques</span>
+      <span class="es">Herramientas adaptadas a tus objetivos terap&eacute;uticos</span>
+    </h3>
+    <p>
+      <span class="en">Some clients receive personalized reflective resources or between-session tools, tailored to what we&rsquo;re working on together.</span>
+      <span class="fr">Certains clients re&ccedil;oivent des ressources r&eacute;flexives personnalis&eacute;es ou des outils entre les s&eacute;ances, adapt&eacute;s &agrave; ce que nous travaillons ensemble.</span>
+      <span class="es">Algunos clientes reciben recursos reflexivos personalizados o herramientas entre sesiones, adaptadas a lo que estamos trabajando juntos.</span>
+    </p>
+    <div class="resources-examples">
+      <span>
+        <span class="en">Reflection prompts</span>
+        <span class="fr">Questions de r&eacute;flexion</span>
+        <span class="es">Preguntas de reflexi&oacute;n</span>
+      </span>
+      <span>
+        <span class="en">Emotional mapping tools</span>
+        <span class="fr">Outils de cartographie &eacute;motionnelle</span>
+        <span class="es">Herramientas de mapeo emocional</span>
+      </span>
+      <span>
+        <span class="en">Psychoeducational resources</span>
+        <span class="fr">Ressources psycho&eacute;ducatives</span>
+        <span class="es">Recursos psicoeducativos</span>
+      </span>
+      <span>
+        <span class="en">Personalized exercises</span>
+        <span class="fr">Exercices personnalis&eacute;s</span>
+        <span class="es">Ejercicios personalizados</span>
+      </span>
+    </div>
+    <p class="resources-block-note">
+      <span class="en">Resources are offered selectively, when clinically appropriate.</span>
+      <span class="fr">Les ressources sont offertes de mani&egrave;re s&eacute;lective, lorsque c&rsquo;est cliniquement appropri&eacute;.</span>
+      <span class="es">Los recursos se ofrecen de manera selectiva, cuando es cl&iacute;nicamente apropiado.</span>
+    </p>
   </div>
 </section>
 
@@ -1673,190 +2224,6 @@ footer {
         <span class="fr">Il ne s&rsquo;agit pas d&rsquo;&ecirc;tre artiste&mdash;mais d&rsquo;acc&eacute;der &agrave; des couches plus profondes de l&rsquo;exp&eacute;rience. Par le dessin, le mouvement, le bac &agrave; sable ou l&rsquo;imagerie guid&eacute;e, nous contournons l&rsquo;esprit analytique et nous connectons &agrave; des parties de vous qui n&rsquo;ont peut-&ecirc;tre pas encore de mots.</span>
         <span class="es">No se trata de ser artista&mdash;sino de acceder a capas m&aacute;s profundas de la experiencia. A trav&eacute;s del dibujo, movimiento, bandeja de arena o imaginer&iacute;a guiada, pasamos por alto la mente pensante y conectamos con partes de ti que quiz&aacute;s a&uacute;n no tienen palabras.</span>
       </p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Is This For You — Persona Journey ── -->
-<section class="recognition" id="recognition">
-  <div class="recognition-grid">
-    <div class="recognition-content">
-      <p class="section-label reveal">
-        <span class="en">Is this for you?</span>
-        <span class="fr">Est-ce pour vous?</span>
-        <span class="es">&iquest;Es para ti?</span>
-      </p>
-      <h2 class="section-heading reveal reveal-d1">
-        <span class="en">You might recognize<br>yourself here</span>
-        <span class="fr">Vous vous reconna&icirc;trez<br>peut-&ecirc;tre ici</span>
-        <span class="es">Quiz&aacute;s te reconozcas<br>aqu&iacute;</span>
-      </h2>
-      <p class="approach-text reveal reveal-d2" style="margin-bottom:0">
-        <span class="en">Therapy isn't only for moments of crisis. Many people I work with simply feel that something is off&mdash;and they're ready to explore what that means.</span>
-        <span class="fr">La th&eacute;rapie n&rsquo;est pas seulement pour les moments de crise. Beaucoup de personnes que j&rsquo;accompagne sentent simplement que quelque chose ne va pas&mdash;et sont pr&ecirc;tes &agrave; explorer ce que cela signifie.</span>
-        <span class="es">La terapia no es solo para momentos de crisis. Muchas personas con las que trabajo simplemente sienten que algo no est&aacute; bien&mdash;y est&aacute;n listas para explorar lo que eso significa.</span>
-      </p>
-    </div>
-    <div class="recognition-list reveal reveal-d3">
-      <div class="recognition-item expandable">
-        <div class="expandable-trigger">
-          <span class="en">You feel stuck in patterns you can't seem to break</span>
-          <span class="fr">Vous vous sentez pris dans des sch&eacute;mas impossibles &agrave; briser</span>
-          <span class="es">Te sientes atrapado en patrones que no puedes romper</span>
-        </div>
-        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
-          <span class="en">In relationships, at work, or with yourself&mdash;you keep ending up in the same place. Together we uncover what's driving these cycles and find new ways through them. You're not broken; you're repeating what you learned.</span>
-          <span class="fr">En relation, au travail, ou avec vous-m&ecirc;me&mdash;vous finissez toujours au m&ecirc;me endroit. Ensemble, nous d&eacute;couvrons ce qui alimente ces cycles et trouvons de nouvelles voies. Vous n&rsquo;&ecirc;tes pas bris&eacute;; vous r&eacute;p&eacute;tez ce que vous avez appris.</span>
-          <span class="es">En relaciones, trabajo, o contigo mismo&mdash;siempre terminas en el mismo lugar. Juntos descubrimos qu&eacute; alimenta estos ciclos y encontramos nuevos caminos. No est&aacute;s roto; est&aacute;s repitiendo lo que aprendiste.</span>
-        </p></div></div>
-      </div>
-      <div class="recognition-item expandable">
-        <div class="expandable-trigger">
-          <span class="en">Anxiety has become your baseline</span>
-          <span class="fr">L&rsquo;anxi&eacute;t&eacute; est devenue votre &eacute;tat normal</span>
-          <span class="es">La ansiedad se ha convertido en tu estado normal</span>
-        </div>
-        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
-          <span class="en">You're exhausted from managing it alone&mdash;the racing thoughts, the knot in your chest, the feeling that something is always about to go wrong. We work with both your mind and your body to help your nervous system find calm again.</span>
-          <span class="fr">Vous &ecirc;tes &eacute;puis&eacute; de la g&eacute;rer seul&mdash;les pens&eacute;es qui s&rsquo;emballent, le n&oelig;ud dans la poitrine, le sentiment que quelque chose va mal tourner. Nous travaillons avec votre esprit et votre corps pour retrouver le calme.</span>
-          <span class="es">Est&aacute;s agotado de manejarla solo&mdash;los pensamientos acelerados, el nudo en el pecho, la sensaci&oacute;n de que algo siempre est&aacute; por salir mal. Trabajamos con tu mente y tu cuerpo para que tu sistema nervioso encuentre la calma.</span>
-        </p></div></div>
-      </div>
-      <div class="recognition-item expandable">
-        <div class="expandable-trigger">
-          <span class="en">A past experience still shapes your present</span>
-          <span class="fr">Une exp&eacute;rience pass&eacute;e influence encore votre pr&eacute;sent</span>
-          <span class="es">Una experiencia pasada a&uacute;n moldea tu presente</span>
-        </div>
-        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
-          <span class="en">Even years later, it shows up in how you react, what you avoid, and what triggers you. Trauma-informed work means going at your pace&mdash;not reliving the past, but gently freeing yourself from its grip on your present.</span>
-          <span class="fr">M&ecirc;me des ann&eacute;es plus tard, &ccedil;a se manifeste dans vos r&eacute;actions, ce que vous &eacute;vitez, ce qui vous d&eacute;clenche. Un travail inform&eacute; par le trauma signifie aller &agrave; votre rythme&mdash;non pas revivre le pass&eacute;, mais doucement vous lib&eacute;rer de son emprise sur votre pr&eacute;sent.</span>
-          <span class="es">Incluso a&ntilde;os despu&eacute;s, aparece en c&oacute;mo reaccionas, qu&eacute; evitas, qu&eacute; te activa. El trabajo informado por el trauma significa ir a tu ritmo&mdash;no revivir el pasado, sino liberarte suavemente de su control sobre tu presente.</span>
-        </p></div></div>
-      </div>
-      <div class="recognition-item expandable">
-        <div class="expandable-trigger">
-          <span class="en">Your relationship keeps hitting the same walls</span>
-          <span class="fr">Votre relation se heurte toujours aux m&ecirc;mes murs</span>
-          <span class="es">Tu relaci&oacute;n sigue chocando contra las mismas paredes</span>
-        </div>
-        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
-          <span class="en">The same fights, the same distance, the same feeling of not being heard. Couples therapy helps you understand each other's patterns and build a new way of being together&mdash;one where both people feel safe enough to be honest.</span>
-          <span class="fr">Les m&ecirc;mes disputes, la m&ecirc;me distance, le m&ecirc;me sentiment de ne pas &ecirc;tre entendu. La th&eacute;rapie de couple vous aide &agrave; comprendre les sch&eacute;mas de l&rsquo;autre et &agrave; construire une nouvelle fa&ccedil;on d&rsquo;&ecirc;tre ensemble.</span>
-          <span class="es">Las mismas peleas, la misma distancia, la misma sensaci&oacute;n de no ser escuchado. La terapia de pareja les ayuda a entender los patrones del otro y construir una nueva forma de estar juntos.</span>
-        </p></div></div>
-      </div>
-      <div class="recognition-item expandable">
-        <div class="expandable-trigger">
-          <span class="en">You're navigating a major life change</span>
-          <span class="fr">Vous traversez un grand changement de vie</span>
-          <span class="es">Est&aacute;s atravesando un gran cambio de vida</span>
-        </div>
-        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
-          <span class="en">A move, a loss, a breakup, a career shift, becoming a parent&mdash;transitions shake our sense of who we are. Having someone steady to process with makes the unknown feel more manageable.</span>
-          <span class="fr">Un d&eacute;m&eacute;nagement, une perte, une rupture, un changement de carri&egrave;re, devenir parent&mdash;les transitions &eacute;branlent notre sens de qui nous sommes. Avoir quelqu&rsquo;un de stable pour traverser rend l&rsquo;inconnu plus g&eacute;rable.</span>
-          <span class="es">Una mudanza, una p&eacute;rdida, una ruptura, un cambio de carrera, ser padre&mdash;las transiciones sacuden nuestro sentido de qui&eacute;nes somos. Tener a alguien estable para procesar hace que lo desconocido sea m&aacute;s manejable.</span>
-        </p></div></div>
-      </div>
-      <div class="recognition-item expandable">
-        <div class="expandable-trigger">
-          <span class="en">You long to feel more alive, more <em>you</em></span>
-          <span class="fr">Vous d&eacute;sirez vous sentir plus vivant, plus <em>vous</em></span>
-          <span class="es">Anhelas sentirte m&aacute;s vivo, m&aacute;s <em>t&uacute;</em></span>
-        </div>
-        <div class="expandable-detail"><div class="expandable-detail-inner"><p>
-          <span class="en">Nothing is technically &ldquo;wrong&rdquo;&mdash;but something feels missing. A quiet desire for deeper self-understanding, more presence, more aliveness. This is one of the most beautiful reasons to start therapy.</span>
-          <span class="fr">Rien ne va techniquement &laquo;&nbsp;mal&nbsp;&raquo;&mdash;mais quelque chose manque. Un d&eacute;sir silencieux de mieux se comprendre, d&rsquo;&ecirc;tre plus pr&eacute;sent, plus vivant. C&rsquo;est l&rsquo;une des plus belles raisons de commencer la th&eacute;rapie.</span>
-          <span class="es">T&eacute;cnicamente nada est&aacute; &ldquo;mal&rdquo;&mdash;pero algo falta. Un deseo silencioso de entenderte mejor, estar m&aacute;s presente, sentirte m&aacute;s vivo. Esta es una de las razones m&aacute;s hermosas para empezar terapia.</span>
-        </p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── Approach ── -->
-<section class="approach" id="approach">
-  <div class="approach-inner">
-    <div class="approach-visual">
-      <div class="gold-ring ring-approach"></div>
-      <div class="blob blob--lavender blob-approach"></div>
-      <div class="approach-quote-wrapper reveal">
-        <span class="approach-quote-mark" aria-hidden="true">&ldquo;</span>
-        <blockquote class="approach-quote">
-          <span class="en">The curious paradox is that when I accept myself just as I am, then I can change.</span>
-          <span class="fr">Le paradoxe curieux est que lorsque je m&rsquo;accepte tel que je suis, alors je peux changer.</span>
-          <span class="es">La curiosa paradoja es que cuando me acepto tal como soy, entonces puedo cambiar.</span>
-          <cite class="approach-quote-attr">Carl Rogers</cite>
-        </blockquote>
-      </div>
-    </div>
-
-    <div class="approach-content">
-      <p class="section-label reveal"><span class="en">How I Work</span><span class="fr">Comment je travaille</span><span class="es">C&oacute;mo trabajo</span></p>
-      <h2 class="section-heading reveal reveal-d1">
-        <span class="en">Many tools,<br>one goal: yours</span>
-        <span class="fr">Plusieurs outils,<br>un seul objectif: le v&ocirc;tre</span>
-        <span class="es">Muchas herramientas,<br>un solo objetivo: el tuyo</span>
-      </h2>
-      <p class="approach-text reveal reveal-d2">
-        <span class="en">There's no single "right" way to do therapy. I use different tools depending on what you need&mdash;sometimes we talk, sometimes we tune into the body, sometimes we get creative. You don't need to know any of these methods. I'll guide you through what fits.</span>
-        <span class="fr">Il n&rsquo;y a pas de &laquo;&nbsp;bonne&nbsp;&raquo; fa&ccedil;on unique de faire la th&eacute;rapie. J&rsquo;utilise diff&eacute;rents outils selon ce dont vous avez besoin&mdash;parfois on parle, parfois on &eacute;coute le corps, parfois on cr&eacute;e. Vous n&rsquo;avez pas besoin de conna&icirc;tre ces m&eacute;thodes. Je vous guide.</span>
-        <span class="es">No hay una &uacute;nica forma &ldquo;correcta&rdquo; de hacer terapia. Uso diferentes herramientas seg&uacute;n lo que necesites&mdash;a veces hablamos, a veces sintonizamos con el cuerpo, a veces creamos. No necesitas conocer estos m&eacute;todos. Yo te gu&iacute;o.</span>
-      </p>
-
-      <div class="approach-methods reveal reveal-d3">
-        <div class="approach-method expandable">
-          <div class="expandable-trigger"><span class="approach-method-dot"></span>
-          <span class="en">You lead, I listen</span>
-          <span class="fr">Vous guidez, j&rsquo;&eacute;coute</span>
-          <span class="es">T&uacute; gu&iacute;as, yo escucho</span></div>
-          <div class="expandable-detail"><div class="expandable-detail-inner"><p><span class="en">You know your life better than anyone. My job is to be fully present, warm, and honest&mdash;creating a space where you feel safe enough to explore what matters to you. No agenda, no judgment.</span><span class="fr">Vous connaissez votre vie mieux que quiconque. Mon r&ocirc;le est d&rsquo;&ecirc;tre pleinement pr&eacute;sente, chaleureuse et honn&ecirc;te&mdash;cr&eacute;ant un espace o&ugrave; vous vous sentez assez en s&eacute;curit&eacute; pour explorer ce qui compte pour vous.</span><span class="es">T&uacute; conoces tu vida mejor que nadie. Mi trabajo es estar plenamente presente, c&aacute;lida y honesta&mdash;creando un espacio donde te sientas lo suficientemente seguro para explorar lo que te importa.</span></p></div></div>
-        </div>
-        <div class="approach-method expandable">
-          <div class="expandable-trigger"><span class="approach-method-dot"></span>
-          <span class="en">Understanding your relationship patterns</span>
-          <span class="fr">Comprendre vos sch&eacute;mas relationnels</span>
-          <span class="es">Entender tus patrones de relaci&oacute;n</span></div>
-          <div class="expandable-detail"><div class="expandable-detail-inner"><p><span class="en">The way you connected with your caregivers as a child shapes how you love, fight, and trust as an adult. Together we uncover these patterns so your relationships can feel safer and more fulfilling.</span><span class="fr">La fa&ccedil;on dont vous vous &ecirc;tes li&eacute; &agrave; vos parents enfant influence comment vous aimez, vous disputez et faites confiance adulte. Ensemble, nous d&eacute;couvrons ces sch&eacute;mas pour des relations plus s&eacute;curisantes.</span><span class="es">La forma en que te conectaste con tus cuidadores de ni&ntilde;o moldea c&oacute;mo amas, peleas y conf&iacute;as de adulto. Juntos descubrimos estos patrones para que tus relaciones sean m&aacute;s seguras.</span></p></div></div>
-        </div>
-        <div class="approach-method expandable">
-          <div class="expandable-trigger"><span class="approach-method-dot"></span>
-          <span class="en">Changing how you think</span>
-          <span class="fr">Changer votre fa&ccedil;on de penser</span>
-          <span class="es">Cambiar c&oacute;mo piensas</span></div>
-          <div class="expandable-detail"><div class="expandable-detail-inner"><p><span class="en">Sometimes our brain gets stuck in loops&mdash;&ldquo;I'm not good enough,&rdquo; &ldquo;something bad will happen.&rdquo; We learn to notice those automatic thoughts, question them, and build healthier mental habits. Very practical, with real tools you can use daily.</span><span class="fr">Parfois notre cerveau tourne en boucle&mdash;&laquo;&nbsp;je ne suis pas assez bien&nbsp;&raquo;, &laquo;&nbsp;quelque chose de mal va arriver&nbsp;&raquo;. Nous apprenons &agrave; remarquer ces pens&eacute;es automatiques, les questionner, et b&acirc;tir des habitudes mentales plus saines. Tr&egrave;s concret.</span><span class="es">A veces nuestro cerebro se queda en bucles&mdash;&ldquo;no soy suficiente&rdquo;, &ldquo;algo malo va a pasar.&rdquo; Aprendemos a notar esos pensamientos autom&aacute;ticos, cuestionarlos, y construir h&aacute;bitos mentales m&aacute;s sanos. Muy pr&aacute;ctico.</span></p></div></div>
-        </div>
-        <div class="approach-method expandable">
-          <div class="expandable-trigger"><span class="approach-method-dot"></span>
-          <span class="en">Listening to your body</span>
-          <span class="fr">&Eacute;couter votre corps</span>
-          <span class="es">Escuchar tu cuerpo</span></div>
-          <div class="expandable-detail"><div class="expandable-detail-inner"><p><span class="en">Stress, anxiety, and past experiences live in the body&mdash;the tight chest, the knot in the stomach, the tension in the shoulders. We slow down, notice what your body is telling you, and gently release what's been held. No yoga mat required.</span><span class="fr">Le stress, l&rsquo;anxi&eacute;t&eacute; et les exp&eacute;riences pass&eacute;es vivent dans le corps&mdash;la poitrine serr&eacute;e, le n&oelig;ud &agrave; l&rsquo;estomac, la tension dans les &eacute;paules. Nous ralentissons, observons ce que votre corps vous dit, et lib&eacute;rons doucement ce qui &eacute;tait retenu.</span><span class="es">El estr&eacute;s, la ansiedad y las experiencias pasadas viven en el cuerpo&mdash;el pecho apretado, el nudo en el est&oacute;mago, la tensi&oacute;n en los hombros. Desaceleramos, notamos lo que tu cuerpo te dice, y liberamos suavemente lo que se ha retenido.</span></p></div></div>
-        </div>
-        <div class="approach-method expandable">
-          <div class="expandable-trigger"><span class="approach-method-dot"></span>
-          <span class="en">Being present, right now</span>
-          <span class="fr">&Ecirc;tre pr&eacute;sent, ici et maintenant</span>
-          <span class="es">Estar presente, aqu&iacute; y ahora</span></div>
-          <div class="expandable-detail"><div class="expandable-detail-inner"><p><span class="en">Instead of analyzing the past endlessly, we pay attention to what's happening right now&mdash;in your body, your emotions, your reactions in this very moment. It sounds simple, but it's surprisingly revealing.</span><span class="fr">Au lieu d&rsquo;analyser le pass&eacute; sans fin, nous portons attention &agrave; ce qui se passe maintenant&mdash;dans votre corps, vos &eacute;motions, vos r&eacute;actions en ce moment. &Ccedil;a semble simple, mais c&rsquo;est &eacute;tonnamment r&eacute;v&eacute;lateur.</span><span class="es">En vez de analizar el pasado sin fin, prestamos atenci&oacute;n a lo que pasa ahora&mdash;en tu cuerpo, tus emociones, tus reacciones en este momento. Suena simple, pero es sorprendentemente revelador.</span></p></div></div>
-        </div>
-        <div class="approach-method expandable">
-          <div class="expandable-trigger"><span class="approach-method-dot"></span>
-          <span class="en">Getting to know your inner voices</span>
-          <span class="fr">Conna&icirc;tre vos voix int&eacute;rieures</span>
-          <span class="es">Conocer tus voces internas</span></div>
-          <div class="expandable-detail"><div class="expandable-detail-inner"><p><span class="en">You know that inner critic that tells you you're not enough? Or the part of you that shuts down to avoid getting hurt? We all have these &ldquo;parts.&rdquo; Instead of fighting them, we learn to understand what they're trying to protect&mdash;and find gentler ways forward.</span><span class="fr">Vous connaissez cette voix int&eacute;rieure qui dit que vous n&rsquo;&ecirc;tes pas assez? Ou cette partie de vous qui se ferme pour &eacute;viter d&rsquo;&ecirc;tre bless&eacute;? Nous avons tous ces &laquo;&nbsp;parties&nbsp;&raquo;. Au lieu de les combattre, nous apprenons &agrave; comprendre ce qu&rsquo;elles prot&egrave;gent.</span><span class="es">&iquest;Conoces esa voz interior que dice que no eres suficiente? &iquest;O esa parte de ti que se cierra para evitar ser herido? Todos tenemos estas &ldquo;partes.&rdquo; En vez de luchar contra ellas, aprendemos a entender qu&eacute; est&aacute;n protegiendo.</span></p></div></div>
-        </div>
-        <div class="approach-method expandable">
-          <div class="expandable-trigger"><span class="approach-method-dot"></span>
-          <span class="en">Expressing without words</span>
-          <span class="fr">S&rsquo;exprimer sans mots</span>
-          <span class="es">Expresarse sin palabras</span></div>
-          <div class="expandable-detail"><div class="expandable-detail-inner"><p><span class="en">Sometimes the most important things can't be said&mdash;they need to be drawn, moved, or played. Using simple creative activities (no artistic talent needed!), we access feelings and memories that talking alone can't reach.</span><span class="fr">Parfois les choses les plus importantes ne peuvent pas &ecirc;tre dites&mdash;elles doivent &ecirc;tre dessin&eacute;es, boug&eacute;es, ou jou&eacute;es. &Agrave; travers des activit&eacute;s cr&eacute;atives simples (aucun talent artistique requis!), nous acc&eacute;dons &agrave; des sentiments que la parole seule ne peut atteindre.</span><span class="es">A veces las cosas m&aacute;s importantes no se pueden decir&mdash;necesitan ser dibujadas, movidas o jugadas. Usando actividades creativas simples (&iexcl;no se necesita talento art&iacute;stico!), accedemos a sentimientos que solo hablando no se alcanzan.</span></p></div></div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
