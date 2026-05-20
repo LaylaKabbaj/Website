@@ -1315,6 +1315,52 @@ footer {
 }
 
 /* ══════════════════════
+   TRUST / PROFESSIONAL STANDARDS
+   ══════════════════════ */
+.trust {
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(2rem, 6vw, 6rem);
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+.trust-pillar {
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  background: var(--cream-light);
+  border-top: 2px solid var(--gold-soft);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s, box-shadow 0.4s;
+}
+.trust-pillar:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 6px 22px rgba(45, 61, 45, 0.08);
+}
+.trust-pillar-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.trust-pillar h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--forest);
+  margin-bottom: 0.65rem;
+  line-height: 1.35;
+}
+.trust-pillar p {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.65;
+}
+
+/* ══════════════════════
    FAQ — Accordion
    ══════════════════════ */
 .faq {
@@ -2277,45 +2323,74 @@ footer {
   </div>
 </section>
 
-<!-- ── Testimonials ── -->
-<section class="testimonials">
-  <div class="blob blob--blush blob-test"></div>
-  <div class="testimonials-inner">
-    <p class="section-label reveal">
-      <span class="en">Words from clients</span>
-      <span class="fr">Paroles de clients</span>
-      <span class="es">Palabras de clientes</span>
-    </p>
-    <h2 class="section-heading reveal reveal-d1">
-      <span class="en">What it feels like<br>to be heard</span>
-      <span class="fr">Ce que &ccedil;a fait<br>d&rsquo;&ecirc;tre entendu</span>
-      <span class="es">Lo que se siente<br>ser escuchado</span>
-    </h2>
-    <div class="testimonials-grid">
-      <div class="testimonial reveal reveal-d1">
-        <p class="testimonial-quote">
-          <span class="en">I spent years thinking therapy wasn't for me. With Layla, I finally understood what it means to feel safe enough to be honest with yourself.</span>
-          <span class="fr">J&rsquo;ai pass&eacute; des ann&eacute;es &agrave; penser que la th&eacute;rapie n&rsquo;&eacute;tait pas pour moi. Avec Layla, j&rsquo;ai enfin compris ce que signifie se sentir assez en s&eacute;curit&eacute; pour &ecirc;tre honn&ecirc;te avec soi-m&ecirc;me.</span>
-          <span class="es">Pas&eacute; a&ntilde;os pensando que la terapia no era para m&iacute;. Con Layla, finalmente entend&iacute; lo que significa sentirse lo suficientemente seguro para ser honesto contigo mismo.</span>
-        </p>
-        <p class="testimonial-author">&mdash; S.M.</p>
-      </div>
-      <div class="testimonial reveal reveal-d2">
-        <p class="testimonial-quote">
-          <span class="en">She helped us find our way back to each other. The creative approaches surprised us&mdash;they unlocked things we couldn't access through talking alone.</span>
-          <span class="fr">Elle nous a aid&eacute;s &agrave; nous retrouver. Les approches cr&eacute;atives nous ont surpris&mdash;elles ont d&eacute;bloqu&eacute; des choses inaccessibles par la parole seule.</span>
-          <span class="es">Nos ayud&oacute; a encontrar el camino de vuelta el uno al otro. Los enfoques creativos nos sorprendieron&mdash;desbloquearon cosas que no pod&iacute;amos acceder solo hablando.</span>
-        </p>
-        <p class="testimonial-author">&mdash; A. &amp; J.</p>
-      </div>
-      <div class="testimonial reveal reveal-d3">
-        <p class="testimonial-quote">
-          <span class="en">For the first time, someone helped me understand why I react the way I do&mdash;without making me feel broken. I finally feel like I'm on my own side.</span>
-          <span class="fr">Pour la premi&egrave;re fois, quelqu&rsquo;un m&rsquo;a aid&eacute; &agrave; comprendre pourquoi je r&eacute;agis comme je le fais&mdash;sans me faire sentir bris&eacute;. Je sens enfin que je suis de mon c&ocirc;t&eacute;.</span>
-          <span class="es">Por primera vez, alguien me ayud&oacute; a entender por qu&eacute; reacciono como lo hago&mdash;sin hacerme sentir roto. Finalmente siento que estoy de mi propio lado.</span>
-        </p>
-        <p class="testimonial-author">&mdash; C.L.</p>
-      </div>
+<!-- ── Professional Standards / Trust ── -->
+<section class="trust" id="standards">
+  <p class="section-label reveal">
+    <span class="en">Professional Standards</span>
+    <span class="fr">Standards professionnels</span>
+    <span class="es">Est&aacute;ndares profesionales</span>
+  </p>
+  <h2 class="section-heading reveal reveal-d1">
+    <span class="en">Care, ethics,<br>and clinical rigour</span>
+    <span class="fr">Soin, &eacute;thique<br>et rigueur clinique</span>
+    <span class="es">Cuidado, &eacute;tica<br>y rigor cl&iacute;nico</span>
+  </h2>
+
+  <div class="trust-grid reveal reveal-d2">
+    <div class="trust-pillar">
+      <svg class="trust-pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+      <h3>
+        <span class="en">Qualifying registration</span>
+        <span class="fr">Inscription en formation qualifiante</span>
+        <span class="es">Registro en formaci&oacute;n cualificante</span>
+      </h3>
+      <p>
+        <span class="en">Practising as a Registered Psychotherapist (Qualifying) under clinical supervision, in line with professional regulatory standards.</span>
+        <span class="fr">Je pratique en tant que psychoth&eacute;rapeute autoris&eacute;e (en formation), sous supervision clinique, conform&eacute;ment aux normes professionnelles applicables.</span>
+        <span class="es">Ejerzo como Psicoterapeuta Registrada (en formaci&oacute;n) bajo supervisi&oacute;n cl&iacute;nica, conforme a los est&aacute;ndares profesionales aplicables.</span>
+      </p>
+    </div>
+
+    <div class="trust-pillar">
+      <svg class="trust-pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg>
+      <h3>
+        <span class="en">Integrative &amp; trauma-informed</span>
+        <span class="fr">Int&eacute;grative et sensible au trauma</span>
+        <span class="es">Integrativa e informada por el trauma</span>
+      </h3>
+      <p>
+        <span class="en">Drawing on attachment theory, somatic awareness, parts-informed exploration, and integrative psychotherapy frameworks.</span>
+        <span class="fr">Approche fond&eacute;e sur la th&eacute;orie de l&rsquo;attachement, la conscience somatique, le travail inform&eacute; par les parties internes et les cadres de psychoth&eacute;rapie int&eacute;grative.</span>
+        <span class="es">Basada en la teor&iacute;a del apego, la conciencia som&aacute;tica, la exploraci&oacute;n basada en partes internas y los marcos de psicoterapia integrativa.</span>
+      </p>
+    </div>
+
+    <div class="trust-pillar">
+      <svg class="trust-pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="1.5"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+      <h3>
+        <span class="en">Confidential &amp; ethical</span>
+        <span class="fr">Confidentialit&eacute; et &eacute;thique</span>
+        <span class="es">Confidencial y &eacute;tico</span>
+      </h3>
+      <p>
+        <span class="en">Sessions and records are handled in accordance with applicable privacy law. Information is shared only with your written consent.</span>
+        <span class="fr">Les s&eacute;ances et les dossiers sont trait&eacute;s conform&eacute;ment aux lois sur la protection des renseignements personnels. Toute information n&rsquo;est partag&eacute;e qu&rsquo;avec votre consentement &eacute;crit.</span>
+        <span class="es">Las sesiones y los registros se manejan conforme a la legislaci&oacute;n de privacidad aplicable. La informaci&oacute;n se comparte &uacute;nicamente con tu consentimiento por escrito.</span>
+      </p>
+    </div>
+
+    <div class="trust-pillar">
+      <svg class="trust-pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+      <h3>
+        <span class="en">Inclusive &amp; affirming</span>
+        <span class="fr">Inclusif et bienveillant</span>
+        <span class="es">Inclusivo y afirmativo</span>
+      </h3>
+      <p>
+        <span class="en">A welcoming, non-judgmental space for people of all backgrounds, identities, orientations, and lived experiences.</span>
+        <span class="fr">Un espace accueillant et sans jugement pour les personnes de tous horizons, identit&eacute;s, orientations et exp&eacute;riences v&eacute;cues.</span>
+        <span class="es">Un espacio acogedor y sin juicio para personas de todos los or&iacute;genes, identidades, orientaciones y experiencias vividas.</span>
+      </p>
     </div>
   </div>
 </section>
